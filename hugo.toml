@@ -1,4 +1,4 @@
-baseURL = 'https://thixotropist.github.io/riscv_ghidra_extensions_field_guide'
+baseURL = 'https://thixotropist.github.io/riscv_vector_survey'
 languageCode = 'en-us'
 title = 'RISCV ISA extensions Ghidra field guide'
 
@@ -91,7 +91,7 @@ version = "0.0"
 
 # A link to latest version of the docs. Used in the "version-banner" partial to
 # point people to the main doc site.
-url_latest_version = "https://example.com"
+url_latest_version = "https://github.com/thixotropist/riscv_vector_survey"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
 github_repo = "https://github.com/thixotropist/ghidra_import_tests"
@@ -116,7 +116,7 @@ prism_syntax_highlighting = false
 
 [params.copyright]
   authors = "Thixotropist | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) | "
-  from_year = 2023
+  from_year = 2024
 
 # User interface configuration
 [params.ui]

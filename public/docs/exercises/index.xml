@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Exercises on RISCV ISA extensions Ghidra field guide</title>
+    <link>https://thixotropist.github.io/riscv_vector_survey/docs/exercises/</link>
+    <description>Recent content in Exercises on RISCV ISA extensions Ghidra field guide</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://thixotropist.github.io/riscv_vector_survey/docs/exercises/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>structure accesses</title>
+      <link>https://thixotropist.github.io/riscv_vector_survey/docs/exercises/structureaccesses/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://thixotropist.github.io/riscv_vector_survey/docs/exercises/structureaccesses/</guid>
+      <description>Some memory operations can be very hard to understand. This is especially true when copying some elements of a structure into elements of a different class of structure.&#xA;Note: a tutorial on segemented, strided, and indexed loads and stores would be useful, as would a tutorial on the various element width, length, and multiplier mechanics.&#xA;This function is one of the more confusing sequences of vector operations.&#xA;void FUN_006759d0(undefined8 param_1,undefined8 param_2,undefined4 *param_3) { long lVar1; ulong uVar2; long lVar3; undefined auVar4 [256]; undefined auVar5 [256]; undefined auVar6 [256]; undefined auVar7 [256]; int iStack_78; undefined auStack_74 [28]; undefined4 auStack_58 [4]; int *piStack_48; undefined uStack_37; FUN_000e4230(auStack_58,0x28); auStack_58[0] = 0x1f0000; piStack_48 = &amp;amp;iStack_78; uStack_37 = 0x20; lVar1 = FUN_0066f66a(param_1,param_2,auStack_58); if (lVar1 == 0) { uVar2 = minu((long)iStack_78,7); // max number of elements is 7 *param_3 = (int)uVar2; if ((long)iStack_78 !</description>
+    </item>
+  </channel>
+</rss>

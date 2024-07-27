@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ens on My New Hugo Site</title>
+    <link>http://localhost:1313/en/</link>
+    <description>Recent content in Ens on My New Hugo Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Instruction definition is pending</title>
+      <link>http://localhost:1313/en/docs/pending/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/en/docs/pending/</guid>
+      <description>This instruction has not yet been documented.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/en/docs/vector_survey/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/en/docs/vector_survey/</guid>
+      <description>vector opcode frequency table opcode frequency vse8.v 12756 vsetivli 9668 vsetvli 7882 vle8.v 5841 vle8ff.v 3433 vmv.v.i 3134 vse32.v 2357 vmseq.vi 1914 vse64.v 1880 csrrs[vl] 1843 vfirst.m 1843 vle64.v 1808 vid.v 1801 vse16.v 1751 vmsne.vv 1603 vmor.mm 1597 vle32.v 1431 csrrs[vlenb] 1163 vmul.vx 1136 vmv.x.s 1134 vmv.v.x 979 vadd.vi 909 vrgather.vv 733 vadd.vv 654 vle16.v 624 vadd.vx 592 vslide1down.vx 566 vor.vv 546 vncvt.x.x.w 479 vand.vv 468 vsll.vi 424 vmv.s.x 333 vmv1r.</description>
+    </item>
+  </channel>
+</rss>

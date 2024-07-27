@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Patterns on RISCV ISA extensions Ghidra field guide</title>
+    <link>https://thixotropist.github.io/riscv_vector_survey/docs/patterns/</link>
+    <description>Recent content in Patterns on RISCV ISA extensions Ghidra field guide</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://thixotropist.github.io/riscv_vector_survey/docs/patterns/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>strlen</title>
+      <link>https://thixotropist.github.io/riscv_vector_survey/docs/patterns/strlen/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://thixotropist.github.io/riscv_vector_survey/docs/patterns/strlen/</guid>
+      <description>The strlen standard library function can be vectorized inline&#xA;Inline invocation of strlen(char* src) can look like this:&#xA;def $len = strlen($src) c.li $offset, 0 c.li $pointer, $src $1: vsetvli $scratch,zero,e8,m1,ta,ma ; set element width to 8 bits, tail and mask agnostic c.add $pointer,$offset vle8ff.v $v_tmp,($pointer) ; attempt to load vector register $v_tmp from memory vmseq.vi $v_tmp,$v_tmp,0x0 ; set mask if element equals immediate value csrrs $offset,vl,zero ; determine the number of elements actually read vfirst.</description>
+    </item>
+    <item>
+      <title>memset</title>
+      <link>https://thixotropist.github.io/riscv_vector_survey/docs/patterns/memset/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://thixotropist.github.io/riscv_vector_survey/docs/patterns/memset/</guid>
+      <description>The GCC compiler handles many initialization operations with the setmem pseudocode RTL operation. This includes both memset standard library invocations and sequences of var = constant; initialers. The vectorizer translates as many of these as it can into equivalent vector initializers.&#xA;Often the initializer is an immediate constant zero. The compiler takes memory alignment into account when generating loads and stores. Storing a vector of 8 8 bit bytes is not the same as storing a single 64 bit doubleword.</description>
+    </item>
+  </channel>
+</rss>

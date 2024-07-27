@@ -1,0 +1,1930 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="https://thixotropist.github.io/riscv_vector_survey/docs/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://thixotropist.github.io/riscv_vector_survey/docs/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/riscv_vector_survey/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/riscv_vector_survey/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/riscv_vector_survey/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/riscv_vector_survey/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/riscv_vector_survey/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/riscv_vector_survey/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/riscv_vector_survey/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/riscv_vector_survey/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/riscv_vector_survey/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/riscv_vector_survey/favicons/android-192x192.png" sizes="192x192">
+
+<title>Documentation | RISCV ISA extensions Ghidra field guide</title>
+<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+<meta property="og:url" content="https://thixotropist.github.io/riscv_vector_survey/docs/">
+  <meta property="og:site_name" content="RISCV ISA extensions Ghidra field guide">
+  <meta property="og:title" content="Documentation">
+  <meta property="og:description" content="Recognizing vector instruction sequences in large RISCV-64 binaries.
+…">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Documentation">
+  <meta itemprop="description" content="Recognizing vector instruction sequences in large RISCV-64 binaries.
+…">
+  <meta itemprop="dateModified" content="2024-07-27T11:52:32-04:00">
+  <meta itemprop="wordCount" content="9">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Documentation">
+  <meta name="twitter:description" content="Recognizing vector instruction sequences in large RISCV-64 binaries.
+…">
+
+
+
+
+<link rel="preload" href="/riscv_vector_survey/scss/main.min.c7fba8d75c695e2a7cf37f10b188552511714d4c1645c16af7e24f7cc964a002.css" as="style">
+<link href="/riscv_vector_survey/scss/main.min.c7fba8d75c695e2a7cf37f10b188552511714d4c1645c16af7e24f7cc964a002.css" rel="stylesheet" integrity="">
+
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/riscv_vector_survey/"><span class="navbar-brand__logo navbar-logo"><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500"><g><path style="fill:#fff" d="M116.8525 421.9722c-5.7041.0-10.3442-4.3127-10.3442-9.6129V88.183c0-5.3002 4.6401-9.6117 10.3442-9.6117H320.858c3.0347.0 9.3959.5498 11.7506 2.6302l.3545.3442 58.905 63.2912c2.3101 2.491 2.9202 8.4928 2.9202 11.3184v256.2039c0 5.3002-4.6407 9.6129-10.3436 9.6129H116.8525z"/><g><g><g><path style="fill:#767676" d="M384.4445 423.2066H116.852c-6.3839.0-11.5786-4.8658-11.5786-10.8474V88.1831c0-5.9804 5.1947-10.8461 11.5786-10.8461h204.0062c.377.0 9.2786.0329 12.568 2.9389l.3947.3833 58.9508 63.337c3.2135 3.4652 3.2514 11.7924 3.2514 12.1593v256.2036C396.0231 418.3408 390.8284 423.2066 384.4445 423.2066zM116.5079 411.9189c.0848.0278.1999.0531.3441.0531h267.5925c.1442.0.2581-.0253.3441-.0531V156.1556c-.0076-.9033-.3593-3.7347-.7034-5.0037l-57.6527-61.9416c-1.4651-.3176-4.4533-.6389-5.5742-.6389H116.852c-.143.0-.2594.024-.3441.0531V411.9189zm267.4533-261.149zM327.0321 89.371v.0013V89.371z"/></g></g></g><g><g><path style="fill:#5b7fc0" d="M189.0874 210.1754l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4473C177.5953 212.627 183.0601 210.1742 189.0874 210.1754zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 234.1722 197.0804 232.033z"/><path style="opacity:.3;fill:#fff" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/><g><defs><path id="SVGID_1_" d="M194.7376 237.6875c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 234.2399 196.1861 236.239 194.7376 237.6875z"/></defs><clipPath id="SVGID_2_"><use xlink:href="#SVGID_1_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_2_);fill:#fff" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/><path style="opacity:.13;clip-path:url(#SVGID_2_);fill:#020202" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/></g><g><defs><path id="SVGID_3_" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/></defs><clipPath id="SVGID_4_"><use xlink:href="#SVGID_3_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_4_);fill:#5b7fc0" d="M172.6595 215.6045c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8475-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 209.1953 176.6171 211.647 172.6595 215.6045z"/></g></g><rect x="198.8952" y="225.1043" style="fill:#5b7fc0" width="122.6266" height="13.8671"/></g><g><path style="fill:#d95140" d="M189.0874 155.7611l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.0249 2.454-11.4897 6.4116-15.4473C177.5953 158.2128 183.0601 155.7599 189.0874 155.7611zm7.993 21.8577c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.2508 181.7667 197.0816 179.758 197.0804 177.6188z"/><path style="opacity:.3;fill:#fff" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/><g><defs><path id="SVGID_5_" d="M194.7376 183.2733c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 179.8256 196.1861 181.8248 194.7376 183.2733z"/></defs><clipPath id="SVGID_6_"><use xlink:href="#SVGID_5_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_6_);fill:#fff" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/><path style="opacity:.13;clip-path:url(#SVGID_6_);fill:#020202" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/></g><g><defs><path id="SVGID_7_" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/></defs><clipPath id="SVGID_8_"><use xlink:href="#SVGID_7_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_8_);fill:#d95140" d="M172.6595 161.1903c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 154.7811 176.6171 157.2327 172.6595 161.1903z"/></g><rect x="198.8952" y="170.69" style="fill:#d95140" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#56a55c" d="M189.5379 264.6147l.0012-.0012c7.7751.0012 15.0294 4.1862 18.932 10.9235 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032-5.8394.0-11.3281-2.2733-15.458-6.4032-4.13-4.13-6.4032-9.6186-6.4056-15.4628.0012-6.0249 2.454-11.4897 6.4116-15.4472C178.0458 267.0663 183.5105 264.6135 189.5379 264.6147zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6538 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.7013 290.6202 197.5321 288.6115 197.5309 286.4723z"/><path style="opacity:.3;fill:#fff" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/><g><defs><path id="SVGID_9_" d="M195.1881 292.1268c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9941 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.5344 288.6792 196.6366 290.6783 195.1881 292.1268z"/></defs><clipPath id="SVGID_10_"><use xlink:href="#SVGID_9_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_10_);fill:#fff" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/><path style="opacity:.13;clip-path:url(#SVGID_10_);fill:#020202" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/></g><g><defs><path id="SVGID_11_" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/></defs><clipPath id="SVGID_12_"><use xlink:href="#SVGID_11_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_12_);fill:#56a55c" d="M173.11 270.0439c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7325-11.1497-10.9151-18.926-10.9151C182.5311 263.6346 177.0676 266.0863 173.11 270.0439z"/></g></g><rect x="199.3456" y="279.5436" style="fill:#56a55c" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#f1bc42" d="M189.0874 318.7208l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3305-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4472C177.5953 321.1724 183.0601 318.7196 189.0874 318.7208zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 342.7176 197.0804 340.5784z"/><path style="opacity:.3;fill:#fff" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/><g><defs><path id="SVGID_13_" d="M194.7376 346.2329c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 342.7853 196.1861 344.7844 194.7376 346.2329z"/></defs><clipPath id="SVGID_14_"><use xlink:href="#SVGID_13_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_14_);fill:#fff" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/><path style="opacity:.13;clip-path:url(#SVGID_14_);fill:#020202" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/></g><g><defs><path id="SVGID_15_" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/></defs><clipPath id="SVGID_16_"><use xlink:href="#SVGID_15_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_16_);fill:#f1bc42" d="M172.6595 324.15c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8474-1.0151-7.6327-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 317.7407 176.6171 320.1924 172.6595 324.15z"/></g></g><rect x="198.8952" y="333.6497" style="fill:#f1bc42" width="122.6266" height="13.8671"/></g></g></svg></span><span class="navbar-brand__name">RISCV ISA extensions Ghidra field guide</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/riscv_vector_survey/about/"><span>About</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/riscv_vector_survey/docs/"><span>Docs</span></a>
+      </li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/riscv_vector_survey/docs/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Documentation</h1>
+
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-09310424fca265d6b9035b2390ead37b">Vector ISA Frequencies</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-e5c82d969a9b7f4c2dc2ac24d096e17d">Opcodes</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>2.1: <a href="#pg-fb7327efc6498bdb83bb566098d62785">Instruction definition is pending</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2.2: <a href="#pg-2a1a7a2a0e262537eef7cc79e50b10c8">vsetvli, vsetivli</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2.3: <a href="#pg-08ea4546aa0cd4403a970e274c47fee1">vle_ff</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2.4: <a href="#pg-bef2c18731e388084454d01e5942f30f">vle_</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2.5: <a href="#pg-a94301f45d1fda0f50acf22168eb216e">vm_</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2.6: <a href="#pg-76e1f291c116a5153335dd37b7fbc432">vms__.v_</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2.7: <a href="#pg-b000d8ea00415618fec7e29831cc534a">vse_</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2.8: <a href="#pg-088d9f1990fd0a0d3ffc72aabef9d18a">csrrs</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2.9: <a href="#pg-5f749e66f5b60acf18f3043875777e38">vmv.v.?</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2.10: <a href="#pg-c0194658cd413153693dcdcb4d03de58">vfirst.m</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2.11: <a href="#pg-ab0a85d4ccb10e9e6d6b345fafc36ec6">vid.v</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-c57d38f23b8b25805a47bee624cd3b46">Patterns</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>3.1: <a href="#pg-75fcec362bd17b7df658d3516b858ce2">strlen</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3.2: <a href="#pg-182a088d6d3d0de97717d86569eb4fa9">memset</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-efae62a251013d0e444a5caea6f99cb4">Exercises</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>4.1: <a href="#pg-2ab437f302746beca2457c93997b0c0c">structure accesses</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>5: <a href="#pg-0a6b22de6bb8ab21bf9a0599a2e76143">RISCV-64 toolchain and deployment environment</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+
+<div class="pageinfo pageinfo-primary">
+<p>Recognizing vector instruction sequences in large RISCV-64 binaries.</p>
+
+</div>
+
+<p>&hellip;</p>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-09310424fca265d6b9035b2390ead37b">1 - Vector ISA Frequencies</h1>
+    
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>What are the vector instruction frequencies in <code>dpdk-ip_pipeline</code>
+when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
+
+</div>
+
+<p>This means libc calls won&rsquo;t invoke vector instructions in this memory snapshot.</p>
+<table>
+<thead>
+<tr>
+<th>opcode</th>
+<th>frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vse_/">vse8.v</a></td>
+<td>12756</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vsetvli/">vsetivli</a></td>
+<td>9668</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vsetvli/">vsetvli</a></td>
+<td>7882</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vle_/">vle8.v</a></td>
+<td>5841</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vle_ff/">vle8ff.v</a></td>
+<td>3433</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vmv.v._/">vmv.v.i</a></td>
+<td>3134</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vse_/">vse32.v</a></td>
+<td>2357</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vms__/">vmseq.vi</a></td>
+<td>1914</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vse_/">vse64.v</a></td>
+<td>1880</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/csrrs/">csrrs[vl]</a></td>
+<td>1843</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vfirst.m/">vfirst.m</a></td>
+<td>1843</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vle_/">vle64.v</a></td>
+<td>1808</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vid.v/">vid.v</a></td>
+<td>1801</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vse_/">vse16.v</a></td>
+<td>1751</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vms__/">vmsne.vv</a></td>
+<td>1603</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vm_/">vmor.mm</a></td>
+<td>1597</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vle_/">vle32.v</a></td>
+<td>1431</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/csrrs/">csrrs[vlenb]</a></td>
+<td>1163</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmul.vx</a></td>
+<td>1136</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmv.x.s</a></td>
+<td>1134</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vmv.v._/">vmv.v.x</a></td>
+<td>979</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vadd.vi</a></td>
+<td>909</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vrgather.vv</a></td>
+<td>733</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vadd.vv</a></td>
+<td>654</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vle_/">vle16.v</a></td>
+<td>624</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vadd.vx</a></td>
+<td>592</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vslide1down.vx</a></td>
+<td>566</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vm_/">vor.vv</a></td>
+<td>546</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vncvt.x.x.w</a></td>
+<td>479</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vand.vv</a></td>
+<td>468</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsll.vi</a></td>
+<td>424</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmv.s.x</a></td>
+<td>333</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmv1r.v</a></td>
+<td>271</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vslidedown.vi</a></td>
+<td>262</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vzext.vf2</a></td>
+<td>248</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vrsub.vi</a></td>
+<td>215</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vs1r.v</a></td>
+<td>197</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vxor.vv</a></td>
+<td>192</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vredor.vs</a></td>
+<td>179</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsrl.vi</a></td>
+<td>156</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vms__/">vmsne.vi</a></td>
+<td>151</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vl1re64.v</a></td>
+<td>150</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vrsub.vx</a></td>
+<td>132</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vluxei64.v</a></td>
+<td>125</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vand.vi</a></td>
+<td>122</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vredsum.vs</a></td>
+<td>110</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsll.vv</a></td>
+<td>106</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vzext.vf4</a></td>
+<td>103</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vlse32.v</a></td>
+<td>88</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vluxei32.v</a></td>
+<td>88</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vlseg2e32.v</a></td>
+<td>87</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vms__/">vmseq.vv</a></td>
+<td>70</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmerge.vim</a></td>
+<td>66</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vcpop.m</a></td>
+<td>61</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsub.vv</a></td>
+<td>57</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vslide1up.vx</a></td>
+<td>56</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmerge.vvm</a></td>
+<td>55</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsuxei64.v</a></td>
+<td>55</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vwaddu.wv</a></td>
+<td>50</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vrgatherei16.vv</a></td>
+<td>49</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vl1re32.v</a></td>
+<td>48</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vwredsumu.vs</a></td>
+<td>47</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vms__/">vmsgtu.vi</a></td>
+<td>39</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vnsrl.wi</a></td>
+<td>39</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsrl.vv</a></td>
+<td>37</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vlse16.v</a></td>
+<td>31</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vms__/">vmsleu.vi</a></td>
+<td>30</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmul.vv</a></td>
+<td>29</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vminu.vv</a></td>
+<td>28</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vlse64.v</a></td>
+<td>26</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vnot.v</a></td>
+<td>26</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmax.vv</a></td>
+<td>24</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vremu.vv</a></td>
+<td>23</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vnsrl.wv</a></td>
+<td>20</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmadd.vv</a></td>
+<td>19</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vm_/">vmand.mm</a></td>
+<td>19</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vredxor.vs</a></td>
+<td>19</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsra.vi</a></td>
+<td>17</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vms__/">vmsltu.vv</a></td>
+<td>16</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsuxei32.v</a></td>
+<td>15</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vl1r.v</a></td>
+<td>14</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmulhu.vv</a></td>
+<td>14</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vluxei16.v</a></td>
+<td>14</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsll.vx</a></td>
+<td>12</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vfmv.v.f</a></td>
+<td>12</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsseg2e32.v</a></td>
+<td>12</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmacc.vv</a></td>
+<td>11</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vlm.v</a></td>
+<td>10</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vcompress.vm</a></td>
+<td>10</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vm_/">vmnand.mm</a></td>
+<td>10</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vslidedown.vx</a></td>
+<td>9</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vfmul.vv</a></td>
+<td>8</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vand.vx</a></td>
+<td>8</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vlseg3e32.v</a></td>
+<td>8</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsseg2e16.v</a></td>
+<td>8</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsseg2e64.v</a></td>
+<td>8</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsext.vf2</a></td>
+<td>7</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vredand.vs</a></td>
+<td>7</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsuxei16.v</a></td>
+<td>7</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vms__/">vmsltu.vx</a></td>
+<td>7</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vms__/">vmslt.vv</a></td>
+<td>7</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vlse8.v</a></td>
+<td>7</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsuxei8.v</a></td>
+<td>7</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vslideup.vi</a></td>
+<td>7</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsrl.vx</a></td>
+<td>6</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vluxei8.v</a></td>
+<td>6</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsseg8e8.v</a></td>
+<td>6</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vdivu.vv</a></td>
+<td>5</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vlseg8e8.v</a></td>
+<td>5</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vneg.v</a></td>
+<td>5</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vwaddu.vv</a></td>
+<td>4</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vfcvt.f.x.v</a></td>
+<td>4</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vnmsub.vv</a></td>
+<td>4</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vl1re16.v</a></td>
+<td>4</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsm.v</a></td>
+<td>3</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vredminu.vs</a></td>
+<td>3</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vfwcvt.f.x.v</a></td>
+<td>3</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vnsra.wv</a></td>
+<td>3</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vms__/">vmsle.vi</a></td>
+<td>3</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vfmadd.vv</a></td>
+<td>3</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vfncvt.rtz.xu.f.w</a></td>
+<td>3</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmaxu.vv</a></td>
+<td>3</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vle_ff/">vle64ff.v</a></td>
+<td>3</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vzext.vf8</a></td>
+<td>3</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vlseg4e16.v</a></td>
+<td>3</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vlseg4e32.v</a></td>
+<td>2</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vwadd.wv</a></td>
+<td>2</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vxor.vi</a></td>
+<td>2</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vredmaxu.vs</a></td>
+<td>2</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsseg4e8.v</a></td>
+<td>2</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vfwcvt.f.xu.v</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vfcvt.f.xu.v</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vfncvt.f.x.w</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vfncvt.f.xu.w</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vms__/">vmseq.vx</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vlseg7e32.v</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vs2r.v</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vl2re16.v</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsseg3e16.v</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmin.vv</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vlseg6e16.v</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vnsrl.wx</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vlseg8e32.v</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vrem.vv</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vor.vi</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsext.vf4</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/vms__/">vmsle.vv</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsra.vv</a></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-e5c82d969a9b7f4c2dc2ac24d096e17d">2 - Opcodes</h1>
+    
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>Common vector instruction opcodes</p>
+
+</div>
+
+<p>This section can help Ghidra users understand specific vector opcodes.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-fb7327efc6498bdb83bb566098d62785">2.1 - Instruction definition is pending</h1>
+    
+	<p>This instruction has not yet been documented.  See the vector <a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc">ISA extension reference</a></p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-2a1a7a2a0e262537eef7cc79e50b10c8">2.2 - vsetvli, vsetivli</h1>
+    
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>Set vector element count and width, plus tail and mask options.</p>
+
+</div>
+
+<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#sec-vector-config">Detailed Reference</a></p>
+<h2 id="overview">Overview</h2>
+<p><code>vsetvli</code> and <code>vsetivli</code> set context parameters for subsequent vector instructions.  This includes:</p>
+<ul>
+<li>the size of the vector element, e.g. 8, 16, 32, or 64 bits</li>
+<li>the number of vector elements to be processed</li>
+<li>whether to preserve or ignore tail elements in a vector register</li>
+<li>whether to preserve or ignore unmasked elements in a vector register</li>
+<li>whether to bind multiple vector registers into a logical single and larger register</li>
+</ul>
+<p>These instructions return the number of elements that can be processed in parallel.</p>
+<h2 id="patterns">Patterns</h2>
+<ul>
+<li><code>vsetvli</code> takes the number of elements (<code>vl</code>) to be processed from an operand register.  It is used
+when that number is unknown at compile time.  If the number operand register in <code>rs1</code> is zero, then
+<code>vl</code> is set to VLMAX or preserved from the previous <code>vl</code>, depending on the destination register.
+<ul>
+<li><code>vsetvli</code> often begins a vector stanza</li>
+<li><code>vsetvli</code> often occurs within a vector stanza if type conversion (widening or narrowing) is performed.</li>
+</ul>
+</li>
+<li><code>vsetivli</code> takes the number of elements (<code>vl</code>) to be processed from an immediate value.
+It is used when that number is known at compile time.
+<ul>
+<li>If <code>vl</code> is a small integer, and <code>vsetivli</code> is not followed by a loop, then these stanzas are likely
+due to compiler optimization of scalar code doing similar things to two or more adjacent memory locations.</li>
+</ul>
+</li>
+</ul>
+<h2 id="examples">Examples</h2>
+<h3 id="vsetvli">vsetvli</h3>
+<ul>
+<li><a href="/riscv_vector_survey/docs/patterns/strlen/">inline strlen</a></li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-08ea4546aa0cd4403a970e274c47fee1">2.3 - vle_ff</h1>
+    
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>Vector load 8, 16, 32, 64 bit elements with fault only first</p>
+
+</div>
+
+<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#77-unit-stride-fault-only-first-loads">Detailed Reference</a></p>
+<h2 id="overview">Overview</h2>
+<p>Vector load with unit stride (adjacent elements) with page and memory faults suppressed
+for reads other than the first element.</p>
+<h2 id="patterns">Patterns</h2>
+<p>Typically found when loading a vector with unknown effective length, and where that vector
+might straddle a page boundary causing a page fault.</p>
+<h2 id="examples">Examples</h2>
+<ul>
+<li><a href="/riscv_vector_survey/docs/patterns/strlen/">inline strlen</a></li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-bef2c18731e388084454d01e5942f30f">2.4 - vle_</h1>
+    
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>Vector load 8, 16, 32, 64 bit elements</p>
+
+</div>
+
+<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#74-vector-unit-stride-instructions">Detailed Reference</a></p>
+<h2 id="overview">Overview</h2>
+<p>Vector load with unit stride (adjacent elements).  Vector loads will cause an alignment exception if the equivalent
+scalar load would cause one.</p>
+<p>Includes:</p>
+<ul>
+<li>vle8</li>
+<li>vle16</li>
+<li>vle32</li>
+<li>vle64</li>
+</ul>
+<h2 id="patterns">Patterns</h2>
+<p>The simplest of the vector load instructions</p>
+<h2 id="examples">Examples</h2>
+<ul>
+<li><a href="/riscv_vector_survey/docs/exercises/structureaccesses/">inline strlen</a></li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-a94301f45d1fda0f50acf22168eb216e">2.5 - vm_</h1>
+    
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>Vector masked logical instructions.  Individual opcodes match the pattern
+<code>vm(and|namd|andn|or|nor|orn|xnor).mm</code>. These perform a logical operation on
+a vector register using a mask.  Several pseudoinstructions are recognized by
+the disassembler.</p>
+
+</div>
+
+<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#151-vector-mask-register-logical-instructions">Detailed Reference</a></p>
+<p>The instructions are:</p>
+<ul>
+<li>vmand.mm vd, vs2, vs1   # vd.mask[i] =   vs2.mask[i] &amp;&amp;  vs1.mask[i]</li>
+<li>vmnand.mm vd, vs2, vs1  # vd.mask[i] = !(vs2.mask[i] &amp;&amp;  vs1.mask[i])</li>
+<li>vmandn.mm vd, vs2, vs1  # vd.mask[i] =   vs2.mask[i] &amp;&amp; !vs1.mask[i]</li>
+<li>vmxor.mm  vd, vs2, vs1  # vd.mask[i] =   vs2.mask[i] ^^  vs1.mask[i]</li>
+<li>vmor.mm  vd, vs2, vs1   # vd.mask[i] =   vs2.mask[i] ||  vs1.mask[i]</li>
+<li>vmnor.mm  vd, vs2, vs1  # vd.mask[i] = !(vs2.mask[i] ||  vs1.mask[i])</li>
+<li>vmorn.mm  vd, vs2, vs1  # vd.mask[i] =   vs2.mask[i] || !vs1.mask[i]</li>
+<li>vmxnor.mm vd, vs2, vs1  # vd.mask[i] = !(vs2.mask[i] ^^  vs1.mask[i])</li>
+</ul>
+<p>The pseudoinstructions are:</p>
+<ul>
+<li>vmmv.m vd, vs  =&gt; vmand.mm vd, vs, vs   # Copy mask register</li>
+<li>vmclr.m vd     =&gt; vmxor.mm vd, vd, vd   # Clear mask register</li>
+<li>vmset.m vd     =&gt; vmxnor.mm vd, vd, vd  # Set mask register</li>
+<li>vmnot.m vd, vs =&gt; vmnand.mm vd, vs, vs  # Invert bits</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-76e1f291c116a5153335dd37b7fbc432">2.6 - vms__.v_</h1>
+    
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>Vector integer compare instruction, generating a vector mask.  Individual opcodes match the pattern
+<code>vms(eq|ne|ltu|lt|leu|le|gtu|gt).(vv|vx|vi)</code>. These combine an integer comparison operation with the source of the
+compared integer(s) - another vector register, a scalar register, or an immediate.</p>
+
+</div>
+
+<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#118-vector-integer-compare-instructions">Detailed Reference</a></p>
+<h2 id="set-if-equal">Set if equal</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vmseq.vv vd, vs2, vs1, vm  # Vector-vector
+</span></span><span style="display:flex;"><span>vmseq.vx vd, vs2, rs1, vm  # vector-scalar
+</span></span><span style="display:flex;"><span>vmseq.vi vd, vs2, imm, vm  # vector-immediate
+</span></span></code></pre></div><h2 id="set-if-not-equal">Set if not equal</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vmsne.vv vd, vs2, vs1, vm  # Vector-vector
+</span></span><span style="display:flex;"><span>vmsne.vx vd, vs2, rs1, vm  # vector-scalar
+</span></span><span style="display:flex;"><span>vmsne.vi vd, vs2, imm, vm  # vector-immediate
+</span></span></code></pre></div><h2 id="set-if-less-than-unsigned">Set if less than, unsigned</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vmsltu.vv vd, vs2, vs1, vm  # Vector-vector
+</span></span><span style="display:flex;"><span>vmsltu.vx vd, vs2, rs1, vm  # Vector-scalar
+</span></span></code></pre></div><h2 id="set-if-less-than-signed">Set if less than, signed</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vmslt.vv vd, vs2, vs1, vm  # Vector-vector
+</span></span><span style="display:flex;"><span>vmslt.vx vd, vs2, rs1, vm  # vector-scalar
+</span></span></code></pre></div><h2 id="set-if-less-than-or-equal-unsigned">Set if less than or equal, unsigned</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vmsleu.vv vd, vs2, vs1, vm   # Vector-vector
+</span></span><span style="display:flex;"><span>vmsleu.vx vd, vs2, rs1, vm   # vector-scalar
+</span></span><span style="display:flex;"><span>vmsleu.vi vd, vs2, imm, vm   # Vector-immediate
+</span></span></code></pre></div><h2 id="set-if-less-than-or-equal-signed">Set if less than or equal, signed</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vmsle.vv vd, vs2, vs1, vm  # Vector-vector
+</span></span><span style="display:flex;"><span>vmsle.vx vd, vs2, rs1, vm  # vector-scalar
+</span></span><span style="display:flex;"><span>vmsle.vi vd, vs2, imm, vm  # vector-immediate
+</span></span></code></pre></div><h2 id="set-if-greater-than-unsigned">Set if greater than, unsigned</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vmsgtu.vx vd, vs2, rs1, vm   # Vector-scalar
+</span></span><span style="display:flex;"><span>vmsgtu.vi vd, vs2, imm, vm   # Vector-immediate
+</span></span></code></pre></div><h2 id="set-if-greater-than-signed">Set if greater than, signed</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vmsgt.vx vd, vs2, rs1, vm    # Vector-scalar
+</span></span><span style="display:flex;"><span>vmsgt.vi vd, vs2, imm, vm    # Vector-immediate
+</span></span></code></pre></div><blockquote>
+<p>Note: two instructions are not provided directly</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span># Set if greater than or equal, unsigned
+</span></span><span style="display:flex;"><span># vmsgeu.vx vd, vs2, rs1, vm    # Vector-scalar
+</span></span><span style="display:flex;"><span># Set if greater than or equal, signed
+</span></span><span style="display:flex;"><span># vmsge.vx vd, vs2, rs1, vm    # Vector-scalar
+</span></span></code></pre></div><h2 id="examples">Examples</h2>
+<ul>
+<li><a href="/riscv_vector_survey/docs/patterns/strlen/">inline strlen</a></li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-b000d8ea00415618fec7e29831cc534a">2.7 - vse_</h1>
+    
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>Vector store 8, 16, 32, 64 bit elements</p>
+
+</div>
+
+<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#7-vector-loads-and-stores">Detailed Reference</a></p>
+<h2 id="overview">Overview</h2>
+<p>Vector store with unit stride (adjacent elements)</p>
+<h2 id="patterns">Patterns</h2>
+<p>Store a vector into main memory.</p>
+<p>Notes:</p>
+<ul>
+<li>vector stores cause alignment faults if an equivalent sequence of scalar stores would fault.</li>
+</ul>
+<h2 id="examples">Examples</h2>
+<ul>
+<li><a href="/riscv_vector_survey/docs/patterns/memset/">inline memset</a></li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-088d9f1990fd0a0d3ffc72aabef9d18a">2.8 - csrrs</h1>
+    
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>Read vector context from a Control and Status Register</p>
+
+</div>
+
+<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#vector-type-register-vtype">Vector Type Register vtype</a></p>
+<p>The read-only XLEN-wide vector type CSR, vtype provides the default type used to interpret the contents of the vector register file, and can only be updated by vset{i}vl{i} instructions. The vector type determines the organization of elements in each vector register, and how multiple vector registers are grouped. The vtype register also indicates how masked-off elements and elements past the current vector length in a vector result are handled.</p>
+<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#35-vector-length-register-vl">Vector Length Register vl</a></p>
+<p>The vl register holds an unsigned integer specifying the number of elements to be updated with results from a vector instruction, as further detailed in Section Prestart, Active, Inactive, Body, and Tail Element Definitions.</p>
+<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#36-vector-byte-length-vlenb">Vector Byte Length vlenb</a></p>
+<p>The XLEN-bit-wide read-only CSR vlenb holds the value VLEN/8, i.e., the vector register length in bytes.</p>
+<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#37-vector-start-index-csr-vstart">Vector Start Index CSR vstart</a></p>
+<p>The XLEN-bit-wide read-write vstart CSR specifies the index of the first element to be executed by a vector instruction, as described in Section Prestart, Active, Inactive, Body, and Tail Element Definitions.</p>
+<p>Normally, vstart is only written by hardware on a trap on a vector instruction, with the vstart value representing the element on which the trap was taken (either a synchronous exception or an asynchronous interrupt), and at which execution should resume after a resumable trap is handled.</p>
+<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#38-vector-fixed-point-rounding-mode-register-vxrm">Vector Fixed-Point Rounding Mode Register vxrm</a></p>
+<h2 id="example">Example</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>csrrs       $offset,vl,zero            ; determine the number of elementsread
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-5f749e66f5b60acf18f3043875777e38">2.9 - vmv.v.?</h1>
+    
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>Vector move</p>
+
+</div>
+
+<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#1116-vector-integer-move-instructions">Detailed Reference</a></p>
+<h2 id="overview">Overview</h2>
+<p>Vector move from vector, scalar, or immediate</p>
+<h2 id="patterns">Patterns</h2>
+<p>Used to copy one vector into another, a scalar register into all elements of a vector, or an immediate value into
+all elements of a vector</p>
+<h2 id="examples">Examples</h2>
+<ul>
+<li><a href="/riscv_vector_survey/docs/patterns/memset/">inline strlen</a></li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-c0194658cd413153693dcdcb4d03de58">2.10 - vfirst.m</h1>
+    
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>Find-first-set mask bit</p>
+
+</div>
+
+<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#153-vfirst-find-first-set-mask-bit">Detailed Reference</a></p>
+<p>The vfirst instruction finds the lowest-numbered active element of the source mask vector that has the value 1 and
+writes that element’s index to a GPR. If no active element has the value 1, -1 is written to the GPR.</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-ab0a85d4ccb10e9e6d6b345fafc36ec6">2.11 - vid.v</h1>
+    
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>Vector element index</p>
+
+</div>
+
+<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#159-vector-element-index-instruction">Detailed Reference</a></p>
+<p>The <code>vid.v</code> instruction writes each element’s index to the destination vector register group, from 0 to vl-1.</p>
+
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-c57d38f23b8b25805a47bee624cd3b46">3 - Patterns</h1>
+    
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>Common vector instruction patterns</p>
+
+</div>
+
+<p>Optimizing compilers often use templates in translating pcode operations and standard functions into sequences of
+vector instructions.  Here are some basic patterns.</p>
+<p>When those compilers unroll loops with vector instructions you can get more complex patterns.  This is especially true for
+structure transforms.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-75fcec362bd17b7df658d3516b858ce2">3.1 - strlen</h1>
+    
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>The <code>strlen</code> standard library function can be vectorized inline</p>
+
+</div>
+
+<p>Inline invocation of <code>strlen(char* src)</code> can look like this:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>def $len = strlen($src)
+</span></span><span style="display:flex;"><span>  c.li        $offset, 0
+</span></span><span style="display:flex;"><span>  c.li        $pointer, $src
+</span></span><span style="display:flex;"><span>$1:
+</span></span><span style="display:flex;"><span>  vsetvli     $scratch,zero,e8,m1,ta,ma  ; set element width to 8 bits, tail and mask agnostic
+</span></span><span style="display:flex;"><span>  c.add       $pointer,$offset
+</span></span><span style="display:flex;"><span>  vle8ff.v    $v_tmp,($pointer)          ; attempt to load vector register $v_tmp from memory
+</span></span><span style="display:flex;"><span>  vmseq.vi    $v_tmp,$v_tmp,0x0          ; set mask if element equals immediate value
+</span></span><span style="display:flex;"><span>  csrrs       $offset,vl,zero            ; determine the number of elements actually read
+</span></span><span style="display:flex;"><span>  vfirst.m    $r_tmp,$v_tmp              ; find the first match (the first 0x0) or return -1
+</span></span><span style="display:flex;"><span>  blt         $r_tmp,zero,$1             ; keep searching if no match
+</span></span><span style="display:flex;"><span>  c.add       $pointer,$r_tmp            ; set pointer to the null element
+</span></span><span style="display:flex;"><span>  c.sub       $pointer,$src              ; subtract src start to get length
+</span></span><span style="display:flex;"><span>  return      $pointer as $len
+</span></span></code></pre></div><p>The instruction pair <code>vle8ff.v</code>..<code>vfirst.m</code> within a short loop is probably the best marker for this pattern.
+This sequence locates the first null (0x0) byte found after <code>$src</code>, returning the offset of that null byte
+from <code>$src</code>.</p>
+<h2 id="notes">Notes</h2>
+<p>This <code>vsetvli</code> instruction sets the element width to 8 bits, returning the number of such elements that fit into
+a vector register in register <code>s2</code>.  If the vector size is 128 bits, that would be 16 elements processed in parallel.  However, if the base address is just below a page or segment boundary, the vector load may cause a page
+fault or memory access error.  The <code>vle8ff.v</code> instruction allows for this by reading fewer bytes and suppressing
+exceptions, with the number of elements read retrieved from the <code>vl</code> CSR instead of from the register <code>s2</code>.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="/riscv_vector_survey/docs/opcodes/vsetvli/">vsetvli</a></li>
+<li><a href="/riscv_vector_survey/docs/opcodes/vle_ff/">vle8ff.v</a></li>
+<li><a href="/riscv_vector_survey/docs/opcodes/vms__/">vmseq.vi</a></li>
+<li><a href="/riscv_vector_survey/docs/opcodes/csrrs/">csrrs $reg,vl,zero</a></li>
+<li><a href="/riscv_vector_survey/docs/opcodes/vfirst.m/">vfirst.m</a></li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-182a088d6d3d0de97717d86569eb4fa9">3.2 - memset</h1>
+    
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>The GCC compiler handles many initialization operations with the <code>setmem</code> pseudocode RTL operation.  This includes
+both <code>memset</code> standard library invocations and sequences of <code>var = constant;</code> initialers.  The vectorizer translates
+as many of these as it can into equivalent vector initializers.</p>
+
+</div>
+
+<ul>
+<li>Often the initializer is an immediate constant zero.</li>
+<li>The compiler takes memory alignment into account when generating loads and stores.  Storing a vector of 8 8 bit bytes
+is not the same as storing a single 64 bit doubleword.</li>
+</ul>
+<h2 id="c-and-n-are-known-at-compile-time-and-n-is-small">c and n are known at compile time, and n is small</h2>
+<p>If the fill byte &lsquo;c&rsquo; is known at compile time and if the size <code>n</code> is known at compile time and relatively small,
+you may see a pattern like this:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>; if n=16 bytes
+</span></span><span style="display:flex;"><span>def $void_pointer = memset(void* $src, int $c, size_t $n)
+</span></span><span style="display:flex;"><span>  vsetivli    zero,0x8,e8,mf2,ta,ma  ; vectors are 8 elements of 8 bits each,
+</span></span><span style="display:flex;"><span>                                     ;   using at most half of the vector register
+</span></span><span style="display:flex;"><span>  vmv.v.i     v1,$c                  ; vector v1 is filled with &#39;0&#39; bytes
+</span></span><span style="display:flex;"><span>  c.addi4spn  $tmp,$src,0x8          ; get a pointer to src + 8 
+</span></span><span style="display:flex;"><span>  vse8.v      v1,($tmp)              ; write 8 bytes of zeros into the first 8 bytes of src
+</span></span><span style="display:flex;"><span>  vse8.v      v1,($src)              ; write 8 bytes of zeros into the second 8 bytes of src
+</span></span><span style="display:flex;"><span>  return      $src as $void_pointer
+</span></span></code></pre></div><h3 id="notes">Notes</h3>
+<ul>
+<li>additional instructions may be interleaved with the vector instructions above</li>
+<li>this sequence assumes VLEN is at least 128 bits</li>
+<li>this sequence avoids 16 byte vector writes for an unknown reason</li>
+</ul>
+<h2 id="multiple-initializations">multiple initializations</h2>
+<p>Complex initialization sequences can be optimized in surprising ways.</p>
+<p>This code fragment sets two adjacent 8 byte elements to (0,0), then two adjacent
+byte booleans to (0,1).  The compiler has lots of tricks for generating non-zero initializers.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#000">eal_reset_internal_config</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000">internal_config</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">internal_cfg</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">internal_cfg</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">hugefile_prefix</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">NULL</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">internal_cfg</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">hugepage_dir</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">NULL</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">internal_cfg</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">hugepage_file</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">unlink_before_mapping</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">internal_cfg</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">hugepage_file</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">unlink_existing</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">true</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>        00328498 57 70 81 cd     vsetivli zero,0x2,e64,m1,ta,ma   ; vector of 2 64 bit elements
+</span></span><span style="display:flex;"><span>        003284a0 57 31 00 5e     vmv.v.i  v2,0x0                  ; initialize to 0
+</span></span><span style="display:flex;"><span>        003284a8 57 70 50 0c     vsetvli  zero,zero,e8,mf8,ta,ma  ; resize each element to 8 bits, using 1/8 of the register
+</span></span><span style="display:flex;"><span>        003284b0 d7 a0 08 52     vid.v    v1                      ; v1[0] = 0; v1[1]=1; ...
+</span></span><span style="display:flex;"><span>        003284b4 93 07 05 09     addi     a5,param_1,0x90
+</span></span><span style="display:flex;"><span>        003284b8 27 f1 07 02     vse64.v  v2,(a5)                 ; 
+</span></span><span style="display:flex;"><span>        003284bc 93 07 45 01     addi     a5,param_1,0x14
+</span></span><span style="display:flex;"><span>        003284c0 a7 80 07 02     vse8.v   v1,(a5)                 ; store (0,1) aka (false,true) into (a5)
+</span></span></code></pre></div><p>This example shows mixed width operations:</p>
+<ul>
+<li>The first vsetivli instruction sets VL=2, SEW=64, LMUL=1</li>
+<li>The second vmv.v.i instruction zeros two 64 bit elements in v2 - 0x0000000000000000, 0x0000000000000000</li>
+<li>The third vsetivli instruction leaves VL unchanged at 2, SEW=8, and LMUL=1/8</li>
+<li>the fourth vid.v instruction sets v1 to 0x??????00, 0x??????01</li>
+<li>the sixth vse64.v instruction writes (0x0000000000000000, 0x0000000000000000) into param_1 + 0x90
+<ul>
+<li>This instruction uses an element width of 64, so the effective multiplier (EMUL) becomes LMUL * (EEW/SEW) = 1</li>
+</ul>
+</li>
+<li>the eighth vse8.v instruction writes (0x00, 0x01) into param_1 + 0xa4</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="/riscv_vector_survey/docs/opcodes/vsetvli/">vsetivli</a></li>
+<li><a href="/riscv_vector_survey/docs/opcodes/vmv.v._/">vmv.v.i</a></li>
+<li><a href="/riscv_vector_survey/docs/opcodes/vse_/">vse8.v</a></li>
+<li><a href="/riscv_vector_survey/docs/opcodes/vid.v/">vid.v</a></li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-efae62a251013d0e444a5caea6f99cb4">4 - Exercises</h1>
+    
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>Vectorized functions to be understood</p>
+
+</div>
+
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-2ab437f302746beca2457c93997b0c0c">4.1 - structure accesses</h1>
+    
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>Some memory operations can be very hard to understand.  This is especially true
+when copying some elements of a structure into elements of a different class
+of structure.</p>
+
+</div>
+
+<blockquote>
+<p>Note: a tutorial on segemented, strided, and indexed loads and stores would be useful,
+as would a tutorial on the various element width, length, and multiplier mechanics.</p>
+</blockquote>
+<p>This function is one of the more confusing sequences of vector operations.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>void FUN_006759d0(undefined8 param_1,undefined8 param_2,undefined4 *param_3)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  long lVar1;
+</span></span><span style="display:flex;"><span>  ulong uVar2;
+</span></span><span style="display:flex;"><span>  long lVar3;
+</span></span><span style="display:flex;"><span>  undefined auVar4 [256];
+</span></span><span style="display:flex;"><span>  undefined auVar5 [256];
+</span></span><span style="display:flex;"><span>  undefined auVar6 [256];
+</span></span><span style="display:flex;"><span>  undefined auVar7 [256];
+</span></span><span style="display:flex;"><span>  int iStack_78;
+</span></span><span style="display:flex;"><span>  undefined auStack_74 [28];
+</span></span><span style="display:flex;"><span>  undefined4 auStack_58 [4];
+</span></span><span style="display:flex;"><span>  int *piStack_48;
+</span></span><span style="display:flex;"><span>  undefined uStack_37;
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  FUN_000e4230(auStack_58,0x28);
+</span></span><span style="display:flex;"><span>  auStack_58[0] = 0x1f0000;
+</span></span><span style="display:flex;"><span>  piStack_48 = &amp;iStack_78;
+</span></span><span style="display:flex;"><span>  uStack_37 = 0x20;
+</span></span><span style="display:flex;"><span>  lVar1 = FUN_0066f66a(param_1,param_2,auStack_58);
+</span></span><span style="display:flex;"><span>  if (lVar1 == 0) {
+</span></span><span style="display:flex;"><span>    uVar2 = minu((long)iStack_78,7);                   // max number of elements is 7
+</span></span><span style="display:flex;"><span>    *param_3 = (int)uVar2;
+</span></span><span style="display:flex;"><span>    if ((long)iStack_78 != 0) {
+</span></span><span style="display:flex;"><span>      lVar1 = vsetvli_e16mf2tama(uVar2 &amp; 0xffffffff);  // SEW=16, LMUL=1/2, VL=min(7, ??)
+</span></span><span style="display:flex;"><span>      auVar4 = vle32_v(auStack_74);                    // EEW=32, EMUL=(EEW/SEW)*LMUL = 1
+</span></span><span style="display:flex;"><span>      lVar3 = (uVar2 &amp; 0xffffffff) - lVar1;
+</span></span><span style="display:flex;"><span>      auVar5 = vncvt_xxw(auVar4);                      // narrowing from 32 bit to 16 bit
+</span></span><span style="display:flex;"><span>      auVar6 = vnsrl_wi(auVar4,0x10);                  // shift right 0x10 bits, zero extend
+</span></span><span style="display:flex;"><span>      auVar4 = vnsrl_wi(auVar4,0x18);                  // shift right 0x18 bits, zero extend
+</span></span><span style="display:flex;"><span>      vsetvli_e8mf4tama(0);                            // SEW=8, LMUL=1/4, VL unchanged
+</span></span><span style="display:flex;"><span>      auVar7 = vncvt_xxw(auVar5);                      // narrow 
+</span></span><span style="display:flex;"><span>      vnsrl_wi(auVar5,8);
+</span></span><span style="display:flex;"><span>      vncvt_xxw(auVar6);
+</span></span><span style="display:flex;"><span>      vncvt_xxw(auVar4);
+</span></span><span style="display:flex;"><span>      vsseg4e8_v(auVar7,param_3 + 1);
+</span></span><span style="display:flex;"><span>      if (lVar3 != 0) {
+</span></span><span style="display:flex;"><span>        vsetvli_e16mf2tama(lVar3);
+</span></span><span style="display:flex;"><span>        auVar4 = vle32_v(auStack_58 + lVar1 + -7);
+</span></span><span style="display:flex;"><span>        auVar5 = vncvt_xxw(auVar4);
+</span></span><span style="display:flex;"><span>        auVar6 = vnsrl_wi(auVar4,0x10);
+</span></span><span style="display:flex;"><span>        auVar4 = vnsrl_wi(auVar4,0x18);
+</span></span><span style="display:flex;"><span>        vsetvli_e8mf4tama(0);
+</span></span><span style="display:flex;"><span>        auVar7 = vncvt_xxw(auVar5);
+</span></span><span style="display:flex;"><span>        vnsrl_wi(auVar5,8);
+</span></span><span style="display:flex;"><span>        vncvt_xxw(auVar6);
+</span></span><span style="display:flex;"><span>        vncvt_xxw(auVar4);
+</span></span><span style="display:flex;"><span>        vsseg4e8_v(auVar7,param_3 + 1 + lVar1);         // segmented stores
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  return;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If we peek into Ghidra&rsquo;s view of the unstripped binary, we get a little more information.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">ecore_mcp_get_temperature_info</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">undefined8</span> <span style="color:#000">param_1</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">undefined8</span> <span style="color:#000">param_2</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">undefined4</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">param_3</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">long</span> <span style="color:#000">lVar1</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">ulong</span> <span style="color:#000">uVar2</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">long</span> <span style="color:#000">lVar3</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">undefined</span> <span style="color:#000">auVar4</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">256</span><span style="color:#000;font-weight:bold">];</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">undefined</span> <span style="color:#000">auVar5</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">256</span><span style="color:#000;font-weight:bold">];</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">undefined</span> <span style="color:#000">auVar6</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">256</span><span style="color:#000;font-weight:bold">];</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">undefined</span> <span style="color:#000">auVar7</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">256</span><span style="color:#000;font-weight:bold">];</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">iStack_78</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">undefined</span> <span style="color:#000">auStack_74</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">28</span><span style="color:#000;font-weight:bold">];</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">undefined4</span> <span style="color:#000">auStack_58</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">];</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">piStack_48</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">undefined</span> <span style="color:#000">uStack_37</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#000">gp</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0xf25590</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">bzero</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auStack_58</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">0x28</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">auStack_58</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0x1f0000</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">piStack_48</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">iStack_78</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">uStack_37</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0x20</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">lVar1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">ecore_mcp_cmd_and_union</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">param_1</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">param_2</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">auStack_58</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">lVar1</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">uVar2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">minu</span><span style="color:#000;font-weight:bold">((</span><span style="color:#204a87;font-weight:bold">long</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">iStack_78</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">7</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">param_3</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">uVar2</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">((</span><span style="color:#204a87;font-weight:bold">long</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">iStack_78</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">lVar1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vsetvli_e16mf2tama</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">uVar2</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">0xffffffff</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">auVar4</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vle32_v</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auStack_74</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">lVar3</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">uVar2</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">0xffffffff</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">-</span> <span style="color:#000">lVar1</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">auVar5</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vncvt_xxw</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar4</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">auVar6</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vnsrl_wi</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar4</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">0x10</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">auVar4</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vnsrl_wi</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar4</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">0x18</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">vsetvli_e8mf4tama</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">auVar7</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vncvt_xxw</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar5</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">vnsrl_wi</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar5</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">vncvt_xxw</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar6</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">vncvt_xxw</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar4</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">vsseg4e8_v</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar7</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">param_3</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">lVar3</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">vsetvli_e16mf2tama</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">lVar3</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">auVar4</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vle32_v</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auStack_58</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">lVar1</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">7</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">auVar5</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vncvt_xxw</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar4</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">auVar6</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vnsrl_wi</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar4</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">0x10</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">auVar4</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vnsrl_wi</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar4</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">0x18</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">vsetvli_e8mf4tama</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">auVar7</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vncvt_xxw</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar5</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">vnsrl_wi</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar5</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">vncvt_xxw</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar6</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">vncvt_xxw</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar4</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">vsseg4e8_v</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar7</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">param_3</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">lVar1</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">return</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><p>The original C code:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">enum</span> <span style="color:#000">_ecore_status_t</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">ecore_mcp_get_temperature_info</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000">ecore_hwfn</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">p_hwfn</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                               <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000">ecore_ptt</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">p_ptt</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                               <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000">ecore_temperature_info</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">p_temp_info</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000">ecore_temperature_sensor</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">p_temp_sensor</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000">temperature_status_stc</span> <span style="color:#000">mfw_temp_info</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000">ecore_mcp_mb_params</span> <span style="color:#000">mb_params</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">u32</span> <span style="color:#000">val</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">enum</span> <span style="color:#000">_ecore_status_t</span> <span style="color:#000">rc</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">u8</span> <span style="color:#000">i</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">OSAL_MEM_ZERO</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">mb_params</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">sizeof</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">mb_params</span><span style="color:#000;font-weight:bold">));</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">mb_params</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">cmd</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">DRV_MSG_CODE_GET_TEMPERATURE</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">mb_params</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">p_data_dst</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">mfw_temp_info</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">mb_params</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">data_dst_size</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">sizeof</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">mfw_temp_info</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">rc</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">ecore_mcp_cmd_and_union</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">p_hwfn</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">p_ptt</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">mb_params</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">rc</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#000">ECORE_SUCCESS</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">rc</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">OSAL_BUILD_BUG_ON</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">ECORE_MAX_NUM_OF_SENSORS</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#000">MAX_NUM_OF_SENSORS</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">p_temp_info</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">num_sensors</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">OSAL_MIN_T</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">u32</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">mfw_temp_info</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">num_of_sensors</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                                              <span style="color:#000">ECORE_MAX_NUM_OF_SENSORS</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#000">p_temp_info</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">num_sensors</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">mfw_temp_info</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">sensor</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">];</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000">p_temp_sensor</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">p_temp_info</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">sensors</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">];</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000">p_temp_sensor</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">sensor_location</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#000">SENSOR_LOCATION_MASK</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span>
+</span></span><span style="display:flex;"><span>                                                 <span style="color:#000">SENSOR_LOCATION_OFFSET</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000">p_temp_sensor</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">threshold_high</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#000">THRESHOLD_HIGH_MASK</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span>
+</span></span><span style="display:flex;"><span>                                                <span style="color:#000">THRESHOLD_HIGH_OFFSET</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000">p_temp_sensor</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">critical</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#000">CRITICAL_TEMPERATURE_MASK</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span>
+</span></span><span style="display:flex;"><span>                                          <span style="color:#000">CRITICAL_TEMPERATURE_OFFSET</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000">p_temp_sensor</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">current_temp</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#000">CURRENT_TEMP_MASK</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span>
+</span></span><span style="display:flex;"><span>                                              <span style="color:#000">CURRENT_TEMP_OFFSET</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">ECORE_SUCCESS</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><p>Start with the C source code to understand the Ghidra decompiler view.</p>
+<ul>
+<li>A loop of at most seven iterations exists</li>
+<li>four 8 bit fields are updated in an array of structures, slicing bit fields out of a 32 bit <code>val</code> with
+shift and mask operations</li>
+</ul>
+<p>The general pattern here involves transfers from one array of structures to another array of structures,
+where the compiler knows the maximum number of elements in the array - 7 in this case.  The compiler is guaranteed that
+it can hold at least four 32 bit values in a single vector register, given a minimum VLEN of 128 bits.  It <em>may</em> be able
+to hold eight 32 bit values in a single register if VLEN is at least 256 bits.  For each 32 bit value read four 8 bit values must
+be written.</p>
+<p>The compiler has chosen to process four elements first, then the trailing elements in a similar block <em>if</em> <code>num_sensors &gt; 4</code> <em>and</em> <code>VLEN &lt; 256</code>.
+Therefore the loop has been completely unrolled.</p>
+<p>The C pseudocode presented in the decompiler window does not provide enough information to understand the full logic.
+The annotated listing view helps:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>add.uw      a5,a5,zero             ; zero extend low order 32 bits of a5 into a5
+</span></span><span style="display:flex;"><span>vsetvli     a4,a5,e16,mf2,ta,ma    ; a4=VL; SEW=16, LMUL=1/2, tail agnostic, mask agnostic
+</span></span><span style="display:flex;"><span>c.addi4spn  a3,sp,0xc              ; a3 = sp + 0xc
+</span></span><span style="display:flex;"><span>vle32.v     v1,(a3)                ; v1 is loaded from (a3), Effective MUL = 2 * 1/2 = 1
+</span></span><span style="display:flex;"><span>c.addi      s0,0x4
+</span></span><span style="display:flex;"><span>c.sub       a5,a4
+</span></span><span style="display:flex;"><span>vncvt.x.x.w v2,v1                  ; v2 = zext(short(v1))
+</span></span><span style="display:flex;"><span>vnsrl.wi    v3,v1,0x10             ; v3 = zext(short(v1 &gt;&gt; 16))
+</span></span><span style="display:flex;"><span>vnsrl.wi    v1,v1,0x18             ; v1 = zext(short(v1 &gt;&gt; 24))
+</span></span><span style="display:flex;"><span>vsetvli     zero,zero,e8,mf4,ta,ma ; VL=VL, SEW=8, LMUL=1/4, tail agnostic, mask agnostic
+</span></span><span style="display:flex;"><span>vncvt.x.x.w v4,v2                  ; v4 = zext(byte(v2))
+</span></span><span style="display:flex;"><span>vnsrl.wi    v5,v2,0x8              ; v5 = zext(byte(v2&gt;&gt;8))
+</span></span><span style="display:flex;"><span>vncvt.x.x.w v6,v3                  ; v6 = zext(byte(v3))
+</span></span><span style="display:flex;"><span>vncvt.x.x.w v7,v1                  ; v7 = zext(byte(v1))
+</span></span><span style="display:flex;"><span>vsseg4e8.v  v4,(s0)                ; so[0..VL-1] = v4; so[VL..2*VL-1] = v5
+</span></span><span style="display:flex;"><span>                                   ; so[2*VL..3*VL-1] = v6; so[3*VL..4*VL-1] = v7
+</span></span></code></pre></div><p>On a 128 bit vector processor hart VL will be max(a5, LMUL * VLEN / SEW) or max(a5, 4).</p>
+<p>Note that the narrowing opcodes (<code>vncvt.x.x.w</code> and <code>vnsrl.wi</code>) use 2<em>SEW as the width of the input operand
+to generate 1</em>SEW outputs.  <code>vncvt.x.x.w</code> is encoded as <code>vnsrl.wi</code> with a zero shift.</p>
+
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-0a6b22de6bb8ab21bf9a0599a2e76143">5 - RISCV-64 toolchain and deployment environment</h1>
+    
+	<p>We use two RISCV-64 applications to examine the impact of extensions to the RISCV-64 Instruction Set Architecture.
+These are:</p>
+<ul>
+<li><code>dpdk-ip_pipeline</code> - a network application framework example where one wouldn&rsquo;t expect a lot of vector math.</li>
+<li><code>whisper.cpp</code> - a Inference Engine voice-to-text application which uses a lot of tensor math</li>
+</ul>
+<p>We use the latest RISCV toolchains available to understand what the newer toolchains may soon mean to Ghidra analyses.
+At present that means a GCC 15 compiler and binutils assembler close to the development tip.  That means most of the
+instruction extensions documented here won&rsquo;t show up in products anytime soon.  That&rsquo;s good, because some of these
+extensions will demand a lot of preparation time.  That&rsquo;s especially true for RISCV vector instructions, since these
+generally do not easily decompile into the typed C language code we expect to see from scalar instructions.</p>
+<p>Ghidra normally processes several types of binary inputs, ranging from easiest to hardest</p>
+<ul>
+<li>ELF executables, sharable object libraries, or kernel modules compiled without optimization and not stripped of symbols.</li>
+<li>ELF binaries compiled with full optimization and stripped of symbols not needed by the loader</li>
+<li>Loadable kernels</li>
+<li>Memory snapshots taken from running processes, where dynamic linkages are partially completed.</li>
+</ul>
+<p>Our goal is to show how interpretation of RISCV ISA extensions like vector instructions do not materially complicate
+the analyst&rsquo;s job.</p>
+<p>Notes:</p>
+<ul>
+<li><code>dpdk-ip_pipeline</code> was built and linked against using a GCC-15 RISCV crosscompiler toolchain
+with <code>-march=rv64gcv_zba_zbb</code> to ask for vector and bit manipulation ISA extensions</li>
+<li>The executable ran on an Ubuntu 24.04 RISCV VM with all qemu extensions enabled</li>
+<li>Run-time dynamic loading brought the older <code>libc.so.6</code> into RAM. It was built with GCC 13.2.0
+with no vector ISA support assumed</li>
+<li><code>gcore</code> provided an as-executed RAM image file</li>
+<li>Ghidra(isa_ext branch) identified 2.7M instructions in the <code>dpdk-ip_pipeline</code> + <code>libc.so</code> + <code>libm.so</code> memory image.</li>
+<li>The <code>vector_survey.py</code> analytic identified 77669 vector instructions in the RAM snapshot, or 2.9%  of the total.</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://github.com/google/docsy" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2024&ndash;2024
+    <span class="td-footer__authors">Thixotropist | <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a> |</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/riscv_vector_survey/js/main.min.68c9a31dd693463d3622bbd6253513d826071034389c140c96dd8d24ff9251df.js" integrity="sha256-aMmjHdaTRj02IrvWJTUT2CYHEDQ4nBQMlt2NJP&#43;SUd8=" crossorigin="anonymous"></script>
+<script defer src="/riscv_vector_survey/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+<script src='/riscv_vector_survey/js/tabpane-persist.js'></script>
+
+  </body>
+</html>
