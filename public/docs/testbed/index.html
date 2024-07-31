@@ -1,9 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
-  <head>
+  <head><script src="/riscv_vector_survey/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=riscv_vector_survey/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 
 
 <link rel="shortcut icon" href="/riscv_vector_survey/favicons/favicon.ico" >
@@ -20,7 +20,7 @@
 <title>RISCV-64 toolchain and deployment environment | RISCV ISA extensions Ghidra field guide</title>
 <meta name="description" content="We use two RISCV-64 applications to examine the impact of extensions to the RISCV-64 Instruction Set Architecture. These are:
 dpdk-ip_pipeline - a network application framework example where one wouldn&amp;rsquo;t expect a lot of vector math. whisper.cpp - a Inference Engine voice-to-text application which uses a lot of tensor math We use the latest RISCV toolchains available to understand what the newer toolchains may soon mean to Ghidra analyses. At present that means a GCC 15 compiler and binutils assembler close to the development tip.">
-<meta property="og:url" content="https://thixotropist.github.io/riscv_vector_survey/docs/testbed/">
+<meta property="og:url" content="http://localhost:1313/riscv_vector_survey/docs/testbed/">
   <meta property="og:site_name" content="RISCV ISA extensions Ghidra field guide">
   <meta property="og:title" content="RISCV-64 toolchain and deployment environment">
   <meta property="og:description" content="We use two RISCV-64 applications to examine the impact of extensions to the RISCV-64 Instruction Set Architecture. These are:
@@ -43,8 +43,8 @@ dpdk-ip_pipeline - a network application framework example where one wouldn’t 
 
 
 
-<link rel="preload" href="/riscv_vector_survey/scss/main.min.c7fba8d75c695e2a7cf37f10b188552511714d4c1645c16af7e24f7cc964a002.css" as="style">
-<link href="/riscv_vector_survey/scss/main.min.c7fba8d75c695e2a7cf37f10b188552511714d4c1645c16af7e24f7cc964a002.css" rel="stylesheet" integrity="">
+
+<link href="/riscv_vector_survey/scss/main.css" rel="stylesheet">
 
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -111,6 +111,8 @@ dpdk-ip_pipeline - a network application framework example where one wouldn’t 
   <a href="/riscv_vector_survey/docs/opcodes/csrrs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodescsrrs"><span class="">csrrs</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesvmvv_-li">
   <a href="/riscv_vector_survey/docs/opcodes/vmv.v._/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesvmvv_"><span class="">vmv.v.?</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesv_math_-li">
+  <a href="/riscv_vector_survey/docs/opcodes/v_math_/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesv_math_"><span class="">v_math_</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesvfirstm-li">
   <a href="/riscv_vector_survey/docs/opcodes/vfirst.m/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesvfirstm"><span class="">vfirst.m</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesvidv-li">
@@ -131,6 +133,8 @@ dpdk-ip_pipeline - a network application framework example where one wouldn’t 
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsexercisesstructureaccesses-li">
   <a href="/riscv_vector_survey/docs/exercises/structureaccesses/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsexercisesstructureaccesses"><span class="">structure accesses</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsexercisesautovec-li">
+  <a href="/riscv_vector_survey/docs/exercises/autovec/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsexercisesautovec"><span class="">autovec</span></a>
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-riscv_vector_surveydocstestbed-li">
@@ -183,7 +187,7 @@ These are:</p>
 <li><code>whisper.cpp</code> - a Inference Engine voice-to-text application which uses a lot of tensor math</li>
 </ul>
 <p>We use the latest RISCV toolchains available to understand what the newer toolchains may soon mean to Ghidra analyses.
-At present that means a GCC 15 compiler and binutils assembler close to the development tip.  That means most of the
+At present that means a GCC 15 compiler and <code>binutils</code> assembler close to the development tip.  That means most of the
 instruction extensions documented here won&rsquo;t show up in products anytime soon.  That&rsquo;s good, because some of these
 extensions will demand a lot of preparation time.  That&rsquo;s especially true for RISCV vector instructions, since these
 generally do not easily decompile into the typed C language code we expect to see from scalar instructions.</p>
@@ -244,8 +248,8 @@ with no vector ISA support assumed</li>
 </footer>
 
     </div>
-    <script src="/riscv_vector_survey/js/main.min.68c9a31dd693463d3622bbd6253513d826071034389c140c96dd8d24ff9251df.js" integrity="sha256-aMmjHdaTRj02IrvWJTUT2CYHEDQ4nBQMlt2NJP&#43;SUd8=" crossorigin="anonymous"></script>
-<script defer src="/riscv_vector_survey/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+    <script src="/riscv_vector_survey/js/main.js"></script>
+<script defer src="/riscv_vector_survey/js/click-to-copy.js" crossorigin="anonymous"></script>
 <script src='/riscv_vector_survey/js/tabpane-persist.js'></script>
 
   </body>

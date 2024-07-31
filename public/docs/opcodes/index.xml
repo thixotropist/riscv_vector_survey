@@ -2,86 +2,93 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Opcodes on RISCV ISA extensions Ghidra field guide</title>
-    <link>https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/</link>
+    <link>http://localhost:1313/riscv_vector_survey/docs/opcodes/</link>
     <description>Recent content in Opcodes on RISCV ISA extensions Ghidra field guide</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/riscv_vector_survey/docs/opcodes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Instruction definition is pending</title>
-      <link>https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/pending/</link>
+      <link>http://localhost:1313/riscv_vector_survey/docs/opcodes/pending/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/pending/</guid>
+      <guid>http://localhost:1313/riscv_vector_survey/docs/opcodes/pending/</guid>
       <description>This instruction has not yet been documented. See the vector ISA extension reference</description>
     </item>
     <item>
       <title>vsetvli, vsetivli</title>
-      <link>https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/vsetvli/</link>
+      <link>http://localhost:1313/riscv_vector_survey/docs/opcodes/vsetvli/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/vsetvli/</guid>
+      <guid>http://localhost:1313/riscv_vector_survey/docs/opcodes/vsetvli/</guid>
       <description>Set vector element count and width, plus tail and mask options.&#xA;Detailed Reference&#xA;Overview vsetvli and vsetivli set context parameters for subsequent vector instructions. This includes:&#xA;the size of the vector element, e.g. 8, 16, 32, or 64 bits the number of vector elements to be processed whether to preserve or ignore tail elements in a vector register whether to preserve or ignore unmasked elements in a vector register whether to bind multiple vector registers into a logical single and larger register These instructions return the number of elements that can be processed in parallel.</description>
     </item>
     <item>
       <title>vle_ff</title>
-      <link>https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/vle_ff/</link>
+      <link>http://localhost:1313/riscv_vector_survey/docs/opcodes/vle_ff/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/vle_ff/</guid>
+      <guid>http://localhost:1313/riscv_vector_survey/docs/opcodes/vle_ff/</guid>
       <description> Vector load 8, 16, 32, 64 bit elements with fault only first&#xA;Detailed Reference&#xA;Overview Vector load with unit stride (adjacent elements) with page and memory faults suppressed for reads other than the first element.&#xA;Patterns Typically found when loading a vector with unknown effective length, and where that vector might straddle a page boundary causing a page fault.&#xA;Examples inline strlen </description>
     </item>
     <item>
       <title>vle_</title>
-      <link>https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/vle_/</link>
+      <link>http://localhost:1313/riscv_vector_survey/docs/opcodes/vle_/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/vle_/</guid>
+      <guid>http://localhost:1313/riscv_vector_survey/docs/opcodes/vle_/</guid>
       <description> Vector load 8, 16, 32, 64 bit elements&#xA;Detailed Reference&#xA;Overview Vector load with unit stride (adjacent elements). Vector loads will cause an alignment exception if the equivalent scalar load would cause one.&#xA;Includes:&#xA;vle8 vle16 vle32 vle64 Patterns The simplest of the vector load instructions&#xA;Examples inline strlen </description>
     </item>
     <item>
       <title>vm_</title>
-      <link>https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/vm_/</link>
+      <link>http://localhost:1313/riscv_vector_survey/docs/opcodes/vm_/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/vm_/</guid>
+      <guid>http://localhost:1313/riscv_vector_survey/docs/opcodes/vm_/</guid>
       <description>Vector masked logical instructions. Individual opcodes match the pattern vm(and|namd|andn|or|nor|orn|xnor).mm. These perform a logical operation on a vector register using a mask. Several pseudoinstructions are recognized by the disassembler.&#xA;Detailed Reference&#xA;The instructions are:&#xA;vmand.mm vd, vs2, vs1 # vd.mask[i] = vs2.mask[i] &amp;amp;&amp;amp; vs1.mask[i] vmnand.mm vd, vs2, vs1 # vd.mask[i] = !(vs2.mask[i] &amp;amp;&amp;amp; vs1.mask[i]) vmandn.mm vd, vs2, vs1 # vd.mask[i] = vs2.mask[i] &amp;amp;&amp;amp; !vs1.mask[i] vmxor.mm vd, vs2, vs1 # vd.</description>
     </item>
     <item>
       <title>vms__.v_</title>
-      <link>https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/vms__/</link>
+      <link>http://localhost:1313/riscv_vector_survey/docs/opcodes/vms__/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/vms__/</guid>
+      <guid>http://localhost:1313/riscv_vector_survey/docs/opcodes/vms__/</guid>
       <description>Vector integer compare instruction, generating a vector mask. Individual opcodes match the pattern vms(eq|ne|ltu|lt|leu|le|gtu|gt).(vv|vx|vi). These combine an integer comparison operation with the source of the compared integer(s) - another vector register, a scalar register, or an immediate.&#xA;Detailed Reference&#xA;Set if equal vmseq.vv vd, vs2, vs1, vm # Vector-vector vmseq.vx vd, vs2, rs1, vm # vector-scalar vmseq.vi vd, vs2, imm, vm # vector-immediate Set if not equal vmsne.vv vd, vs2, vs1, vm # Vector-vector vmsne.</description>
     </item>
     <item>
       <title>vse_</title>
-      <link>https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/vse_/</link>
+      <link>http://localhost:1313/riscv_vector_survey/docs/opcodes/vse_/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/vse_/</guid>
+      <guid>http://localhost:1313/riscv_vector_survey/docs/opcodes/vse_/</guid>
       <description> Vector store 8, 16, 32, 64 bit elements&#xA;Detailed Reference&#xA;Overview Vector store with unit stride (adjacent elements)&#xA;Patterns Store a vector into main memory.&#xA;Notes:&#xA;vector stores cause alignment faults if an equivalent sequence of scalar stores would fault. Examples inline memset </description>
     </item>
     <item>
       <title>csrrs</title>
-      <link>https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/csrrs/</link>
+      <link>http://localhost:1313/riscv_vector_survey/docs/opcodes/csrrs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/csrrs/</guid>
+      <guid>http://localhost:1313/riscv_vector_survey/docs/opcodes/csrrs/</guid>
       <description>Read vector context from a Control and Status Register&#xA;Vector Type Register vtype&#xA;The read-only XLEN-wide vector type CSR, vtype provides the default type used to interpret the contents of the vector register file, and can only be updated by vset{i}vl{i} instructions. The vector type determines the organization of elements in each vector register, and how multiple vector registers are grouped. The vtype register also indicates how masked-off elements and elements past the current vector length in a vector result are handled.</description>
     </item>
     <item>
       <title>vmv.v.?</title>
-      <link>https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/vmv.v._/</link>
+      <link>http://localhost:1313/riscv_vector_survey/docs/opcodes/vmv.v._/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/vmv.v._/</guid>
+      <guid>http://localhost:1313/riscv_vector_survey/docs/opcodes/vmv.v._/</guid>
       <description> Vector move&#xA;Detailed Reference&#xA;Overview Vector move from vector, scalar, or immediate&#xA;Patterns Used to copy one vector into another, a scalar register into all elements of a vector, or an immediate value into all elements of a vector&#xA;Examples inline strlen </description>
     </item>
     <item>
-      <title>vfirst.m</title>
-      <link>https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/vfirst.m/</link>
+      <title>v_math_</title>
+      <link>http://localhost:1313/riscv_vector_survey/docs/opcodes/v_math_/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/vfirst.m/</guid>
+      <guid>http://localhost:1313/riscv_vector_survey/docs/opcodes/v_math_/</guid>
+      <description>Vector math and bit operations&#xA;Detailed Reference&#xA;Overview Vector integer arithemetic and logical instructions are mostly easy to understand. You want to consult the detailed reference above to understand mixed-width operations and any exception conditions. The following is cut from the formal reference material.&#xA;Integer adds vadd.vv vd, vs2, vs1, vm # Vector-vector vadd.vx vd, vs2, rs1, vm # vector-scalar vadd.vi vd, vs2, imm, vm # vector-immediate Integer subtract vsub.</description>
+    </item>
+    <item>
+      <title>vfirst.m</title>
+      <link>http://localhost:1313/riscv_vector_survey/docs/opcodes/vfirst.m/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/riscv_vector_survey/docs/opcodes/vfirst.m/</guid>
       <description>Find-first-set mask bit&#xA;Detailed Reference&#xA;The vfirst instruction finds the lowest-numbered active element of the source mask vector that has the value 1 and writes that element’s index to a GPR. If no active element has the value 1, -1 is written to the GPR.</description>
     </item>
     <item>
       <title>vid.v</title>
-      <link>https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/vid.v/</link>
+      <link>http://localhost:1313/riscv_vector_survey/docs/opcodes/vid.v/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/vid.v/</guid>
+      <guid>http://localhost:1313/riscv_vector_survey/docs/opcodes/vid.v/</guid>
       <description>Vector element index&#xA;Detailed Reference&#xA;The vid.v instruction writes each element’s index to the destination vector register group, from 0 to vl-1.</description>
     </item>
   </channel>

@@ -1,9 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
-  <head>
+  <head><script src="/riscv_vector_survey/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=riscv_vector_survey/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 
 
 <link rel="shortcut icon" href="/riscv_vector_survey/favicons/favicon.ico" >
@@ -21,7 +21,7 @@
 <meta name="description" content="Read vector context from a Control and Status Register
 Vector Type Register vtype
 The read-only XLEN-wide vector type CSR, vtype provides the default type used to interpret the contents of the vector register file, and can only be updated by vset{i}vl{i} instructions. The vector type determines the organization of elements in each vector register, and how multiple vector registers are grouped. The vtype register also indicates how masked-off elements and elements past the current vector length in a vector result are handled.">
-<meta property="og:url" content="https://thixotropist.github.io/riscv_vector_survey/docs/opcodes/csrrs/">
+<meta property="og:url" content="http://localhost:1313/riscv_vector_survey/docs/opcodes/csrrs/">
   <meta property="og:site_name" content="RISCV ISA extensions Ghidra field guide">
   <meta property="og:title" content="csrrs">
   <meta property="og:description" content="Read vector context from a Control and Status Register
@@ -37,7 +37,7 @@ The read-only XLEN-wide vector type CSR, vtype provides the default type used to
 Vector Type Register vtype
 The read-only XLEN-wide vector type CSR, vtype provides the default type used to interpret the contents of the vector register file, and can only be updated by vset{i}vl{i} instructions. The vector type determines the organization of elements in each vector register, and how multiple vector registers are grouped. The vtype register also indicates how masked-off elements and elements past the current vector length in a vector result are handled.">
   <meta itemprop="dateModified" content="2024-07-27T11:52:32-04:00">
-  <meta itemprop="wordCount" content="238">
+  <meta itemprop="wordCount" content="239">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="csrrs">
   <meta name="twitter:description" content="Read vector context from a Control and Status Register
@@ -47,8 +47,8 @@ The read-only XLEN-wide vector type CSR, vtype provides the default type used to
 
 
 
-<link rel="preload" href="/riscv_vector_survey/scss/main.min.c7fba8d75c695e2a7cf37f10b188552511714d4c1645c16af7e24f7cc964a002.css" as="style">
-<link href="/riscv_vector_survey/scss/main.min.c7fba8d75c695e2a7cf37f10b188552511714d4c1645c16af7e24f7cc964a002.css" rel="stylesheet" integrity="">
+
+<link href="/riscv_vector_survey/scss/main.css" rel="stylesheet">
 
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -115,6 +115,8 @@ The read-only XLEN-wide vector type CSR, vtype provides the default type used to
   <a href="/riscv_vector_survey/docs/opcodes/csrrs/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodescsrrs"><span class="td-sidebar-nav-active-item">csrrs</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesvmvv_-li">
   <a href="/riscv_vector_survey/docs/opcodes/vmv.v._/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesvmvv_"><span class="">vmv.v.?</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesv_math_-li">
+  <a href="/riscv_vector_survey/docs/opcodes/v_math_/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesv_math_"><span class="">v_math_</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesvfirstm-li">
   <a href="/riscv_vector_survey/docs/opcodes/vfirst.m/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesvfirstm"><span class="">vfirst.m</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesvidv-li">
@@ -135,6 +137,8 @@ The read-only XLEN-wide vector type CSR, vtype provides the default type used to
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsexercisesstructureaccesses-li">
   <a href="/riscv_vector_survey/docs/exercises/structureaccesses/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsexercisesstructureaccesses"><span class="">structure accesses</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsexercisesautovec-li">
+  <a href="/riscv_vector_survey/docs/exercises/autovec/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsexercisesautovec"><span class="">autovec</span></a>
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocstestbed-li">
@@ -207,7 +211,7 @@ The read-only XLEN-wide vector type CSR, vtype provides the default type used to
 <p>Normally, vstart is only written by hardware on a trap on a vector instruction, with the vstart value representing the element on which the trap was taken (either a synchronous exception or an asynchronous interrupt), and at which execution should resume after a resumable trap is handled.</p>
 <p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#38-vector-fixed-point-rounding-mode-register-vxrm">Vector Fixed-Point Rounding Mode Register vxrm</a></p>
 <h2 id="example">Example</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>csrrs       $offset,vl,zero            ; determine the number of elementsread
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>csrrs       $offset,vl,zero            ; determine the number of elements read
 </span></span></code></pre></div>
 	<div class="td-page-meta__lastmod">
   Last modified July 27, 2024: <a href="https://github.com/thixotropist/ghidra_import_tests/commit/7f19f63c3008b9f477754c5ee5f80022d345fdff">Initial commit (7f19f63)</a>
@@ -245,8 +249,8 @@ The read-only XLEN-wide vector type CSR, vtype provides the default type used to
 </footer>
 
     </div>
-    <script src="/riscv_vector_survey/js/main.min.68c9a31dd693463d3622bbd6253513d826071034389c140c96dd8d24ff9251df.js" integrity="sha256-aMmjHdaTRj02IrvWJTUT2CYHEDQ4nBQMlt2NJP&#43;SUd8=" crossorigin="anonymous"></script>
-<script defer src="/riscv_vector_survey/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+    <script src="/riscv_vector_survey/js/main.js"></script>
+<script defer src="/riscv_vector_survey/js/click-to-copy.js" crossorigin="anonymous"></script>
 <script src='/riscv_vector_survey/js/tabpane-persist.js'></script>
 
   </body>

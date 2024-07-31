@@ -1,9 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
-  <head>
+  <head><script src="/riscv_vector_survey/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=riscv_vector_survey/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 
 
 <link rel="shortcut icon" href="/riscv_vector_survey/favicons/favicon.ico" >
@@ -18,12 +18,12 @@
 <link rel="icon" type="image/png" href="/riscv_vector_survey/favicons/android-192x192.png" sizes="192x192">
 
 <title>memset | RISCV ISA extensions Ghidra field guide</title>
-<meta name="description" content="The GCC compiler handles many initialization operations with the setmem pseudocode RTL operation. This includes both memset standard library invocations and sequences of var = constant; initialers. The vectorizer translates as many of these as it can into equivalent vector initializers.
+<meta name="description" content="The GCC compiler handles many initialization operations with the setmem pseudocode RTL operation. This includes both memset standard library invocations and sequences of var = constant; initializers. The vectorizer translates as many of these as it can into equivalent vector initializers.
 Often the initializer is an immediate constant zero. The compiler takes memory alignment into account when generating loads and stores. Storing a vector of 8 8 bit bytes is not the same as storing a single 64 bit doubleword.">
-<meta property="og:url" content="https://thixotropist.github.io/riscv_vector_survey/docs/patterns/memset/">
+<meta property="og:url" content="http://localhost:1313/riscv_vector_survey/docs/patterns/memset/">
   <meta property="og:site_name" content="RISCV ISA extensions Ghidra field guide">
   <meta property="og:title" content="memset">
-  <meta property="og:description" content="The GCC compiler handles many initialization operations with the setmem pseudocode RTL operation. This includes both memset standard library invocations and sequences of var = constant; initialers. The vectorizer translates as many of these as it can into equivalent vector initializers.
+  <meta property="og:description" content="The GCC compiler handles many initialization operations with the setmem pseudocode RTL operation. This includes both memset standard library invocations and sequences of var = constant; initializers. The vectorizer translates as many of these as it can into equivalent vector initializers.
 Often the initializer is an immediate constant zero. The compiler takes memory alignment into account when generating loads and stores. Storing a vector of 8 8 bit bytes is not the same as storing a single 64 bit doubleword.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
@@ -31,20 +31,20 @@ Often the initializer is an immediate constant zero. The compiler takes memory a
     <meta property="article:modified_time" content="2024-07-27T11:52:32-04:00">
 
   <meta itemprop="name" content="memset">
-  <meta itemprop="description" content="The GCC compiler handles many initialization operations with the setmem pseudocode RTL operation. This includes both memset standard library invocations and sequences of var = constant; initialers. The vectorizer translates as many of these as it can into equivalent vector initializers.
+  <meta itemprop="description" content="The GCC compiler handles many initialization operations with the setmem pseudocode RTL operation. This includes both memset standard library invocations and sequences of var = constant; initializers. The vectorizer translates as many of these as it can into equivalent vector initializers.
 Often the initializer is an immediate constant zero. The compiler takes memory alignment into account when generating loads and stores. Storing a vector of 8 8 bit bytes is not the same as storing a single 64 bit doubleword.">
   <meta itemprop="dateModified" content="2024-07-27T11:52:32-04:00">
   <meta itemprop="wordCount" content="485">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="memset">
-  <meta name="twitter:description" content="The GCC compiler handles many initialization operations with the setmem pseudocode RTL operation. This includes both memset standard library invocations and sequences of var = constant; initialers. The vectorizer translates as many of these as it can into equivalent vector initializers.
+  <meta name="twitter:description" content="The GCC compiler handles many initialization operations with the setmem pseudocode RTL operation. This includes both memset standard library invocations and sequences of var = constant; initializers. The vectorizer translates as many of these as it can into equivalent vector initializers.
 Often the initializer is an immediate constant zero. The compiler takes memory alignment into account when generating loads and stores. Storing a vector of 8 8 bit bytes is not the same as storing a single 64 bit doubleword.">
 
 
 
 
-<link rel="preload" href="/riscv_vector_survey/scss/main.min.c7fba8d75c695e2a7cf37f10b188552511714d4c1645c16af7e24f7cc964a002.css" as="style">
-<link href="/riscv_vector_survey/scss/main.min.c7fba8d75c695e2a7cf37f10b188552511714d4c1645c16af7e24f7cc964a002.css" rel="stylesheet" integrity="">
+
+<link href="/riscv_vector_survey/scss/main.css" rel="stylesheet">
 
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -111,6 +111,8 @@ Often the initializer is an immediate constant zero. The compiler takes memory a
   <a href="/riscv_vector_survey/docs/opcodes/csrrs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodescsrrs"><span class="">csrrs</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesvmvv_-li">
   <a href="/riscv_vector_survey/docs/opcodes/vmv.v._/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesvmvv_"><span class="">vmv.v.?</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesv_math_-li">
+  <a href="/riscv_vector_survey/docs/opcodes/v_math_/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesv_math_"><span class="">v_math_</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesvfirstm-li">
   <a href="/riscv_vector_survey/docs/opcodes/vfirst.m/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesvfirstm"><span class="">vfirst.m</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesvidv-li">
@@ -131,6 +133,8 @@ Often the initializer is an immediate constant zero. The compiler takes memory a
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsexercisesstructureaccesses-li">
   <a href="/riscv_vector_survey/docs/exercises/structureaccesses/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsexercisesstructureaccesses"><span class="">structure accesses</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsexercisesautovec-li">
+  <a href="/riscv_vector_survey/docs/exercises/autovec/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsexercisesautovec"><span class="">autovec</span></a>
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocstestbed-li">
@@ -195,7 +199,7 @@ Often the initializer is an immediate constant zero. The compiler takes memory a
 
 <div class="pageinfo pageinfo-primary">
 <p>The GCC compiler handles many initialization operations with the <code>setmem</code> pseudocode RTL operation.  This includes
-both <code>memset</code> standard library invocations and sequences of <code>var = constant;</code> initialers.  The vectorizer translates
+both <code>memset</code> standard library invocations and sequences of <code>var = constant;</code> initializers.  The vectorizer translates
 as many of these as it can into equivalent vector initializers.</p>
 
 </div>
@@ -300,8 +304,8 @@ byte booleans to (0,1).  The compiler has lots of tricks for generating non-zero
 </footer>
 
     </div>
-    <script src="/riscv_vector_survey/js/main.min.68c9a31dd693463d3622bbd6253513d826071034389c140c96dd8d24ff9251df.js" integrity="sha256-aMmjHdaTRj02IrvWJTUT2CYHEDQ4nBQMlt2NJP&#43;SUd8=" crossorigin="anonymous"></script>
-<script defer src="/riscv_vector_survey/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+    <script src="/riscv_vector_survey/js/main.js"></script>
+<script defer src="/riscv_vector_survey/js/click-to-copy.js" crossorigin="anonymous"></script>
 <script src='/riscv_vector_survey/js/tabpane-persist.js'></script>
 
   </body>

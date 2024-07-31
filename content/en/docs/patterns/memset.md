@@ -6,7 +6,7 @@ weight: 20
 
 {{% pageinfo %}}
 The GCC compiler handles many initialization operations with the `setmem` pseudocode RTL operation.  This includes
-both `memset` standard library invocations and sequences of `var = constant;` initialers.  The vectorizer translates
+both `memset` standard library invocations and sequences of `var = constant;` initializers.  The vectorizer translates
 as many of these as it can into equivalent vector initializers.  
 {{% /pageinfo %}}
 

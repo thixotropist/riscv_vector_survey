@@ -1,9 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
-  <head>
+  <head><script src="/riscv_vector_survey/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=riscv_vector_survey/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 
 
 <link rel="shortcut icon" href="/riscv_vector_survey/favicons/favicon.ico" >
@@ -21,7 +21,7 @@
 <meta name="description" content="What are the vector instruction frequencies in dpdk-ip_pipeline when built with gcc-15 and executed within a RISCV-64 emulated system?
 This means libc calls won&amp;rsquo;t invoke vector instructions in this memory snapshot.
 opcode frequency vse8.v 12756 vsetivli 9668 vsetvli 7882 vle8.v 5841 vle8ff.v 3433 vmv.v.i 3134 vse32.v 2357 vmseq.vi 1914 vse64.v 1880 csrrs[vl] 1843 vfirst.m 1843 vle64.v 1808 vid.v 1801 vse16.v 1751 vmsne.vv 1603 vmor.mm 1597 vle32.v 1431 csrrs[vlenb] 1163 vmul.">
-<meta property="og:url" content="https://thixotropist.github.io/riscv_vector_survey/docs/vector_survey/">
+<meta property="og:url" content="http://localhost:1313/riscv_vector_survey/docs/vector_survey/">
   <meta property="og:site_name" content="RISCV ISA extensions Ghidra field guide">
   <meta property="og:title" content="Vector ISA Frequencies">
   <meta property="og:description" content="What are the vector instruction frequencies in dpdk-ip_pipeline when built with gcc-15 and executed within a RISCV-64 emulated system?
@@ -47,8 +47,8 @@ opcode frequency vse8.v 12756 vsetivli 9668 vsetvli 7882 vle8.v 5841 vle8ff.v 34
 
 
 
-<link rel="preload" href="/riscv_vector_survey/scss/main.min.c7fba8d75c695e2a7cf37f10b188552511714d4c1645c16af7e24f7cc964a002.css" as="style">
-<link href="/riscv_vector_survey/scss/main.min.c7fba8d75c695e2a7cf37f10b188552511714d4c1645c16af7e24f7cc964a002.css" rel="stylesheet" integrity="">
+
+<link href="/riscv_vector_survey/scss/main.css" rel="stylesheet">
 
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -115,6 +115,8 @@ opcode frequency vse8.v 12756 vsetivli 9668 vsetvli 7882 vle8.v 5841 vle8ff.v 34
   <a href="/riscv_vector_survey/docs/opcodes/csrrs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodescsrrs"><span class="">csrrs</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesvmvv_-li">
   <a href="/riscv_vector_survey/docs/opcodes/vmv.v._/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesvmvv_"><span class="">vmv.v.?</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesv_math_-li">
+  <a href="/riscv_vector_survey/docs/opcodes/v_math_/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesv_math_"><span class="">v_math_</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesvfirstm-li">
   <a href="/riscv_vector_survey/docs/opcodes/vfirst.m/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesvfirstm"><span class="">vfirst.m</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesvidv-li">
@@ -135,6 +137,8 @@ opcode frequency vse8.v 12756 vsetivli 9668 vsetvli 7882 vle8.v 5841 vle8ff.v 34
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsexercisesstructureaccesses-li">
   <a href="/riscv_vector_survey/docs/exercises/structureaccesses/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsexercisesstructureaccesses"><span class="">structure accesses</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsexercisesautovec-li">
+  <a href="/riscv_vector_survey/docs/exercises/autovec/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsexercisesautovec"><span class="">autovec</span></a>
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocstestbed-li">
@@ -270,7 +274,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>1163</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmul.vx</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vmul.vx</a></td>
 <td>1136</td>
 </tr>
 <tr>
@@ -282,7 +286,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>979</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vadd.vi</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vadd.vi</a></td>
 <td>909</td>
 </tr>
 <tr>
@@ -290,7 +294,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>733</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vadd.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vadd.vv</a></td>
 <td>654</td>
 </tr>
 <tr>
@@ -298,7 +302,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>624</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vadd.vx</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vadd.vx</a></td>
 <td>592</td>
 </tr>
 <tr>
@@ -306,7 +310,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>566</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/vm_/">vor.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vor.vv</a></td>
 <td>546</td>
 </tr>
 <tr>
@@ -314,7 +318,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>479</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vand.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vand.vv</a></td>
 <td>468</td>
 </tr>
 <tr>
@@ -334,11 +338,11 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>262</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vzext.vf2</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vzext.vf2</a></td>
 <td>248</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vrsub.vi</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vrsub.vi</a></td>
 <td>215</td>
 </tr>
 <tr>
@@ -346,7 +350,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>197</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vxor.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vxor.vv</a></td>
 <td>192</td>
 </tr>
 <tr>
@@ -366,7 +370,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>150</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vrsub.vx</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vrsub.vx</a></td>
 <td>132</td>
 </tr>
 <tr>
@@ -374,7 +378,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>125</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vand.vi</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vand.vi</a></td>
 <td>122</td>
 </tr>
 <tr>
@@ -386,7 +390,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>106</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vzext.vf4</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vzext.vf4</a></td>
 <td>103</td>
 </tr>
 <tr>
@@ -414,7 +418,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>61</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsub.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vsub.vv</a></td>
 <td>57</td>
 </tr>
 <tr>
@@ -422,7 +426,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>56</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmerge.vvm</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vmerge.vvm</a></td>
 <td>55</td>
 </tr>
 <tr>
@@ -430,7 +434,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>55</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vwaddu.wv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vwaddu.wv</a></td>
 <td>50</td>
 </tr>
 <tr>
@@ -466,11 +470,11 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>30</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmul.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vmul.vv</a></td>
 <td>29</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vminu.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vminu.vv</a></td>
 <td>28</td>
 </tr>
 <tr>
@@ -478,11 +482,11 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>26</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vnot.v</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vnot.v</a></td>
 <td>26</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmax.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vmax.vv</a></td>
 <td>24</td>
 </tr>
 <tr>
@@ -494,7 +498,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>20</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmadd.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vmadd.vv</a></td>
 <td>19</td>
 </tr>
 <tr>
@@ -566,7 +570,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>8</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vand.vx</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vand.vx</a></td>
 <td>8</td>
 </tr>
 <tr>
@@ -626,7 +630,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>6</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vdivu.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vdivu.vv</a></td>
 <td>5</td>
 </tr>
 <tr>
@@ -634,11 +638,11 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>5</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vneg.v</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vneg.v</a></td>
 <td>5</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vwaddu.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vwaddu.vv</a></td>
 <td>4</td>
 </tr>
 <tr>
@@ -646,7 +650,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>4</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vnmsub.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vnmsub.vv</a></td>
 <td>4</td>
 </tr>
 <tr>
@@ -682,7 +686,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>3</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmaxu.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vmaxu.vv</a></td>
 <td>3</td>
 </tr>
 <tr>
@@ -702,11 +706,11 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>2</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vwadd.wv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vwadd.wv</a></td>
 <td>2</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vxor.vi</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vxor.vi</a></td>
 <td>2</td>
 </tr>
 <tr>
@@ -754,7 +758,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>1</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmin.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vmin.vv</a></td>
 <td>1</td>
 </tr>
 <tr>
@@ -774,11 +778,11 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>1</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vor.vi</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vor.vi</a></td>
 <td>1</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsext.vf4</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vsext.vf4</a></td>
 <td>1</td>
 </tr>
 <tr>
@@ -828,8 +832,8 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 </footer>
 
     </div>
-    <script src="/riscv_vector_survey/js/main.min.68c9a31dd693463d3622bbd6253513d826071034389c140c96dd8d24ff9251df.js" integrity="sha256-aMmjHdaTRj02IrvWJTUT2CYHEDQ4nBQMlt2NJP&#43;SUd8=" crossorigin="anonymous"></script>
-<script defer src="/riscv_vector_survey/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+    <script src="/riscv_vector_survey/js/main.js"></script>
+<script defer src="/riscv_vector_survey/js/click-to-copy.js" crossorigin="anonymous"></script>
 <script src='/riscv_vector_survey/js/tabpane-persist.js'></script>
 
   </body>

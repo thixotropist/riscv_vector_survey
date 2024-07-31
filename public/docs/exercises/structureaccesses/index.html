@@ -1,9 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
-  <head>
+  <head><script src="/riscv_vector_survey/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=riscv_vector_survey/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 
 
 <link rel="shortcut icon" href="/riscv_vector_survey/favicons/favicon.ico" >
@@ -19,14 +19,14 @@
 
 <title>structure accesses | RISCV ISA extensions Ghidra field guide</title>
 <meta name="description" content="Some memory operations can be very hard to understand. This is especially true when copying some elements of a structure into elements of a different class of structure.
-Note: a tutorial on segemented, strided, and indexed loads and stores would be useful, as would a tutorial on the various element width, length, and multiplier mechanics.
+Note: a tutorial on segmented, strided, and indexed loads and stores would be useful, as would a tutorial on the various element width, length, and multiplier mechanics.
 This function is one of the more confusing sequences of vector operations.
 void FUN_006759d0(undefined8 param_1,undefined8 param_2,undefined4 *param_3) { long lVar1; ulong uVar2; long lVar3; undefined auVar4 [256]; undefined auVar5 [256]; undefined auVar6 [256]; undefined auVar7 [256]; int iStack_78; undefined auStack_74 [28]; undefined4 auStack_58 [4]; int *piStack_48; undefined uStack_37; FUN_000e4230(auStack_58,0x28); auStack_58[0] = 0x1f0000; piStack_48 = &amp;amp;iStack_78; uStack_37 = 0x20; lVar1 = FUN_0066f66a(param_1,param_2,auStack_58); if (lVar1 == 0) { uVar2 = minu((long)iStack_78,7); // max number of elements is 7 *param_3 = (int)uVar2; if ((long)iStack_78 !">
-<meta property="og:url" content="https://thixotropist.github.io/riscv_vector_survey/docs/exercises/structureaccesses/">
+<meta property="og:url" content="http://localhost:1313/riscv_vector_survey/docs/exercises/structureaccesses/">
   <meta property="og:site_name" content="RISCV ISA extensions Ghidra field guide">
   <meta property="og:title" content="structure accesses">
   <meta property="og:description" content="Some memory operations can be very hard to understand. This is especially true when copying some elements of a structure into elements of a different class of structure.
-Note: a tutorial on segemented, strided, and indexed loads and stores would be useful, as would a tutorial on the various element width, length, and multiplier mechanics.
+Note: a tutorial on segmented, strided, and indexed loads and stores would be useful, as would a tutorial on the various element width, length, and multiplier mechanics.
 This function is one of the more confusing sequences of vector operations.
 void FUN_006759d0(undefined8 param_1,undefined8 param_2,undefined4 *param_3) { long lVar1; ulong uVar2; long lVar3; undefined auVar4 [256]; undefined auVar5 [256]; undefined auVar6 [256]; undefined auVar7 [256]; int iStack_78; undefined auStack_74 [28]; undefined4 auStack_58 [4]; int *piStack_48; undefined uStack_37; FUN_000e4230(auStack_58,0x28); auStack_58[0] = 0x1f0000; piStack_48 = &amp;iStack_78; uStack_37 = 0x20; lVar1 = FUN_0066f66a(param_1,param_2,auStack_58); if (lVar1 == 0) { uVar2 = minu((long)iStack_78,7); // max number of elements is 7 *param_3 = (int)uVar2; if ((long)iStack_78 !">
   <meta property="og:locale" content="en_us">
@@ -36,7 +36,7 @@ void FUN_006759d0(undefined8 param_1,undefined8 param_2,undefined4 *param_3) { l
 
   <meta itemprop="name" content="structure accesses">
   <meta itemprop="description" content="Some memory operations can be very hard to understand. This is especially true when copying some elements of a structure into elements of a different class of structure.
-Note: a tutorial on segemented, strided, and indexed loads and stores would be useful, as would a tutorial on the various element width, length, and multiplier mechanics.
+Note: a tutorial on segmented, strided, and indexed loads and stores would be useful, as would a tutorial on the various element width, length, and multiplier mechanics.
 This function is one of the more confusing sequences of vector operations.
 void FUN_006759d0(undefined8 param_1,undefined8 param_2,undefined4 *param_3) { long lVar1; ulong uVar2; long lVar3; undefined auVar4 [256]; undefined auVar5 [256]; undefined auVar6 [256]; undefined auVar7 [256]; int iStack_78; undefined auStack_74 [28]; undefined4 auStack_58 [4]; int *piStack_48; undefined uStack_37; FUN_000e4230(auStack_58,0x28); auStack_58[0] = 0x1f0000; piStack_48 = &amp;iStack_78; uStack_37 = 0x20; lVar1 = FUN_0066f66a(param_1,param_2,auStack_58); if (lVar1 == 0) { uVar2 = minu((long)iStack_78,7); // max number of elements is 7 *param_3 = (int)uVar2; if ((long)iStack_78 !">
   <meta itemprop="dateModified" content="2024-07-27T11:52:32-04:00">
@@ -44,15 +44,15 @@ void FUN_006759d0(undefined8 param_1,undefined8 param_2,undefined4 *param_3) { l
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="structure accesses">
   <meta name="twitter:description" content="Some memory operations can be very hard to understand. This is especially true when copying some elements of a structure into elements of a different class of structure.
-Note: a tutorial on segemented, strided, and indexed loads and stores would be useful, as would a tutorial on the various element width, length, and multiplier mechanics.
+Note: a tutorial on segmented, strided, and indexed loads and stores would be useful, as would a tutorial on the various element width, length, and multiplier mechanics.
 This function is one of the more confusing sequences of vector operations.
 void FUN_006759d0(undefined8 param_1,undefined8 param_2,undefined4 *param_3) { long lVar1; ulong uVar2; long lVar3; undefined auVar4 [256]; undefined auVar5 [256]; undefined auVar6 [256]; undefined auVar7 [256]; int iStack_78; undefined auStack_74 [28]; undefined4 auStack_58 [4]; int *piStack_48; undefined uStack_37; FUN_000e4230(auStack_58,0x28); auStack_58[0] = 0x1f0000; piStack_48 = &amp;iStack_78; uStack_37 = 0x20; lVar1 = FUN_0066f66a(param_1,param_2,auStack_58); if (lVar1 == 0) { uVar2 = minu((long)iStack_78,7); // max number of elements is 7 *param_3 = (int)uVar2; if ((long)iStack_78 !">
 
 
 
 
-<link rel="preload" href="/riscv_vector_survey/scss/main.min.c7fba8d75c695e2a7cf37f10b188552511714d4c1645c16af7e24f7cc964a002.css" as="style">
-<link href="/riscv_vector_survey/scss/main.min.c7fba8d75c695e2a7cf37f10b188552511714d4c1645c16af7e24f7cc964a002.css" rel="stylesheet" integrity="">
+
+<link href="/riscv_vector_survey/scss/main.css" rel="stylesheet">
 
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -119,6 +119,8 @@ void FUN_006759d0(undefined8 param_1,undefined8 param_2,undefined4 *param_3) { l
   <a href="/riscv_vector_survey/docs/opcodes/csrrs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodescsrrs"><span class="">csrrs</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesvmvv_-li">
   <a href="/riscv_vector_survey/docs/opcodes/vmv.v._/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesvmvv_"><span class="">vmv.v.?</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesv_math_-li">
+  <a href="/riscv_vector_survey/docs/opcodes/v_math_/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesv_math_"><span class="">v_math_</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesvfirstm-li">
   <a href="/riscv_vector_survey/docs/opcodes/vfirst.m/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesvfirstm"><span class="">vfirst.m</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesvidv-li">
@@ -139,6 +141,8 @@ void FUN_006759d0(undefined8 param_1,undefined8 param_2,undefined4 *param_3) { l
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-riscv_vector_surveydocsexercisesstructureaccesses-li">
   <a href="/riscv_vector_survey/docs/exercises/structureaccesses/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsexercisesstructureaccesses"><span class="td-sidebar-nav-active-item">structure accesses</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsexercisesautovec-li">
+  <a href="/riscv_vector_survey/docs/exercises/autovec/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsexercisesautovec"><span class="">autovec</span></a>
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocstestbed-li">
@@ -196,7 +200,7 @@ of structure.</p>
 </div>
 
 <blockquote>
-<p>Note: a tutorial on segemented, strided, and indexed loads and stores would be useful,
+<p>Note: a tutorial on segmented, strided, and indexed loads and stores would be useful,
 as would a tutorial on the various element width, length, and multiplier mechanics.</p>
 </blockquote>
 <p>This function is one of the more confusing sequences of vector operations.</p>
@@ -420,8 +424,8 @@ to generate 1</em>SEW outputs.  <code>vncvt.x.x.w</code> is encoded as <code>vns
 </footer>
 
     </div>
-    <script src="/riscv_vector_survey/js/main.min.68c9a31dd693463d3622bbd6253513d826071034389c140c96dd8d24ff9251df.js" integrity="sha256-aMmjHdaTRj02IrvWJTUT2CYHEDQ4nBQMlt2NJP&#43;SUd8=" crossorigin="anonymous"></script>
-<script defer src="/riscv_vector_survey/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+    <script src="/riscv_vector_survey/js/main.js"></script>
+<script defer src="/riscv_vector_survey/js/click-to-copy.js" crossorigin="anonymous"></script>
 <script src='/riscv_vector_survey/js/tabpane-persist.js'></script>
 
   </body>

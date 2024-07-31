@@ -1,10 +1,10 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
-  <head>
+  <head><script src="/riscv_vector_survey/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=riscv_vector_survey/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="canonical" type="text/html" href="https://thixotropist.github.io/riscv_vector_survey/docs/">
-<link rel="alternate" type="application/rss&#43;xml" href="https://thixotropist.github.io/riscv_vector_survey/docs/index.xml">
+<link rel="canonical" type="text/html" href="http://localhost:1313/riscv_vector_survey/docs/">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/riscv_vector_survey/docs/index.xml">
 <meta name="robots" content="noindex, nofollow">
 
 
@@ -21,7 +21,7 @@
 
 <title>Documentation | RISCV ISA extensions Ghidra field guide</title>
 <meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-<meta property="og:url" content="https://thixotropist.github.io/riscv_vector_survey/docs/">
+<meta property="og:url" content="http://localhost:1313/riscv_vector_survey/docs/">
   <meta property="og:site_name" content="RISCV ISA extensions Ghidra field guide">
   <meta property="og:title" content="Documentation">
   <meta property="og:description" content="Recognizing vector instruction sequences in large RISCV-64 binaries.
@@ -42,8 +42,8 @@
 
 
 
-<link rel="preload" href="/riscv_vector_survey/scss/main.min.c7fba8d75c695e2a7cf37f10b188552511714d4c1645c16af7e24f7cc964a002.css" as="style">
-<link href="/riscv_vector_survey/scss/main.min.c7fba8d75c695e2a7cf37f10b188552511714d4c1645c16af7e24f7cc964a002.css" rel="stylesheet" integrity="">
+
+<link href="/riscv_vector_survey/scss/main.css" rel="stylesheet">
 
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -205,7 +205,7 @@ This is the multi-page printable view of this section.
     
     
 	
-<li>2.10: <a href="#pg-c0194658cd413153693dcdcb4d03de58">vfirst.m</a></li>
+<li>2.10: <a href="#pg-e7afe66e5b603a484407369cdefc4dbc">v_math_</a></li>
 
 
     
@@ -213,7 +213,15 @@ This is the multi-page printable view of this section.
     
     
 	
-<li>2.11: <a href="#pg-ab0a85d4ccb10e9e6d6b345fafc36ec6">vid.v</a></li>
+<li>2.11: <a href="#pg-c0194658cd413153693dcdcb4d03de58">vfirst.m</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2.12: <a href="#pg-ab0a85d4ccb10e9e6d6b345fafc36ec6">vid.v</a></li>
 
 
     
@@ -276,6 +284,14 @@ This is the multi-page printable view of this section.
     
 	
 <li>4.1: <a href="#pg-2ab437f302746beca2457c93997b0c0c">structure accesses</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4.2: <a href="#pg-7acad46cf64303c334fb74f35a30ad91">autovec</a></li>
 
 
     
@@ -418,7 +434,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>1163</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmul.vx</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vmul.vx</a></td>
 <td>1136</td>
 </tr>
 <tr>
@@ -430,7 +446,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>979</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vadd.vi</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vadd.vi</a></td>
 <td>909</td>
 </tr>
 <tr>
@@ -438,7 +454,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>733</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vadd.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vadd.vv</a></td>
 <td>654</td>
 </tr>
 <tr>
@@ -446,7 +462,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>624</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vadd.vx</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vadd.vx</a></td>
 <td>592</td>
 </tr>
 <tr>
@@ -454,7 +470,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>566</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/vm_/">vor.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vor.vv</a></td>
 <td>546</td>
 </tr>
 <tr>
@@ -462,7 +478,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>479</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vand.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vand.vv</a></td>
 <td>468</td>
 </tr>
 <tr>
@@ -482,11 +498,11 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>262</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vzext.vf2</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vzext.vf2</a></td>
 <td>248</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vrsub.vi</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vrsub.vi</a></td>
 <td>215</td>
 </tr>
 <tr>
@@ -494,7 +510,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>197</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vxor.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vxor.vv</a></td>
 <td>192</td>
 </tr>
 <tr>
@@ -514,7 +530,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>150</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vrsub.vx</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vrsub.vx</a></td>
 <td>132</td>
 </tr>
 <tr>
@@ -522,7 +538,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>125</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vand.vi</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vand.vi</a></td>
 <td>122</td>
 </tr>
 <tr>
@@ -534,7 +550,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>106</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vzext.vf4</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vzext.vf4</a></td>
 <td>103</td>
 </tr>
 <tr>
@@ -562,7 +578,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>61</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsub.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vsub.vv</a></td>
 <td>57</td>
 </tr>
 <tr>
@@ -570,7 +586,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>56</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmerge.vvm</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vmerge.vvm</a></td>
 <td>55</td>
 </tr>
 <tr>
@@ -578,7 +594,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>55</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vwaddu.wv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vwaddu.wv</a></td>
 <td>50</td>
 </tr>
 <tr>
@@ -614,11 +630,11 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>30</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmul.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vmul.vv</a></td>
 <td>29</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vminu.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vminu.vv</a></td>
 <td>28</td>
 </tr>
 <tr>
@@ -626,11 +642,11 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>26</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vnot.v</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vnot.v</a></td>
 <td>26</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmax.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vmax.vv</a></td>
 <td>24</td>
 </tr>
 <tr>
@@ -642,7 +658,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>20</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmadd.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vmadd.vv</a></td>
 <td>19</td>
 </tr>
 <tr>
@@ -714,7 +730,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>8</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vand.vx</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vand.vx</a></td>
 <td>8</td>
 </tr>
 <tr>
@@ -774,7 +790,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>6</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vdivu.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vdivu.vv</a></td>
 <td>5</td>
 </tr>
 <tr>
@@ -782,11 +798,11 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>5</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vneg.v</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vneg.v</a></td>
 <td>5</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vwaddu.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vwaddu.vv</a></td>
 <td>4</td>
 </tr>
 <tr>
@@ -794,7 +810,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>4</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vnmsub.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vnmsub.vv</a></td>
 <td>4</td>
 </tr>
 <tr>
@@ -830,7 +846,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>3</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmaxu.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vmaxu.vv</a></td>
 <td>3</td>
 </tr>
 <tr>
@@ -850,11 +866,11 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>2</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vwadd.wv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vwadd.wv</a></td>
 <td>2</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vxor.vi</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vxor.vi</a></td>
 <td>2</td>
 </tr>
 <tr>
@@ -902,7 +918,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>1</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vmin.vv</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vmin.vv</a></td>
 <td>1</td>
 </tr>
 <tr>
@@ -922,11 +938,11 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 <td>1</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vor.vi</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vor.vi</a></td>
 <td>1</td>
 </tr>
 <tr>
-<td><a href="/riscv_vector_survey/docs/opcodes/pending/">vsext.vf4</a></td>
+<td><a href="/riscv_vector_survey/docs/opcodes/v_math_/">vsext.vf4</a></td>
 <td>1</td>
 </tr>
 <tr>
@@ -1308,7 +1324,7 @@ compared integer(s) - another vector register, a scalar register, or an immediat
 <p>Normally, vstart is only written by hardware on a trap on a vector instruction, with the vstart value representing the element on which the trap was taken (either a synchronous exception or an asynchronous interrupt), and at which execution should resume after a resumable trap is handled.</p>
 <p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#38-vector-fixed-point-rounding-mode-register-vxrm">Vector Fixed-Point Rounding Mode Register vxrm</a></p>
 <h2 id="example">Example</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>csrrs       $offset,vl,zero            ; determine the number of elementsread
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>csrrs       $offset,vl,zero            ; determine the number of elements read
 </span></span></code></pre></div>
 </div>
 
@@ -1358,7 +1374,261 @@ all elements of a vector</p>
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-c0194658cd413153693dcdcb4d03de58">2.10 - vfirst.m</h1>
+	<h1 id="pg-e7afe66e5b603a484407369cdefc4dbc">2.10 - v_math_</h1>
+    
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>Vector math and bit operations</p>
+
+</div>
+
+<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#11-vector-integer-arithmetic-instructions">Detailed Reference</a></p>
+<h2 id="overview">Overview</h2>
+<p>Vector integer arithemetic and logical instructions are mostly easy to understand.  You want to consult the detailed reference
+above to understand mixed-width operations and any exception conditions.  The following is cut from the formal reference
+material.</p>
+<h3 id="integer-adds">Integer adds</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vadd.vv vd, vs2, vs1, vm   # Vector-vector
+</span></span><span style="display:flex;"><span>vadd.vx vd, vs2, rs1, vm   # vector-scalar
+</span></span><span style="display:flex;"><span>vadd.vi vd, vs2, imm, vm   # vector-immediate
+</span></span></code></pre></div><h3 id="integer-subtract">Integer subtract</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vsub.vv vd, vs2, vs1, vm   # Vector-vector
+</span></span><span style="display:flex;"><span>vsub.vx vd, vs2, rs1, vm   # vector-scalar
+</span></span></code></pre></div><h3 id="integer-reverse-subtract">Integer reverse subtract</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vrsub.vx vd, vs2, rs1, vm   # vd[i] = x[rs1] - vs2[i]
+</span></span><span style="display:flex;"><span>vrsub.vi vd, vs2, imm, vm   # vd[i] = imm - vs2[i]
+</span></span></code></pre></div><blockquote>
+<p>Note: A vector of integer values can be negated using a reverse-subtract
+instruction with a scalar operand of x0. An assembly pseudoinstruction
+vneg.v vd,vs = vrsub.vx vd,vs,x0 is provided.</p>
+</blockquote>
+<h3 id="widening-unsigned-integer-addsubtract-2sew--sew---sew">Widening unsigned integer add/subtract, 2*SEW = SEW +/- SEW</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vwaddu.vv  vd, vs2, vs1, vm  # vector-vector
+</span></span><span style="display:flex;"><span>vwaddu.vx  vd, vs2, rs1, vm  # vector-scalar
+</span></span><span style="display:flex;"><span>vwsubu.vv  vd, vs2, vs1, vm  # vector-vector
+</span></span><span style="display:flex;"><span>vwsubu.vx  vd, vs2, rs1, vm  # vector-scalar
+</span></span></code></pre></div><h3 id="widening-signed-integer-addsubtract-2sew--sew---sew">Widening signed integer add/subtract, 2*SEW = SEW +/- SEW</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vwadd.vv  vd, vs2, vs1, vm  # vector-vector
+</span></span><span style="display:flex;"><span>vwadd.vx  vd, vs2, rs1, vm  # vector-scalar
+</span></span><span style="display:flex;"><span>vwsub.vv  vd, vs2, vs1, vm  # vector-vector
+</span></span><span style="display:flex;"><span>vwsub.vx  vd, vs2, rs1, vm  # vector-scalar
+</span></span></code></pre></div><h3 id="widening-unsigned-integer-addsubtract-2sew--2sew---sew">Widening unsigned integer add/subtract, 2<em>SEW = 2</em>SEW +/- SEW</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vwaddu.wv  vd, vs2, vs1, vm  # vector-vector
+</span></span><span style="display:flex;"><span>vwaddu.wx  vd, vs2, rs1, vm  # vector-scalar
+</span></span><span style="display:flex;"><span>vwsubu.wv  vd, vs2, vs1, vm  # vector-vector
+</span></span><span style="display:flex;"><span>vwsubu.wx  vd, vs2, rs1, vm  # vector-scalar
+</span></span></code></pre></div><h3 id="widening-signed-integer-addsubtract-2sew--2sew---sew">Widening signed integer add/subtract, 2<em>SEW = 2</em>SEW +/- SEW</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vwadd.wv  vd, vs2, vs1, vm  # vector-vector
+</span></span><span style="display:flex;"><span>vwadd.wx  vd, vs2, rs1, vm  # vector-scalar
+</span></span><span style="display:flex;"><span>vwsub.wv  vd, vs2, vs1, vm  # vector-vector
+</span></span><span style="display:flex;"><span>vwsub.wx  vd, vs2, rs1, vm  # vector-scalar
+</span></span></code></pre></div><blockquote>
+<p>Note:	An integer value can be doubled in width using the widening add
+instructions with a scalar operand of x0. Assembly pseudoinstructions
+vwcvt.x.x.v vd,vs,vm = vwadd.vx vd,vs,x0,vm and
+vwcvtu.x.x.v vd,vs,vm = vwaddu.vx vd,vs,x0,vm are provided.</p>
+</blockquote>
+<h3 id="vector-integer-extension-instructions">Vector Integer Extension Instructions</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vzext.vf2 vd, vs2, vm  # Zero-extend SEW/2 source to SEW destination
+</span></span><span style="display:flex;"><span>vsext.vf2 vd, vs2, vm  # Sign-extend SEW/2 source to SEW destination
+</span></span><span style="display:flex;"><span>vzext.vf4 vd, vs2, vm  # Zero-extend SEW/4 source to SEW destination
+</span></span><span style="display:flex;"><span>vsext.vf4 vd, vs2, vm  # Sign-extend SEW/4 source to SEW destination
+</span></span><span style="display:flex;"><span>vzext.vf8 vd, vs2, vm  # Zero-extend SEW/8 source to SEW destination
+</span></span><span style="display:flex;"><span>vsext.vf8 vd, vs2, vm  # Sign-extend SEW/8 source to SEW destination
+</span></span></code></pre></div><h3 id="vector-integer-add-with-carry--subtract-with-borrow-instructions">Vector Integer Add-with-Carry / Subtract-with-Borrow Instructions</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span># vd[i] = vs2[i] + vs1[i] + v0.mask[i]
+</span></span><span style="display:flex;"><span> vadc.vvm   vd, vs2, vs1, v0  # Vector-vector
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> # vd[i] = vs2[i] + x[rs1] + v0.mask[i]
+</span></span><span style="display:flex;"><span> vadc.vxm   vd, vs2, rs1, v0  # Vector-scalar
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> # vd[i] = vs2[i] + imm + v0.mask[i]
+</span></span><span style="display:flex;"><span> vadc.vim   vd, vs2, imm, v0  # Vector-immediate
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> # Produce carry out in mask register format
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> # vd.mask[i] = carry_out(vs2[i] + vs1[i] + v0.mask[i])
+</span></span><span style="display:flex;"><span> vmadc.vvm   vd, vs2, vs1, v0  # Vector-vector
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> # vd.mask[i] = carry_out(vs2[i] + x[rs1] + v0.mask[i])
+</span></span><span style="display:flex;"><span> vmadc.vxm   vd, vs2, rs1, v0  # Vector-scalar
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> # vd.mask[i] = carry_out(vs2[i] + imm + v0.mask[i])
+</span></span><span style="display:flex;"><span> vmadc.vim   vd, vs2, imm, v0  # Vector-immediate
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> # vd.mask[i] = carry_out(vs2[i] + vs1[i])
+</span></span><span style="display:flex;"><span> vmadc.vv    vd, vs2, vs1      # Vector-vector, no carry-in
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> # vd.mask[i] = carry_out(vs2[i] + x[rs1])
+</span></span><span style="display:flex;"><span> vmadc.vx    vd, vs2, rs1      # Vector-scalar, no carry-in
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> # vd.mask[i] = carry_out(vs2[i] + imm)
+</span></span><span style="display:flex;"><span> vmadc.vi    vd, vs2, imm      # Vector-immediate, no carry-in
+</span></span></code></pre></div><h3 id="vector-bitwise-logical-instructions">Vector Bitwise Logical Instructions</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span># Bitwise logical operations.
+</span></span><span style="display:flex;"><span>vand.vv vd, vs2, vs1, vm   # Vector-vector
+</span></span><span style="display:flex;"><span>vand.vx vd, vs2, rs1, vm   # vector-scalar
+</span></span><span style="display:flex;"><span>vand.vi vd, vs2, imm, vm   # vector-immediate
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>vor.vv vd, vs2, vs1, vm    # Vector-vector
+</span></span><span style="display:flex;"><span>vor.vx vd, vs2, rs1, vm    # vector-scalar
+</span></span><span style="display:flex;"><span>vor.vi vd, vs2, imm, vm    # vector-immediate
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>vxor.vv vd, vs2, vs1, vm    # Vector-vector
+</span></span><span style="display:flex;"><span>vxor.vx vd, vs2, rs1, vm    # vector-scalar
+</span></span><span style="display:flex;"><span>vxor.vi vd, vs2, imm, vm    # vector-immediate
+</span></span></code></pre></div><h3 id="vector-narrowing-integer-right-shift-instructions">Vector Narrowing Integer Right Shift Instructions</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span># Narrowing shift right logical, SEW = (2*SEW) &gt;&gt; SEW
+</span></span><span style="display:flex;"><span>vnsrl.wv vd, vs2, vs1, vm   # vector-vector
+</span></span><span style="display:flex;"><span>vnsrl.wx vd, vs2, rs1, vm   # vector-scalar
+</span></span><span style="display:flex;"><span>vnsrl.wi vd, vs2, uimm, vm   # vector-immediate
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Narrowing shift right arithmetic, SEW = (2*SEW) &gt;&gt; SEW
+</span></span><span style="display:flex;"><span>vnsra.wv vd, vs2, vs1, vm   # vector-vector
+</span></span><span style="display:flex;"><span>vnsra.wx vd, vs2, rs1, vm   # vector-scalar
+</span></span><span style="display:flex;"><span>vnsra.wi vd, vs2, uimm, vm   # vector-immediate
+</span></span></code></pre></div><h3 id="vector-integer-compare-instructions">Vector Integer Compare Instructions</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span># Set if equal
+</span></span><span style="display:flex;"><span>vmseq.vv vd, vs2, vs1, vm  # Vector-vector
+</span></span><span style="display:flex;"><span>vmseq.vx vd, vs2, rs1, vm  # vector-scalar
+</span></span><span style="display:flex;"><span>vmseq.vi vd, vs2, imm, vm  # vector-immediate
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Set if not equal
+</span></span><span style="display:flex;"><span>vmsne.vv vd, vs2, vs1, vm  # Vector-vector
+</span></span><span style="display:flex;"><span>vmsne.vx vd, vs2, rs1, vm  # vector-scalar
+</span></span><span style="display:flex;"><span>vmsne.vi vd, vs2, imm, vm  # vector-immediate
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Set if less than, unsigned
+</span></span><span style="display:flex;"><span>vmsltu.vv vd, vs2, vs1, vm  # Vector-vector
+</span></span><span style="display:flex;"><span>vmsltu.vx vd, vs2, rs1, vm  # Vector-scalar
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Set if less than, signed
+</span></span><span style="display:flex;"><span>vmslt.vv vd, vs2, vs1, vm  # Vector-vector
+</span></span><span style="display:flex;"><span>vmslt.vx vd, vs2, rs1, vm  # vector-scalar
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Set if less than or equal, unsigned
+</span></span><span style="display:flex;"><span>vmsleu.vv vd, vs2, vs1, vm   # Vector-vector
+</span></span><span style="display:flex;"><span>vmsleu.vx vd, vs2, rs1, vm   # vector-scalar
+</span></span><span style="display:flex;"><span>vmsleu.vi vd, vs2, imm, vm   # Vector-immediate
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Set if less than or equal, signed
+</span></span><span style="display:flex;"><span>vmsle.vv vd, vs2, vs1, vm  # Vector-vector
+</span></span><span style="display:flex;"><span>vmsle.vx vd, vs2, rs1, vm  # vector-scalar
+</span></span><span style="display:flex;"><span>vmsle.vi vd, vs2, imm, vm  # vector-immediate
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Set if greater than, unsigned
+</span></span><span style="display:flex;"><span>vmsgtu.vx vd, vs2, rs1, vm   # Vector-scalar
+</span></span><span style="display:flex;"><span>vmsgtu.vi vd, vs2, imm, vm   # Vector-immediate
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Set if greater than, signed
+</span></span><span style="display:flex;"><span>vmsgt.vx vd, vs2, rs1, vm    # Vector-scalar
+</span></span><span style="display:flex;"><span>vmsgt.vi vd, vs2, imm, vm    # Vector-immediate
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Following two instructions are not provided directly
+</span></span><span style="display:flex;"><span># Set if greater than or equal, unsigned
+</span></span><span style="display:flex;"><span># vmsgeu.vx vd, vs2, rs1, vm    # Vector-scalar
+</span></span><span style="display:flex;"><span># Set if greater than or equal, signed
+</span></span><span style="display:flex;"><span># vmsge.vx vd, vs2, rs1, vm    # Vector-scalar
+</span></span></code></pre></div><h3 id="vector-single-width-integer-multiply-instructions">Vector Single-Width Integer Multiply Instructions</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span># Signed multiply, returning low bits of product
+</span></span><span style="display:flex;"><span>vmul.vv vd, vs2, vs1, vm   # Vector-vector
+</span></span><span style="display:flex;"><span>vmul.vx vd, vs2, rs1, vm   # vector-scalar
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Signed multiply, returning high bits of product
+</span></span><span style="display:flex;"><span>vmulh.vv vd, vs2, vs1, vm   # Vector-vector
+</span></span><span style="display:flex;"><span>vmulh.vx vd, vs2, rs1, vm   # vector-scalar
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Unsigned multiply, returning high bits of product
+</span></span><span style="display:flex;"><span>vmulhu.vv vd, vs2, vs1, vm   # Vector-vector
+</span></span><span style="display:flex;"><span>vmulhu.vx vd, vs2, rs1, vm   # vector-scalar
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Signed(vs2)-Unsigned multiply, returning high bits of product
+</span></span><span style="display:flex;"><span>vmulhsu.vv vd, vs2, vs1, vm   # Vector-vector
+</span></span><span style="display:flex;"><span>vmulhsu.vx vd, vs2, rs1, vm   # vector-scalar
+</span></span></code></pre></div><h3 id="vector-integer-divide-instructions">Vector Integer Divide Instructions</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span># Unsigned divide.
+</span></span><span style="display:flex;"><span>vdivu.vv vd, vs2, vs1, vm   # Vector-vector
+</span></span><span style="display:flex;"><span>vdivu.vx vd, vs2, rs1, vm   # vector-scalar
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Signed divide
+</span></span><span style="display:flex;"><span>vdiv.vv vd, vs2, vs1, vm   # Vector-vector
+</span></span><span style="display:flex;"><span>vdiv.vx vd, vs2, rs1, vm   # vector-scalar
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Unsigned remainder
+</span></span><span style="display:flex;"><span>vremu.vv vd, vs2, vs1, vm   # Vector-vector
+</span></span><span style="display:flex;"><span>vremu.vx vd, vs2, rs1, vm   # vector-scalar
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Signed remainder
+</span></span><span style="display:flex;"><span>vrem.vv vd, vs2, vs1, vm   # Vector-vector
+</span></span><span style="display:flex;"><span>vrem.vx vd, vs2, rs1, vm   # vector-scalar
+</span></span></code></pre></div><h3 id="vector-widening-integer-multiply-instructions">Vector Widening Integer Multiply Instructions</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span># Widening signed-integer multiply
+</span></span><span style="display:flex;"><span>vwmul.vv  vd, vs2, vs1, vm # vector-vector
+</span></span><span style="display:flex;"><span>vwmul.vx  vd, vs2, rs1, vm # vector-scalar
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Widening unsigned-integer multiply
+</span></span><span style="display:flex;"><span>vwmulu.vv vd, vs2, vs1, vm # vector-vector
+</span></span><span style="display:flex;"><span>vwmulu.vx vd, vs2, rs1, vm # vector-scalar
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Widening signed(vs2)-unsigned integer multiply
+</span></span><span style="display:flex;"><span>vwmulsu.vv vd, vs2, vs1, vm # vector-vector
+</span></span><span style="display:flex;"><span>vwmulsu.vx vd, vs2, rs1, vm # vector-scalar
+</span></span></code></pre></div><h3 id="vector-single-width-integer-multiply-add-instructions">Vector Single-Width Integer Multiply-Add Instructions</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span># Integer multiply-add, overwrite addend
+</span></span><span style="display:flex;"><span>vmacc.vv vd, vs1, vs2, vm    # vd[i] = +(vs1[i] * vs2[i]) + vd[i]
+</span></span><span style="display:flex;"><span>vmacc.vx vd, rs1, vs2, vm    # vd[i] = +(x[rs1] * vs2[i]) + vd[i]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Integer multiply-sub, overwrite minuend
+</span></span><span style="display:flex;"><span>vnmsac.vv vd, vs1, vs2, vm    # vd[i] = -(vs1[i] * vs2[i]) + vd[i]
+</span></span><span style="display:flex;"><span>vnmsac.vx vd, rs1, vs2, vm    # vd[i] = -(x[rs1] * vs2[i]) + vd[i]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Integer multiply-add, overwrite multiplicand
+</span></span><span style="display:flex;"><span>vmadd.vv vd, vs1, vs2, vm    # vd[i] = (vs1[i] * vd[i]) + vs2[i]
+</span></span><span style="display:flex;"><span>vmadd.vx vd, rs1, vs2, vm    # vd[i] = (x[rs1] * vd[i]) + vs2[i]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Integer multiply-sub, overwrite multiplicand
+</span></span><span style="display:flex;"><span>vnmsub.vv vd, vs1, vs2, vm    # vd[i] = -(vs1[i] * vd[i]) + vs2[i]
+</span></span><span style="display:flex;"><span>vnmsub.vx vd, rs1, vs2, vm    # vd[i] = -(x[rs1] * vd[i]) + vs2[i]
+</span></span></code></pre></div><h3 id="vector-widening-integer-multiply-add-instructions">Vector Widening Integer Multiply-Add Instructions</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span># Widening unsigned-integer multiply-add, overwrite addend
+</span></span><span style="display:flex;"><span>vwmaccu.vv vd, vs1, vs2, vm    # vd[i] = +(vs1[i] * vs2[i]) + vd[i]
+</span></span><span style="display:flex;"><span>vwmaccu.vx vd, rs1, vs2, vm    # vd[i] = +(x[rs1] * vs2[i]) + vd[i]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Widening signed-integer multiply-add, overwrite addend
+</span></span><span style="display:flex;"><span>vwmacc.vv vd, vs1, vs2, vm    # vd[i] = +(vs1[i] * vs2[i]) + vd[i]
+</span></span><span style="display:flex;"><span>vwmacc.vx vd, rs1, vs2, vm    # vd[i] = +(x[rs1] * vs2[i]) + vd[i]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Widening signed-unsigned-integer multiply-add, overwrite addend
+</span></span><span style="display:flex;"><span>vwmaccsu.vv vd, vs1, vs2, vm  # vd[i] = +(signed(vs1[i]) * unsigned(vs2[i])) + vd[i]
+</span></span><span style="display:flex;"><span>vwmaccsu.vx vd, rs1, vs2, vm  # vd[i] = +(signed(x[rs1]) * unsigned(vs2[i])) + vd[i]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Widening unsigned-signed-integer multiply-add, overwrite addend
+</span></span><span style="display:flex;"><span>vwmaccus.vx vd, rs1, vs2, vm  # vd[i] = +(unsigned(x[rs1]) * signed(vs2[i])) + vd[i]
+</span></span></code></pre></div><h3 id="vector-integer-merge-instructions">Vector Integer Merge Instructions</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vmerge.vvm vd, vs2, vs1, v0  # vd[i] = v0.mask[i] ? vs1[i] : vs2[i]
+</span></span><span style="display:flex;"><span>vmerge.vxm vd, vs2, rs1, v0  # vd[i] = v0.mask[i] ? x[rs1] : vs2[i]
+</span></span><span style="display:flex;"><span>vmerge.vim vd, vs2, imm, v0  # vd[i] = v0.mask[i] ? imm    : vs2[i]
+</span></span></code></pre></div><h3 id="vector-integer-move-instructions">Vector Integer Move Instructions</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vmv.v.v vd, vs1 # vd[i] = vs1[i]
+</span></span><span style="display:flex;"><span>vmv.v.x vd, rs1 # vd[i] = x[rs1]
+</span></span><span style="display:flex;"><span>vmv.v.i vd, imm # vd[i] = imm
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-c0194658cd413153693dcdcb4d03de58">2.11 - vfirst.m</h1>
     
 	
 
@@ -1368,7 +1638,7 @@ all elements of a vector</p>
 </div>
 
 <p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#153-vfirst-find-first-set-mask-bit">Detailed Reference</a></p>
-<p>The vfirst instruction finds the lowest-numbered active element of the source mask vector that has the value 1 and
+<p>The <code>vfirst</code> instruction finds the lowest-numbered active element of the source mask vector that has the value 1 and
 writes that element’s index to a GPR. If no active element has the value 1, -1 is written to the GPR.</p>
 
 </div>
@@ -1385,7 +1655,7 @@ writes that element’s index to a GPR. If no active element has the value 1, -1
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-ab0a85d4ccb10e9e6d6b345fafc36ec6">2.11 - vid.v</h1>
+	<h1 id="pg-ab0a85d4ccb10e9e6d6b345fafc36ec6">2.12 - vid.v</h1>
     
 	
 
@@ -1512,7 +1782,7 @@ exceptions, with the number of elements read retrieved from the <code>vl</code> 
 
 <div class="pageinfo pageinfo-primary">
 <p>The GCC compiler handles many initialization operations with the <code>setmem</code> pseudocode RTL operation.  This includes
-both <code>memset</code> standard library invocations and sequences of <code>var = constant;</code> initialers.  The vectorizer translates
+both <code>memset</code> standard library invocations and sequences of <code>var = constant;</code> initializers.  The vectorizer translates
 as many of these as it can into equivalent vector initializers.</p>
 
 </div>
@@ -1643,7 +1913,7 @@ of structure.</p>
 </div>
 
 <blockquote>
-<p>Note: a tutorial on segemented, strided, and indexed loads and stores would be useful,
+<p>Note: a tutorial on segmented, strided, and indexed loads and stores would be useful,
 as would a tutorial on the various element width, length, and multiplier mechanics.</p>
 </blockquote>
 <p>This function is one of the more confusing sequences of vector operations.</p>
@@ -1838,6 +2108,221 @@ to generate 1</em>SEW outputs.  <code>vncvt.x.x.w</code> is encoded as <code>vns
     
 	
   
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-7acad46cf64303c334fb74f35a30ad91">4.2 - autovec</h1>
+    
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>Some memory operations can be very hard to understand.  This is often true
+when gcc optimizes structure initialization and configuration code.</p>
+
+</div>
+
+<blockquote>
+<p>Note: a tutorial on segmented, strided, and indexed loads and stores would be useful,
+as would a tutorial on the various element width, length, and multiplier mechanics.</p>
+</blockquote>
+<p>This function highlights some of the more interesting vector instructions.</p>
+<p>Ghidra&rsquo;s decompiler window - with some manual annotation - shows us:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">long</span> <span style="color:#000">FUN_006577f6</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">long</span> <span style="color:#000">param_1</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">undefined8</span> <span style="color:#000">param_2</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">uint</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">param_3</span><span style="color:#000;font-weight:bold">,</span><span style="color:#204a87;font-weight:bold">long</span> <span style="color:#000">param_4</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">lVar13</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">long</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">)(</span><span style="color:#000">param_1</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">0x2f8</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">0x344</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">lVar7</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0x280</span><span style="color:#000;font-weight:bold">;</span>                                <span style="color:#8f5902;font-style:italic">// operating on 0x280 elements
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">puVar6</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">param_3</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">do</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">lVar10</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vsetvli_e8m8tama</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">lVar7</span><span style="color:#000;font-weight:bold">);</span>           <span style="color:#8f5902;font-style:italic">// SEW=8 bits, LMUL=8
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">auVar23</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vle8_v</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">puVar6</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">lVar7</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">lVar7</span> <span style="color:#ce5c00;font-weight:bold">-</span> <span style="color:#000">lVar10</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">puVar6</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">uint</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">)((</span><span style="color:#204a87;font-weight:bold">long</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">puVar6</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">lVar10</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">vse8_v</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar23</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">lVar13</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">lVar13</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">lVar13</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">lVar10</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">while</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">lVar7</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><p>This use of LMUL=8 indicates that 8 vector registers are grouped together.  If VLEN=128 bits, then
+16 bytes are loaded into each of 8 vector registers for 128 bytes processed per loop iteration.</p>
+<p>The actual C source code is:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#000">OSAL_MEMCPY</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">p_hwfn</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">p_dcbx_info</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">set</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">params</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">sizeof</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">p_hwfn</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">p_dcbx_info</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">set</span><span style="color:#000;font-weight:bold">));</span>
+</span></span></code></pre></div><p>So this vector sequence is an inline variant of <code>memcpy</code>.</p>
+<p>Here&rsquo;s an implementation of memset(auStack_e8,0,8)</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#000">vsetivli_e8mf2tama</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">vmv_v_i</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">in_v1</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">vse8_v</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">in_v1</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">auStack_e8</span><span style="color:#000;font-weight:bold">);</span>
+</span></span></code></pre></div><ul>
+<li>It&rsquo;s unclear why the <code>mf2</code> term is present</li>
+<li>An 8 byte scalar store is not used, perhaps because the compiler can&rsquo;t verify 64 bit alignment for <code>auStack_e8</code></li>
+</ul>
+<p>This sequence is more complex</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#000">vsetivli_e8mf4tama</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">);</span>                     <span style="color:#8f5902;font-style:italic">// SEW=8 bits, LMUL=1/4, VL=4
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">auVar23</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vle8_v</span><span style="color:#000;font-weight:bold">((</span><span style="color:#204a87;font-weight:bold">long</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">param_3</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">0x22a</span><span style="color:#000;font-weight:bold">);</span>   <span style="color:#8f5902;font-style:italic">// auVar23[*] = load first 4 bytes of parameter
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">auVar18</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vle8_v</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0x817da8</span><span style="color:#000;font-weight:bold">);</span>                <span style="color:#8f5902;font-style:italic">// auVar18[*] = load 4 bytes opf constant flags
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">auVar17</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vle8_v</span><span style="color:#000;font-weight:bold">((</span><span style="color:#204a87;font-weight:bold">long</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">param_3</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">0x22e</span><span style="color:#000;font-weight:bold">);</span>   <span style="color:#8f5902;font-style:italic">// auVar17[*] = load last 4 bytes of parameter
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">vmv_v_i</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">in_v1</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">);</span>                          <span style="color:#8f5902;font-style:italic">// in_v1[*]=(0,0,0,0)
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">auVar23</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vmsne_vi</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar23</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">);</span>             <span style="color:#8f5902;font-style:italic">// auVar23[*] = (auVar23[*] != 0)
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">auVar23</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vmerge_vvm</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">in_v1</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">auVar18</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">auVar23</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">// auVar23[*] = auVar23[*] ? auVar18[*] : 0
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">auVar18</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vle8_v</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0x817dac</span><span style="color:#000;font-weight:bold">);</span>                <span style="color:#8f5902;font-style:italic">// load 4 bytes
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">in_v0</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vmsne_vi</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar17</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">);</span>               <span style="color:#8f5902;font-style:italic">// in_v0[*] = (auVar23[*] == 0)
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">vsetvli_e8mf4tamu</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">);</span>                      <span style="color:#8f5902;font-style:italic">// unmasked elements are now unchanged
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">vmv_s_x</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar17</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">);</span>                        <span style="color:#8f5902;font-style:italic">// auVar17[0] = 0; single element move
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">auVar23</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vor_vv</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar23</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">auVar18</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">in_v0</span><span style="color:#000;font-weight:bold">);</span>   <span style="color:#8f5902;font-style:italic">// auVar23[*] |= auVar18[*]
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">auVar23</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vredor_vs</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar23</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">auVar17</span><span style="color:#000;font-weight:bold">);</span>      <span style="color:#8f5902;font-style:italic">// reduction: auVar23[0] = or( 0 , auVar17[*] )
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">uVar14</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vmv_x_s</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar23</span><span style="color:#000;font-weight:bold">);</span>                 <span style="color:#8f5902;font-style:italic">// uVar14 = auVar23[0]
+</span></span></span></code></pre></div><p>This <em>appears</em> to be a vector reduction operation with the <code>or</code> operator.</p>
+<ul>
+<li>0x817da8 is the address of the constant 0x08040201</li>
+<li>0x817dac is the address of the constant 0x80402010</li>
+<li>the two 4 byte loaded vectors are adjacent in memory</li>
+</ul>
+<p>Search through the DPDK source code to identify function generating this sequence.  It appears to be:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#000">u8</span> <span style="color:#000">pfc_map</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#000">ECORE_MAX_PFC_PRIORITIES</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">p_params</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">pfc</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">prio</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">])</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">pfc_map</span> <span style="color:#ce5c00;font-weight:bold">|=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">i</span><span style="color:#000;font-weight:bold">);</span>
+</span></span></code></pre></div><p>The RISCV reduction pattern can be confusing, at it applies the operator in parallel (<code>vor_vv</code>) over the vector group,
+then transversely over the elements (<code>vredor</code>) within that accumulator vector register.</p>
+<p>The compiler has apparently processed this source code with these steps:</p>
+<ul>
+<li><code>ECORE_MAX_PFC_PRIORITIES</code> is defined as the constant 8.  Therefore no loops are needed.</li>
+<li>8 bytes are read, using no more than 1/2 of a single vector register assuming VLEN=128</li>
+<li>the expression <code>(1 &lt;&lt; i)</code> can be lifted outside of the loop into a constant vector of 8 bytes</li>
+<li>the conditional <code>if (p_params-&gt;pfc.prio[i])</code> can be translated into a mask generation step</li>
+<li>the expression <code>pfc_map |= ...</code> implies a reduction operation.</li>
+<li>in general, vector reduction operations work in two phases - accumulate VLEN-wide vector results
+for all but the last elements, then reduce the final vector of VLEN elements into a scalar in vector
+location 0.
+<ul>
+<li>this likely explains why the 8 byte vectors are loaded as two 4 byte reads.</li>
+</ul>
+</li>
+</ul>
+<p>This unreleased version of C++ appears to use these pragmas:</p>
+<ul>
+<li>use fractional LMUL values to avoid updates to unused portions of the vector registers</li>
+<li>use <code>vset*ma</code> for agnostic handling of unmasked elements at the beginning of a vector stanza
+and <code>vset*mu</code> for unchanged handling of unmasked elements in the middle of a vector stanza</li>
+</ul>
+<p>A C++ STL representation of this optimized code might be:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">// generated as a constant 8 element byte vector at compile time at location 0x817da8
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">static</span> <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">VECTOR_SIZE</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">vector</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">byte</span><span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#000">flags</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span><span style="color:#000">byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0x01</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#000">byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0x02</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#000">byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0x04</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#000">byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0x08</span><span style="color:#000;font-weight:bold">),</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#000">byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0x10</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#000">byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0x20</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#000">byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0x40</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#000">byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0x80</span><span style="color:#000;font-weight:bold">)};</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">// the prio vector to be used in generating the result.  Known to be 8 bytes long
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">std</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">vector</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">byte</span><span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#000">prio</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span><span style="color:#000">byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#000">byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#000">byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">),</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#000">byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#000">byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#000">byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#000">byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#000">byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">7</span><span style="color:#000;font-weight:bold">)};</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">// generated mask implemented by vmsne_vi instructions
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">//  masks are boolean vectors stored in v0
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#000">VECTOR_SIZE</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">mask</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">prio</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#000">byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">))</span> <span style="color:#ce5c00;font-weight:bold">?</span> <span style="color:#204a87">true</span> <span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">// use the mask register to select the active flags
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">// NOTE: implemented with vmerge for the first 4 elements and a masked vor for the last 4 elements
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#000">VECTOR_SIZE</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">active_flags</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">mask</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">?</span> <span style="color:#000">flags</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000">byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">// reduce active_flags[i] using the bitwise or operator
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">byte</span> <span style="color:#000">pfc_map</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">std</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">reduce</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">active_flags</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(),</span> <span style="color:#000">active_flags</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">end</span><span style="color:#000;font-weight:bold">(),</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">active_flags</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(),</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">[](</span><span style="color:#000">byte</span> <span style="color:#000">a</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">byte</span> <span style="color:#000">b</span><span style="color:#000;font-weight:bold">){</span><span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">a</span><span style="color:#ce5c00;font-weight:bold">|</span><span style="color:#000">b</span><span style="color:#000;font-weight:bold">;});</span>
+</span></span></code></pre></div><p>If we wanted to train an AI to recognize patterns like these we might want to
+train on the gcc <code>riscv/rvv/autovec</code> test suite.  There are over 1800 test files there,
+including something fairly close to our exercise code:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">#define COND_REDUCTION(TYPE)                                                   \
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">  TYPE foo##TYPE (TYPE *restrict a, TYPE *restrict b, int loop_size)           \
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">  {                                                                            \
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">    TYPE result = 0;                                                           \
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">    for (int i = 0; i &lt; loop_size; i++)                                        \
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">      if (b[i] &lt;= a[i])                                                        \
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">        result += a[i];                                                        \
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">    return result;                                                             \
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">  }
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#000">COND_REDUCTION</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int8_t</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">COND_REDUCTION</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int16_t</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">COND_REDUCTION</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int32_t</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">COND_REDUCTION</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int64_t</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">COND_REDUCTION</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">uint8_t</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">COND_REDUCTION</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">uint16_t</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">COND_REDUCTION</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">uint32_t</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">COND_REDUCTION</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">uint64_t</span><span style="color:#000;font-weight:bold">)</span>
+</span></span></code></pre></div><p>You would expect different generated sequences for different values of <code>loop_size</code>:</p>
+<ul>
+<li>loop_size unknown at compile time</li>
+<li>loop_size * sizeof(TYPE) less than 1 VLEN</li>
+<li>loop_size * sizeof(TYPE) larger than 1 VLEN but small enough to fit within a register group</li>
+<li>loop_size not a multiple of 4</li>
+</ul>
+<p>The same function provides examples of vector <code>slide</code> and <code>gather</code> instructions</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>      <span style="color:#000">vsetivli_e32mf2tama</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>                     <span style="color:#8f5902;font-style:italic">// SEW=32 bits, VL=2
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">auVar23</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vle32_v</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">param_3</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">0x88</span><span style="color:#000;font-weight:bold">);</span>          <span style="color:#8f5902;font-style:italic">// auVar23 = load 8 bytes
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">vsetivli_e8mf2tama</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">);</span>                      <span style="color:#8f5902;font-style:italic">// SEW=8 bits, VL=8
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">auVar17</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vle8_v</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0x932dd0</span><span style="color:#000;font-weight:bold">);</span>                 <span style="color:#8f5902;font-style:italic">// auVar17 = load (3, 2, 1, 0, 7, 6, 5, 4)
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">auVar23</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vrgather_vv</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar23</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">auVar17</span><span style="color:#000;font-weight:bold">);</span>     <span style="color:#8f5902;font-style:italic">// auVar23[*] = auVar23[auVar17[*]]
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">uStack_dc</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">uint</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">byte</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">)((</span><span style="color:#204a87;font-weight:bold">long</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">param_3</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">0x216</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#0000cf;font-weight:bold">4</span> <span style="color:#ce5c00;font-weight:bold">|</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#000;font-weight:bold">(</span><span style="color:#000">uint</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">byte</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">)((</span><span style="color:#204a87;font-weight:bold">long</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">param_3</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">0x215</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#0000cf;font-weight:bold">8</span> <span style="color:#ce5c00;font-weight:bold">|</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#000;font-weight:bold">(</span><span style="color:#000">uint</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">byte</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">)(</span><span style="color:#000">param_3</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">0x85</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#0000cf;font-weight:bold">0xc</span> <span style="color:#ce5c00;font-weight:bold">|</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#000;font-weight:bold">(</span><span style="color:#000">uint</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">byte</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">)((</span><span style="color:#204a87;font-weight:bold">long</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">param_3</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">0x213</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#0000cf;font-weight:bold">0x10</span> <span style="color:#ce5c00;font-weight:bold">|</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#000;font-weight:bold">(</span><span style="color:#000">uint</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">byte</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">)(</span><span style="color:#000">param_3</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">0x84</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#0000cf;font-weight:bold">0x1c</span> <span style="color:#ce5c00;font-weight:bold">|</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#000;font-weight:bold">(</span><span style="color:#000">uint</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">byte</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">)((</span><span style="color:#204a87;font-weight:bold">long</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">param_3</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">0x211</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#0000cf;font-weight:bold">0x18</span> <span style="color:#ce5c00;font-weight:bold">|</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#000;font-weight:bold">(</span><span style="color:#000">uint</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">byte</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">)((</span><span style="color:#204a87;font-weight:bold">long</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">param_3</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">0x217</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">|</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#000;font-weight:bold">(</span><span style="color:#000">uint</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">byte</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">)((</span><span style="color:#204a87;font-weight:bold">long</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">param_3</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">0x212</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#0000cf;font-weight:bold">0x14</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">vse8_v</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar23</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">auStack_d0</span><span style="color:#000;font-weight:bold">);</span>                  <span style="color:#8f5902;font-style:italic">// store 8 bytes into auStack_d0
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">uVar14</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">rev8</span><span style="color:#000;font-weight:bold">((</span><span style="color:#204a87;font-weight:bold">long</span><span style="color:#000;font-weight:bold">)(</span><span style="color:#204a87;font-weight:bold">int</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">param_3</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">0x87</span><span style="color:#000;font-weight:bold">]);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">uVar15</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">rev8</span><span style="color:#000;font-weight:bold">((</span><span style="color:#204a87;font-weight:bold">long</span><span style="color:#000;font-weight:bold">)(</span><span style="color:#204a87;font-weight:bold">int</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">param_3</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">0x86</span><span style="color:#000;font-weight:bold">]);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">uStack_e0</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">uint</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">byte</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">)((</span><span style="color:#204a87;font-weight:bold">long</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">param_3</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">0x233</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#0000cf;font-weight:bold">4</span> <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#000">uVar8</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">0xffffff0f</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">uStack_d4</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">undefined4</span><span style="color:#000;font-weight:bold">)((</span><span style="color:#000">ulong</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">uVar14</span> <span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span> <span style="color:#0000cf;font-weight:bold">0x20</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">uStack_d8</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">undefined4</span><span style="color:#000;font-weight:bold">)((</span><span style="color:#000">ulong</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">uVar15</span> <span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span> <span style="color:#0000cf;font-weight:bold">0x20</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">((</span><span style="color:#204a87;font-weight:bold">long</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">)(</span><span style="color:#000">param_1</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">0x10</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#0000cf;font-weight:bold">0x2d</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">vsetivli_e32mf2tama</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">auVar17</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vslidedown_vi</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar23</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>         <span style="color:#8f5902;font-style:italic">// auVar17[i] = auVar23[i+1]
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#000">vmv_x_s</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar17</span><span style="color:#000;font-weight:bold">);</span>                           <span style="color:#8f5902;font-style:italic">// scalar result missing
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#000">vmv_x_s</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar23</span><span style="color:#000;font-weight:bold">);</span>
+</span></span></code></pre></div><p>The original C source code appears to be</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#000">ECORE_MAX_PFC_PRIORITIES</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">bw_map</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">p_params</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">ets_tc_bw_tbl</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">];</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">tsa_map</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">p_params</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">ets_tc_tsa_tbl</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">];</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#8f5902;font-style:italic">/* Copy the priority value to the corresponding 4 bits in the
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">          * traffic class table.
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">          */</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(((</span><span style="color:#000">u32</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">p_params</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">ets_pri_tc_tbl</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">])</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000;font-weight:bold">((</span><span style="color:#0000cf;font-weight:bold">7</span> <span style="color:#ce5c00;font-weight:bold">-</span> <span style="color:#000">i</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">));</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">p_ets</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">pri_tc_tbl</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">|=</span> <span style="color:#000">val</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">p_ets</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">tc_bw_tbl</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">OSAL_CPU_TO_BE32</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">p_ets</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">tc_bw_tbl</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">]);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">p_ets</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">tc_tsa_tbl</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">OSAL_CPU_TO_BE32</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">p_ets</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">tc_tsa_tbl</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">]);</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">DP_VERBOSE</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">p_hwfn</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">ECORE_MSG_DCB</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#4e9a06">&#34;flags = 0x%x pri_tc = 0x%x tc_bwl[] = {0x%x, 0x%x} tc_tsa = {0x%x, 0x%x}</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000">p_ets</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">flags</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">p_ets</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">pri_tc_tbl</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#000">p_ets</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">tc_bw_tbl</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">],</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000">p_ets</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">tc_bw_tbl</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#000">p_ets</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">tc_tsa_tbl</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">],</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000">p_ets</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">tc_tsa_tbl</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">]);</span>
+</span></span></code></pre></div><p>This example shows:</p>
+<ul>
+<li>a relatively long vector stanza with intermediate scalar operations</li>
+<li>gather and slide operations to translate bytes and big/little endian values</li>
+<li>extraction of byte values for logging</li>
+<li>decompiler loss of values when passed into a varadic logging function via stack slots rather than registers.</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
 
     
 	
@@ -1858,7 +2343,7 @@ These are:</p>
 <li><code>whisper.cpp</code> - a Inference Engine voice-to-text application which uses a lot of tensor math</li>
 </ul>
 <p>We use the latest RISCV toolchains available to understand what the newer toolchains may soon mean to Ghidra analyses.
-At present that means a GCC 15 compiler and binutils assembler close to the development tip.  That means most of the
+At present that means a GCC 15 compiler and <code>binutils</code> assembler close to the development tip.  That means most of the
 instruction extensions documented here won&rsquo;t show up in products anytime soon.  That&rsquo;s good, because some of these
 extensions will demand a lot of preparation time.  That&rsquo;s especially true for RISCV vector instructions, since these
 generally do not easily decompile into the typed C language code we expect to see from scalar instructions.</p>
@@ -1922,8 +2407,8 @@ with no vector ISA support assumed</li>
 </footer>
 
     </div>
-    <script src="/riscv_vector_survey/js/main.min.68c9a31dd693463d3622bbd6253513d826071034389c140c96dd8d24ff9251df.js" integrity="sha256-aMmjHdaTRj02IrvWJTUT2CYHEDQ4nBQMlt2NJP&#43;SUd8=" crossorigin="anonymous"></script>
-<script defer src="/riscv_vector_survey/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+    <script src="/riscv_vector_survey/js/main.js"></script>
+<script defer src="/riscv_vector_survey/js/click-to-copy.js" crossorigin="anonymous"></script>
 <script src='/riscv_vector_survey/js/tabpane-persist.js'></script>
 
   </body>

@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Documentation on RISCV ISA extensions Ghidra field guide</title>
-    <link>https://thixotropist.github.io/riscv_vector_survey/docs/</link>
+    <link>http://localhost:1313/riscv_vector_survey/docs/</link>
     <description>Recent content in Documentation on RISCV ISA extensions Ghidra field guide</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="https://thixotropist.github.io/riscv_vector_survey/docs/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/riscv_vector_survey/docs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vector ISA Frequencies</title>
-      <link>https://thixotropist.github.io/riscv_vector_survey/docs/vector_survey/</link>
+      <link>http://localhost:1313/riscv_vector_survey/docs/vector_survey/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://thixotropist.github.io/riscv_vector_survey/docs/vector_survey/</guid>
+      <guid>http://localhost:1313/riscv_vector_survey/docs/vector_survey/</guid>
       <description>What are the vector instruction frequencies in dpdk-ip_pipeline when built with gcc-15 and executed within a RISCV-64 emulated system?&#xA;This means libc calls won&amp;rsquo;t invoke vector instructions in this memory snapshot.&#xA;opcode frequency vse8.v 12756 vsetivli 9668 vsetvli 7882 vle8.v 5841 vle8ff.v 3433 vmv.v.i 3134 vse32.v 2357 vmseq.vi 1914 vse64.v 1880 csrrs[vl] 1843 vfirst.m 1843 vle64.v 1808 vid.v 1801 vse16.v 1751 vmsne.vv 1603 vmor.mm 1597 vle32.v 1431 csrrs[vlenb] 1163 vmul.</description>
     </item>
     <item>
       <title>RISCV-64 toolchain and deployment environment</title>
-      <link>https://thixotropist.github.io/riscv_vector_survey/docs/testbed/</link>
+      <link>http://localhost:1313/riscv_vector_survey/docs/testbed/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://thixotropist.github.io/riscv_vector_survey/docs/testbed/</guid>
+      <guid>http://localhost:1313/riscv_vector_survey/docs/testbed/</guid>
       <description>We use two RISCV-64 applications to examine the impact of extensions to the RISCV-64 Instruction Set Architecture. These are:&#xA;dpdk-ip_pipeline - a network application framework example where one wouldn&amp;rsquo;t expect a lot of vector math. whisper.cpp - a Inference Engine voice-to-text application which uses a lot of tensor math We use the latest RISCV toolchains available to understand what the newer toolchains may soon mean to Ghidra analyses. At present that means a GCC 15 compiler and binutils assembler close to the development tip.</description>
     </item>
   </channel>

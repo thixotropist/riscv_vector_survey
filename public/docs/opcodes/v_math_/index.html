@@ -3,8 +3,6 @@
   <head><script src="/riscv_vector_survey/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=riscv_vector_survey/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="canonical" type="text/html" href="http://localhost:1313/riscv_vector_survey/docs/opcodes/">
-<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/riscv_vector_survey/docs/opcodes/index.xml">
 <meta name="robots" content="noindex, nofollow">
 
 
@@ -19,25 +17,34 @@
 <link rel="icon" type="image/png" href="/riscv_vector_survey/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/riscv_vector_survey/favicons/android-192x192.png" sizes="192x192">
 
-<title>Opcodes | RISCV ISA extensions Ghidra field guide</title>
-<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-<meta property="og:url" content="http://localhost:1313/riscv_vector_survey/docs/opcodes/">
+<title>v_math_ | RISCV ISA extensions Ghidra field guide</title>
+<meta name="description" content="Vector math and bit operations
+Detailed Reference
+Overview Vector integer arithemetic and logical instructions are mostly easy to understand. You want to consult the detailed reference above to understand mixed-width operations and any exception conditions. The following is cut from the formal reference material.
+Integer adds vadd.vv vd, vs2, vs1, vm # Vector-vector vadd.vx vd, vs2, rs1, vm # vector-scalar vadd.vi vd, vs2, imm, vm # vector-immediate Integer subtract vsub.">
+<meta property="og:url" content="http://localhost:1313/riscv_vector_survey/docs/opcodes/v_math_/">
   <meta property="og:site_name" content="RISCV ISA extensions Ghidra field guide">
-  <meta property="og:title" content="Opcodes">
-  <meta property="og:description" content="Common vector instruction opcodes
-This section can help Ghidra users understand specific vector opcodes.">
+  <meta property="og:title" content="v_math_">
+  <meta property="og:description" content="Vector math and bit operations
+Detailed Reference
+Overview Vector integer arithemetic and logical instructions are mostly easy to understand. You want to consult the detailed reference above to understand mixed-width operations and any exception conditions. The following is cut from the formal reference material.
+Integer adds vadd.vv vd, vs2, vs1, vm # Vector-vector vadd.vx vd, vs2, rs1, vm # vector-scalar vadd.vi vd, vs2, imm, vm # vector-immediate Integer subtract vsub.">
   <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
 
-  <meta itemprop="name" content="Opcodes">
-  <meta itemprop="description" content="Common vector instruction opcodes
-This section can help Ghidra users understand specific vector opcodes.">
-  <meta itemprop="dateModified" content="2024-07-27T11:52:32-04:00">
-  <meta itemprop="wordCount" content="14">
+  <meta itemprop="name" content="v_math_">
+  <meta itemprop="description" content="Vector math and bit operations
+Detailed Reference
+Overview Vector integer arithemetic and logical instructions are mostly easy to understand. You want to consult the detailed reference above to understand mixed-width operations and any exception conditions. The following is cut from the formal reference material.
+Integer adds vadd.vv vd, vs2, vs1, vm # Vector-vector vadd.vx vd, vs2, rs1, vm # vector-scalar vadd.vi vd, vs2, imm, vm # vector-immediate Integer subtract vsub.">
+  <meta itemprop="wordCount" content="1450">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Opcodes">
-  <meta name="twitter:description" content="Common vector instruction opcodes
-This section can help Ghidra users understand specific vector opcodes.">
+  <meta name="twitter:title" content="v_math_">
+  <meta name="twitter:description" content="Vector math and bit operations
+Detailed Reference
+Overview Vector integer arithemetic and logical instructions are mostly easy to understand. You want to consult the detailed reference above to understand mixed-width operations and any exception conditions. The following is cut from the formal reference material.
+Integer adds vadd.vv vd, vs2, vs1, vm # Vector-vector vadd.vx vd, vs2, rs1, vm # vector-scalar vadd.vi vd, vs2, imm, vm # vector-immediate Integer subtract vsub.">
 
 
 
@@ -51,7 +58,7 @@ This section can help Ghidra users understand specific vector opcodes.">
   crossorigin="anonymous"></script>
 
   </head>
-  <body class="td-section">
+  <body class="td-page">
     <header>
       <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
 <div class="container-fluid flex-column flex-md-row">
@@ -75,541 +82,141 @@ This section can help Ghidra users understand specific vector opcodes.">
     <div class="container-fluid td-outer">
       <div class="td-main">
         <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse" id="td-section-nav">
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-riscv_vector_surveydocs-li">
+  <a href="/riscv_vector_survey/docs/" title="Documentation" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-riscv_vector_surveydocs"><span class="">Docs</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsvector_survey-li">
+  <a href="/riscv_vector_survey/docs/vector_survey/" title="Vector ISA Frequencies" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsvector_survey"><span class="">frequencies</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-riscv_vector_surveydocsopcodes-li">
+  <a href="/riscv_vector_survey/docs/opcodes/" title="Opcodes" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-riscv_vector_surveydocsopcodes"><span class="">opcodes</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodespending-li">
+  <a href="/riscv_vector_survey/docs/opcodes/pending/" title="Instruction definition is pending" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodespending"><span class="">pending</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesvsetvli-li">
+  <a href="/riscv_vector_survey/docs/opcodes/vsetvli/" title="vsetvli, vsetivli" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesvsetvli"><span class="">vsetvli</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesvle_ff-li">
+  <a href="/riscv_vector_survey/docs/opcodes/vle_ff/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesvle_ff"><span class="">vle_ff</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesvle_-li">
+  <a href="/riscv_vector_survey/docs/opcodes/vle_/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesvle_"><span class="">vle_</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesvm_-li">
+  <a href="/riscv_vector_survey/docs/opcodes/vm_/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesvm_"><span class="">vm_</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesvms__-li">
+  <a href="/riscv_vector_survey/docs/opcodes/vms__/" title="vms__.v_" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesvms__"><span class="">vms__.vi</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesvse_-li">
+  <a href="/riscv_vector_survey/docs/opcodes/vse_/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesvse_"><span class="">vse_</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodescsrrs-li">
+  <a href="/riscv_vector_survey/docs/opcodes/csrrs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodescsrrs"><span class="">csrrs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesvmvv_-li">
+  <a href="/riscv_vector_survey/docs/opcodes/vmv.v._/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesvmvv_"><span class="">vmv.v.?</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-riscv_vector_surveydocsopcodesv_math_-li">
+  <a href="/riscv_vector_survey/docs/opcodes/v_math_/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesv_math_"><span class="td-sidebar-nav-active-item">v_math_</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesvfirstm-li">
+  <a href="/riscv_vector_survey/docs/opcodes/vfirst.m/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesvfirstm"><span class="">vfirst.m</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodesvidv-li">
+  <a href="/riscv_vector_survey/docs/opcodes/vid.v/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcodesvidv"><span class="">vid.v</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-riscv_vector_surveydocspatterns-li">
+  <a href="/riscv_vector_survey/docs/patterns/" title="Patterns" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-riscv_vector_surveydocspatterns"><span class="">patterns</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocspatternsstrlen-li">
+  <a href="/riscv_vector_survey/docs/patterns/strlen/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocspatternsstrlen"><span class="">strlen</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocspatternsmemset-li">
+  <a href="/riscv_vector_survey/docs/patterns/memset/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocspatternsmemset"><span class="">memset</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-riscv_vector_surveydocsexercises-li">
+  <a href="/riscv_vector_survey/docs/exercises/" title="Exercises" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-riscv_vector_surveydocsexercises"><span class="">exercises</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsexercisesstructureaccesses-li">
+  <a href="/riscv_vector_survey/docs/exercises/structureaccesses/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsexercisesstructureaccesses"><span class="">structure accesses</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsexercisesautovec-li">
+  <a href="/riscv_vector_survey/docs/exercises/autovec/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsexercisesautovec"><span class="">autovec</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocstestbed-li">
+  <a href="/riscv_vector_survey/docs/testbed/" title="RISCV-64 toolchain and deployment environment" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocstestbed"><span class="">testbed</span></a>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+<a href="https://github.com/thixotropist/ghidra_import_tests/tree/main/content/en/docs/opcodes/v_math_.md" class="td-page-meta--view td-page-meta__view" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines fa-fw"></i> View page source</a>
+  <a href="https://github.com/thixotropist/ghidra_import_tests/edit/main/content/en/docs/opcodes/v_math_.md" class="td-page-meta--edit td-page-meta__edit" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Edit this page</a>
+  <a href="https://github.com/thixotropist/ghidra_import_tests/new/main/content/en/docs/opcodes?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child td-page-meta__child" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Create child page</a>
+  <a href="https://github.com/thixotropist/ghidra_import_tests/issues/new?title=v_math_" class="td-page-meta--issue td-page-meta__issue" target="_blank" rel="noopener"><i class="fa-solid fa-list-check fa-fw"></i> Create documentation issue</a>
+  <a id="print" href="/riscv_vector_survey/docs/opcodes/_print/"><i class="fa-solid fa-print fa-fw"></i> Print entire section</a>
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a>
+      <ul>
+        <li><a href="#integer-adds">Integer adds</a></li>
+        <li><a href="#integer-subtract">Integer subtract</a></li>
+        <li><a href="#integer-reverse-subtract">Integer reverse subtract</a></li>
+        <li><a href="#widening-unsigned-integer-addsubtract-2sew--sew---sew">Widening unsigned integer add/subtract, 2*SEW = SEW +/- SEW</a></li>
+        <li><a href="#widening-signed-integer-addsubtract-2sew--sew---sew">Widening signed integer add/subtract, 2*SEW = SEW +/- SEW</a></li>
+        <li><a href="#widening-unsigned-integer-addsubtract-2sew--2sew---sew">Widening unsigned integer add/subtract, 2<em>SEW = 2</em>SEW +/- SEW</a></li>
+        <li><a href="#widening-signed-integer-addsubtract-2sew--2sew---sew">Widening signed integer add/subtract, 2<em>SEW = 2</em>SEW +/- SEW</a></li>
+        <li><a href="#vector-integer-extension-instructions">Vector Integer Extension Instructions</a></li>
+        <li><a href="#vector-integer-add-with-carry--subtract-with-borrow-instructions">Vector Integer Add-with-Carry / Subtract-with-Borrow Instructions</a></li>
+        <li><a href="#vector-bitwise-logical-instructions">Vector Bitwise Logical Instructions</a></li>
+        <li><a href="#vector-narrowing-integer-right-shift-instructions">Vector Narrowing Integer Right Shift Instructions</a></li>
+        <li><a href="#vector-integer-compare-instructions">Vector Integer Compare Instructions</a></li>
+        <li><a href="#vector-single-width-integer-multiply-instructions">Vector Single-Width Integer Multiply Instructions</a></li>
+        <li><a href="#vector-integer-divide-instructions">Vector Integer Divide Instructions</a></li>
+        <li><a href="#vector-widening-integer-multiply-instructions">Vector Widening Integer Multiply Instructions</a></li>
+        <li><a href="#vector-single-width-integer-multiply-add-instructions">Vector Single-Width Integer Multiply-Add Instructions</a></li>
+        <li><a href="#vector-widening-integer-multiply-add-instructions">Vector Widening Integer Multiply-Add Instructions</a></li>
+        <li><a href="#vector-integer-merge-instructions">Vector Integer Merge Instructions</a></li>
+        <li><a href="#vector-integer-move-instructions">Vector Integer Move Instructions</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
+            
+	
+          </aside>
           <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
             
+  
 
-
-
-
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/riscv_vector_survey/docs/">Docs</a></li>
+  <li class="breadcrumb-item">
+    <a href="/riscv_vector_survey/docs/opcodes/">opcodes</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    v_math_</li>
+  </ol>
+</nav>
+            
 <div class="td-content">
-<div class="pageinfo pageinfo-primary d-print-none">
-<p>
-This is the multi-page printable view of this section.
-<a href="#" onclick="print();return false;">Click here to print</a>.
-</p><p>
-<a href="/riscv_vector_survey/docs/opcodes/">Return to the regular view of this page</a>.
-</p>
-</div>
-
-
-
-<h1 class="title">Opcodes</h1>
-
-
-
-
-
-    <ul>
-    
-  
-  
-  
-  
-
-  
-    
-    
+	<h1>v_math_</h1>
 	
-<li>1: <a href="#pg-fb7327efc6498bdb83bb566098d62785">Instruction definition is pending</a></li>
-
-
-    
-  
-    
-    
-	
-<li>2: <a href="#pg-2a1a7a2a0e262537eef7cc79e50b10c8">vsetvli, vsetivli</a></li>
-
-
-    
-  
-    
-    
-	
-<li>3: <a href="#pg-08ea4546aa0cd4403a970e274c47fee1">vle_ff</a></li>
-
-
-    
-  
-    
-    
-	
-<li>4: <a href="#pg-bef2c18731e388084454d01e5942f30f">vle_</a></li>
-
-
-    
-  
-    
-    
-	
-<li>5: <a href="#pg-a94301f45d1fda0f50acf22168eb216e">vm_</a></li>
-
-
-    
-  
-    
-    
-	
-<li>6: <a href="#pg-76e1f291c116a5153335dd37b7fbc432">vms__.v_</a></li>
-
-
-    
-  
-    
-    
-	
-<li>7: <a href="#pg-b000d8ea00415618fec7e29831cc534a">vse_</a></li>
-
-
-    
-  
-    
-    
-	
-<li>8: <a href="#pg-088d9f1990fd0a0d3ffc72aabef9d18a">csrrs</a></li>
-
-
-    
-  
-    
-    
-	
-<li>9: <a href="#pg-5f749e66f5b60acf18f3043875777e38">vmv.v.?</a></li>
-
-
-    
-  
-    
-    
-	
-<li>10: <a href="#pg-e7afe66e5b603a484407369cdefc4dbc">v_math_</a></li>
-
-
-    
-  
-    
-    
-	
-<li>11: <a href="#pg-c0194658cd413153693dcdcb4d03de58">vfirst.m</a></li>
-
-
-    
-  
-    
-    
-	
-<li>12: <a href="#pg-ab0a85d4ccb10e9e6d6b345fafc36ec6">vid.v</a></li>
-
-
-    
-  
-
-    </ul>
-
-
-<div class="content">
-      
-
-<div class="pageinfo pageinfo-primary">
-<p>Common vector instruction opcodes</p>
-
-</div>
-
-<p>This section can help Ghidra users understand specific vector opcodes.</p>
-
-</div>
-</div>
-
-
-  
-  
-  
-  
-
-  
-  
-
-  
-    
-    
-	
-    
-
-<div class="td-content" style="">
-    
-	<h1 id="pg-fb7327efc6498bdb83bb566098d62785">1 - Instruction definition is pending</h1>
-    
-	<p>This instruction has not yet been documented.  See the vector <a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc">ISA extension reference</a></p>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-2a1a7a2a0e262537eef7cc79e50b10c8">2 - vsetvli, vsetivli</h1>
-    
-	
-
-<div class="pageinfo pageinfo-primary">
-<p>Set vector element count and width, plus tail and mask options.</p>
-
-</div>
-
-<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#sec-vector-config">Detailed Reference</a></p>
-<h2 id="overview">Overview</h2>
-<p><code>vsetvli</code> and <code>vsetivli</code> set context parameters for subsequent vector instructions.  This includes:</p>
-<ul>
-<li>the size of the vector element, e.g. 8, 16, 32, or 64 bits</li>
-<li>the number of vector elements to be processed</li>
-<li>whether to preserve or ignore tail elements in a vector register</li>
-<li>whether to preserve or ignore unmasked elements in a vector register</li>
-<li>whether to bind multiple vector registers into a logical single and larger register</li>
-</ul>
-<p>These instructions return the number of elements that can be processed in parallel.</p>
-<h2 id="patterns">Patterns</h2>
-<ul>
-<li><code>vsetvli</code> takes the number of elements (<code>vl</code>) to be processed from an operand register.  It is used
-when that number is unknown at compile time.  If the number operand register in <code>rs1</code> is zero, then
-<code>vl</code> is set to VLMAX or preserved from the previous <code>vl</code>, depending on the destination register.
-<ul>
-<li><code>vsetvli</code> often begins a vector stanza</li>
-<li><code>vsetvli</code> often occurs within a vector stanza if type conversion (widening or narrowing) is performed.</li>
-</ul>
-</li>
-<li><code>vsetivli</code> takes the number of elements (<code>vl</code>) to be processed from an immediate value.
-It is used when that number is known at compile time.
-<ul>
-<li>If <code>vl</code> is a small integer, and <code>vsetivli</code> is not followed by a loop, then these stanzas are likely
-due to compiler optimization of scalar code doing similar things to two or more adjacent memory locations.</li>
-</ul>
-</li>
-</ul>
-<h2 id="examples">Examples</h2>
-<h3 id="vsetvli">vsetvli</h3>
-<ul>
-<li><a href="/riscv_vector_survey/docs/patterns/strlen/">inline strlen</a></li>
-</ul>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-08ea4546aa0cd4403a970e274c47fee1">3 - vle_ff</h1>
-    
-	
-
-<div class="pageinfo pageinfo-primary">
-<p>Vector load 8, 16, 32, 64 bit elements with fault only first</p>
-
-</div>
-
-<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#77-unit-stride-fault-only-first-loads">Detailed Reference</a></p>
-<h2 id="overview">Overview</h2>
-<p>Vector load with unit stride (adjacent elements) with page and memory faults suppressed
-for reads other than the first element.</p>
-<h2 id="patterns">Patterns</h2>
-<p>Typically found when loading a vector with unknown effective length, and where that vector
-might straddle a page boundary causing a page fault.</p>
-<h2 id="examples">Examples</h2>
-<ul>
-<li><a href="/riscv_vector_survey/docs/patterns/strlen/">inline strlen</a></li>
-</ul>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-bef2c18731e388084454d01e5942f30f">4 - vle_</h1>
-    
-	
-
-<div class="pageinfo pageinfo-primary">
-<p>Vector load 8, 16, 32, 64 bit elements</p>
-
-</div>
-
-<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#74-vector-unit-stride-instructions">Detailed Reference</a></p>
-<h2 id="overview">Overview</h2>
-<p>Vector load with unit stride (adjacent elements).  Vector loads will cause an alignment exception if the equivalent
-scalar load would cause one.</p>
-<p>Includes:</p>
-<ul>
-<li>vle8</li>
-<li>vle16</li>
-<li>vle32</li>
-<li>vle64</li>
-</ul>
-<h2 id="patterns">Patterns</h2>
-<p>The simplest of the vector load instructions</p>
-<h2 id="examples">Examples</h2>
-<ul>
-<li><a href="/riscv_vector_survey/docs/exercises/structureaccesses/">inline strlen</a></li>
-</ul>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-a94301f45d1fda0f50acf22168eb216e">5 - vm_</h1>
-    
-	
-
-<div class="pageinfo pageinfo-primary">
-<p>Vector masked logical instructions.  Individual opcodes match the pattern
-<code>vm(and|namd|andn|or|nor|orn|xnor).mm</code>. These perform a logical operation on
-a vector register using a mask.  Several pseudoinstructions are recognized by
-the disassembler.</p>
-
-</div>
-
-<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#151-vector-mask-register-logical-instructions">Detailed Reference</a></p>
-<p>The instructions are:</p>
-<ul>
-<li>vmand.mm vd, vs2, vs1   # vd.mask[i] =   vs2.mask[i] &amp;&amp;  vs1.mask[i]</li>
-<li>vmnand.mm vd, vs2, vs1  # vd.mask[i] = !(vs2.mask[i] &amp;&amp;  vs1.mask[i])</li>
-<li>vmandn.mm vd, vs2, vs1  # vd.mask[i] =   vs2.mask[i] &amp;&amp; !vs1.mask[i]</li>
-<li>vmxor.mm  vd, vs2, vs1  # vd.mask[i] =   vs2.mask[i] ^^  vs1.mask[i]</li>
-<li>vmor.mm  vd, vs2, vs1   # vd.mask[i] =   vs2.mask[i] ||  vs1.mask[i]</li>
-<li>vmnor.mm  vd, vs2, vs1  # vd.mask[i] = !(vs2.mask[i] ||  vs1.mask[i])</li>
-<li>vmorn.mm  vd, vs2, vs1  # vd.mask[i] =   vs2.mask[i] || !vs1.mask[i]</li>
-<li>vmxnor.mm vd, vs2, vs1  # vd.mask[i] = !(vs2.mask[i] ^^  vs1.mask[i])</li>
-</ul>
-<p>The pseudoinstructions are:</p>
-<ul>
-<li>vmmv.m vd, vs  =&gt; vmand.mm vd, vs, vs   # Copy mask register</li>
-<li>vmclr.m vd     =&gt; vmxor.mm vd, vd, vd   # Clear mask register</li>
-<li>vmset.m vd     =&gt; vmxnor.mm vd, vd, vd  # Set mask register</li>
-<li>vmnot.m vd, vs =&gt; vmnand.mm vd, vs, vs  # Invert bits</li>
-</ul>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-76e1f291c116a5153335dd37b7fbc432">6 - vms__.v_</h1>
-    
-	
-
-<div class="pageinfo pageinfo-primary">
-<p>Vector integer compare instruction, generating a vector mask.  Individual opcodes match the pattern
-<code>vms(eq|ne|ltu|lt|leu|le|gtu|gt).(vv|vx|vi)</code>. These combine an integer comparison operation with the source of the
-compared integer(s) - another vector register, a scalar register, or an immediate.</p>
-
-</div>
-
-<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#118-vector-integer-compare-instructions">Detailed Reference</a></p>
-<h2 id="set-if-equal">Set if equal</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vmseq.vv vd, vs2, vs1, vm  # Vector-vector
-</span></span><span style="display:flex;"><span>vmseq.vx vd, vs2, rs1, vm  # vector-scalar
-</span></span><span style="display:flex;"><span>vmseq.vi vd, vs2, imm, vm  # vector-immediate
-</span></span></code></pre></div><h2 id="set-if-not-equal">Set if not equal</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vmsne.vv vd, vs2, vs1, vm  # Vector-vector
-</span></span><span style="display:flex;"><span>vmsne.vx vd, vs2, rs1, vm  # vector-scalar
-</span></span><span style="display:flex;"><span>vmsne.vi vd, vs2, imm, vm  # vector-immediate
-</span></span></code></pre></div><h2 id="set-if-less-than-unsigned">Set if less than, unsigned</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vmsltu.vv vd, vs2, vs1, vm  # Vector-vector
-</span></span><span style="display:flex;"><span>vmsltu.vx vd, vs2, rs1, vm  # Vector-scalar
-</span></span></code></pre></div><h2 id="set-if-less-than-signed">Set if less than, signed</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vmslt.vv vd, vs2, vs1, vm  # Vector-vector
-</span></span><span style="display:flex;"><span>vmslt.vx vd, vs2, rs1, vm  # vector-scalar
-</span></span></code></pre></div><h2 id="set-if-less-than-or-equal-unsigned">Set if less than or equal, unsigned</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vmsleu.vv vd, vs2, vs1, vm   # Vector-vector
-</span></span><span style="display:flex;"><span>vmsleu.vx vd, vs2, rs1, vm   # vector-scalar
-</span></span><span style="display:flex;"><span>vmsleu.vi vd, vs2, imm, vm   # Vector-immediate
-</span></span></code></pre></div><h2 id="set-if-less-than-or-equal-signed">Set if less than or equal, signed</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vmsle.vv vd, vs2, vs1, vm  # Vector-vector
-</span></span><span style="display:flex;"><span>vmsle.vx vd, vs2, rs1, vm  # vector-scalar
-</span></span><span style="display:flex;"><span>vmsle.vi vd, vs2, imm, vm  # vector-immediate
-</span></span></code></pre></div><h2 id="set-if-greater-than-unsigned">Set if greater than, unsigned</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vmsgtu.vx vd, vs2, rs1, vm   # Vector-scalar
-</span></span><span style="display:flex;"><span>vmsgtu.vi vd, vs2, imm, vm   # Vector-immediate
-</span></span></code></pre></div><h2 id="set-if-greater-than-signed">Set if greater than, signed</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>vmsgt.vx vd, vs2, rs1, vm    # Vector-scalar
-</span></span><span style="display:flex;"><span>vmsgt.vi vd, vs2, imm, vm    # Vector-immediate
-</span></span></code></pre></div><blockquote>
-<p>Note: two instructions are not provided directly</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span># Set if greater than or equal, unsigned
-</span></span><span style="display:flex;"><span># vmsgeu.vx vd, vs2, rs1, vm    # Vector-scalar
-</span></span><span style="display:flex;"><span># Set if greater than or equal, signed
-</span></span><span style="display:flex;"><span># vmsge.vx vd, vs2, rs1, vm    # Vector-scalar
-</span></span></code></pre></div><h2 id="examples">Examples</h2>
-<ul>
-<li><a href="/riscv_vector_survey/docs/patterns/strlen/">inline strlen</a></li>
-</ul>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-b000d8ea00415618fec7e29831cc534a">7 - vse_</h1>
-    
-	
-
-<div class="pageinfo pageinfo-primary">
-<p>Vector store 8, 16, 32, 64 bit elements</p>
-
-</div>
-
-<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#7-vector-loads-and-stores">Detailed Reference</a></p>
-<h2 id="overview">Overview</h2>
-<p>Vector store with unit stride (adjacent elements)</p>
-<h2 id="patterns">Patterns</h2>
-<p>Store a vector into main memory.</p>
-<p>Notes:</p>
-<ul>
-<li>vector stores cause alignment faults if an equivalent sequence of scalar stores would fault.</li>
-</ul>
-<h2 id="examples">Examples</h2>
-<ul>
-<li><a href="/riscv_vector_survey/docs/patterns/memset/">inline memset</a></li>
-</ul>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-088d9f1990fd0a0d3ffc72aabef9d18a">8 - csrrs</h1>
-    
-	
-
-<div class="pageinfo pageinfo-primary">
-<p>Read vector context from a Control and Status Register</p>
-
-</div>
-
-<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#vector-type-register-vtype">Vector Type Register vtype</a></p>
-<p>The read-only XLEN-wide vector type CSR, vtype provides the default type used to interpret the contents of the vector register file, and can only be updated by vset{i}vl{i} instructions. The vector type determines the organization of elements in each vector register, and how multiple vector registers are grouped. The vtype register also indicates how masked-off elements and elements past the current vector length in a vector result are handled.</p>
-<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#35-vector-length-register-vl">Vector Length Register vl</a></p>
-<p>The vl register holds an unsigned integer specifying the number of elements to be updated with results from a vector instruction, as further detailed in Section Prestart, Active, Inactive, Body, and Tail Element Definitions.</p>
-<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#36-vector-byte-length-vlenb">Vector Byte Length vlenb</a></p>
-<p>The XLEN-bit-wide read-only CSR vlenb holds the value VLEN/8, i.e., the vector register length in bytes.</p>
-<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#37-vector-start-index-csr-vstart">Vector Start Index CSR vstart</a></p>
-<p>The XLEN-bit-wide read-write vstart CSR specifies the index of the first element to be executed by a vector instruction, as described in Section Prestart, Active, Inactive, Body, and Tail Element Definitions.</p>
-<p>Normally, vstart is only written by hardware on a trap on a vector instruction, with the vstart value representing the element on which the trap was taken (either a synchronous exception or an asynchronous interrupt), and at which execution should resume after a resumable trap is handled.</p>
-<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#38-vector-fixed-point-rounding-mode-register-vxrm">Vector Fixed-Point Rounding Mode Register vxrm</a></p>
-<h2 id="example">Example</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>csrrs       $offset,vl,zero            ; determine the number of elements read
-</span></span></code></pre></div>
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-5f749e66f5b60acf18f3043875777e38">9 - vmv.v.?</h1>
-    
-	
-
-<div class="pageinfo pageinfo-primary">
-<p>Vector move</p>
-
-</div>
-
-<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#1116-vector-integer-move-instructions">Detailed Reference</a></p>
-<h2 id="overview">Overview</h2>
-<p>Vector move from vector, scalar, or immediate</p>
-<h2 id="patterns">Patterns</h2>
-<p>Used to copy one vector into another, a scalar register into all elements of a vector, or an immediate value into
-all elements of a vector</p>
-<h2 id="examples">Examples</h2>
-<ul>
-<li><a href="/riscv_vector_survey/docs/patterns/memset/">inline strlen</a></li>
-</ul>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-e7afe66e5b603a484407369cdefc4dbc">10 - v_math_</h1>
-    
+	<header class="article-meta">
+		
+  </header>
 	
 
 <div class="pageinfo pageinfo-primary">
@@ -848,67 +455,8 @@ vwcvtu.x.x.v vd,vs,vm = vwaddu.vx vd,vs,x0,vm are provided.</p>
 </span></span><span style="display:flex;"><span>vmv.v.x vd, rs1 # vd[i] = x[rs1]
 </span></span><span style="display:flex;"><span>vmv.v.i vd, imm # vd[i] = imm
 </span></span></code></pre></div>
+	
 </div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-c0194658cd413153693dcdcb4d03de58">11 - vfirst.m</h1>
-    
-	
-
-<div class="pageinfo pageinfo-primary">
-<p>Find-first-set mask bit</p>
-
-</div>
-
-<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#153-vfirst-find-first-set-mask-bit">Detailed Reference</a></p>
-<p>The <code>vfirst</code> instruction finds the lowest-numbered active element of the source mask vector that has the value 1 and
-writes that element’s index to a GPR. If no active element has the value 1, -1 is written to the GPR.</p>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-ab0a85d4ccb10e9e6d6b345fafc36ec6">12 - vid.v</h1>
-    
-	
-
-<div class="pageinfo pageinfo-primary">
-<p>Vector element index</p>
-
-</div>
-
-<p><a href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#159-vector-element-index-instruction">Detailed Reference</a></p>
-<p>The <code>vid.v</code> instruction writes each element’s index to the destination vector register group, from 0 to vl-1.</p>
-
-</div>
-
-
-
-    
-	
-  
-
 
 
           </main>
