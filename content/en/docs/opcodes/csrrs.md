@@ -32,5 +32,5 @@ Normally, vstart is only written by hardware on a trap on a vector instruction, 
 ## Example
 
 ```text
-csrrs       $offset,vl,zero            ; determine the number of elementsread
+csrrs       $offset,vl,zero            ; determine the number of elements read
 ```

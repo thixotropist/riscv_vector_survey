@@ -10,7 +10,7 @@ when copying some elements of a structure into elements of a different class
 of structure.
 {{% /pageinfo %}}
 
->Note: a tutorial on segemented, strided, and indexed loads and stores would be useful,
+>Note: a tutorial on segmented, strided, and indexed loads and stores would be useful,
 >      as would a tutorial on the various element width, length, and multiplier mechanics.
 
 This function is one of the more confusing sequences of vector operations.

@@ -11,7 +11,7 @@ These are:
 * `whisper.cpp` - a Inference Engine voice-to-text application which uses a lot of tensor math
 
 We use the latest RISCV toolchains available to understand what the newer toolchains may soon mean to Ghidra analyses.
-At present that means a GCC 15 compiler and binutils assembler close to the development tip.  That means most of the
+At present that means a GCC 15 compiler and `binutils` assembler close to the development tip.  That means most of the
 instruction extensions documented here won't show up in products anytime soon.  That's good, because some of these
 extensions will demand a lot of preparation time.  That's especially true for RISCV vector instructions, since these
 generally do not easily decompile into the typed C language code we expect to see from scalar instructions.
