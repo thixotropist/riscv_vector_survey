@@ -34,6 +34,9 @@ VL
 VLEN
 : The number of bits in a single vector register, VLEN ≥ ELEN, which must be a power of 2.  Often 128 or 256 bits.
 
+VLENB
+: The number of bytes in a single vector register, VLEN/8
+
 XLEN
 : The number of bits in a scalar (x) register, 64 for RISCV-64
 
