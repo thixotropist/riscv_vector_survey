@@ -24,17 +24,17 @@
 <meta property="og:url" content="http://localhost:1313/riscv_vector_survey/docs/exercises/">
   <meta property="og:site_name" content="RISCV ISA extensions Ghidra field guide">
   <meta property="og:title" content="Exercises">
-  <meta property="og:description" content="Vectorized functions to be understood">
+  <meta property="og:description" content="Look into a few common or confusing patterns">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="Exercises">
-  <meta itemprop="description" content="Vectorized functions to be understood">
+  <meta itemprop="description" content="Look into a few common or confusing patterns">
   <meta itemprop="dateModified" content="2024-07-27T11:52:32-04:00">
-  <meta itemprop="wordCount" content="5">
+  <meta itemprop="wordCount" content="8">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Exercises">
-  <meta name="twitter:description" content="Vectorized functions to be understood">
+  <meta name="twitter:description" content="Look into a few common or confusing patterns">
 
 
 
@@ -84,9 +84,7 @@
       <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-riscv_vector_surveydocs-li">
   <a href="/riscv_vector_survey/docs/" title="Documentation" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-riscv_vector_surveydocs"><span class="">Docs</span></a>
   <ul class="ul-1">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsvector_survey-li">
-  <a href="/riscv_vector_survey/docs/vector_survey/" title="Vector ISA Frequencies" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsvector_survey"><span class="">frequencies</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-riscv_vector_surveydocsopcodes-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-riscv_vector_surveydocsopcodes-li">
   <a href="/riscv_vector_survey/docs/opcodes/" title="Opcodes" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-riscv_vector_surveydocsopcodes"><span class="">opcodes</span></a>
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodespending-li">
@@ -131,8 +129,21 @@
   <a href="/riscv_vector_survey/docs/exercises/structureaccesses/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsexercisesstructureaccesses"><span class="">structure accesses</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsexercisesautovec-li">
   <a href="/riscv_vector_survey/docs/exercises/autovec/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsexercisesautovec"><span class="">autovec</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsexercisesvector_math-li">
+  <a href="/riscv_vector_survey/docs/exercises/vector_math/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsexercisesvector_math"><span class="">vector math</span></a>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-riscv_vector_surveydocsopcode_statistics-li">
+  <a href="/riscv_vector_survey/docs/opcode_statistics/" title="Opcode Statistics" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-riscv_vector_surveydocsopcode_statistics"><span class="">opcode statistics</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcode_statisticsdpdk_vector-li">
+  <a href="/riscv_vector_survey/docs/opcode_statistics/dpdk_vector/" title="DPDK Vector ISA Frequencies" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcode_statisticsdpdk_vector"><span class="">DPDK vector frequencies</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcode_statisticswhisper_vector-li">
+  <a href="/riscv_vector_survey/docs/opcode_statistics/whisper_vector/" title="Whisper Vector ISA Frequencies" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcode_statisticswhisper_vector"><span class="">Whisper vector frequencies</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsglossary-li">
+  <a href="/riscv_vector_survey/docs/glossary/" title="Glossary" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsglossary"><span class="">glossary</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocstestbed-li">
   <a href="/riscv_vector_survey/docs/testbed/" title="RISCV-64 toolchain and deployment environment" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocstestbed"><span class="">testbed</span></a>
 </li>
@@ -179,7 +190,7 @@
 	
 
 <div class="pageinfo pageinfo-primary">
-<p>Vectorized functions to be understood</p>
+<p>Look into a few common or confusing patterns</p>
 
 </div>
 
@@ -197,6 +208,12 @@
         <div class="entry">
                 <h5>
                     <a href="/riscv_vector_survey/docs/exercises/autovec/">autovec</a>
+                </h5>
+                <p></p>
+            </div>
+        <div class="entry">
+                <h5>
+                    <a href="/riscv_vector_survey/docs/exercises/vector_math/">vector math</a>
                 </h5>
                 <p></p>
             </div>

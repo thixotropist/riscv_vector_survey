@@ -32,12 +32,14 @@ Ghidra’s decompiler window - with some manual annotation - shows us:">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2024-07-31T11:32:37-04:00">
 
   <meta itemprop="name" content="autovec">
   <meta itemprop="description" content="Some memory operations can be very hard to understand. This is often true when gcc optimizes structure initialization and configuration code.
 Note: a tutorial on segmented, strided, and indexed loads and stores would be useful, as would a tutorial on the various element width, length, and multiplier mechanics.
 This function highlights some of the more interesting vector instructions.
 Ghidra’s decompiler window - with some manual annotation - shows us:">
+  <meta itemprop="dateModified" content="2024-07-31T11:32:37-04:00">
   <meta itemprop="wordCount" content="1254">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="autovec">
@@ -94,9 +96,7 @@ Ghidra’s decompiler window - with some manual annotation - shows us:">
       <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-riscv_vector_surveydocs-li">
   <a href="/riscv_vector_survey/docs/" title="Documentation" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-riscv_vector_surveydocs"><span class="">Docs</span></a>
   <ul class="ul-1">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsvector_survey-li">
-  <a href="/riscv_vector_survey/docs/vector_survey/" title="Vector ISA Frequencies" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsvector_survey"><span class="">frequencies</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-riscv_vector_surveydocsopcodes-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-riscv_vector_surveydocsopcodes-li">
   <a href="/riscv_vector_survey/docs/opcodes/" title="Opcodes" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-riscv_vector_surveydocsopcodes"><span class="">opcodes</span></a>
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodespending-li">
@@ -141,8 +141,21 @@ Ghidra’s decompiler window - with some manual annotation - shows us:">
   <a href="/riscv_vector_survey/docs/exercises/structureaccesses/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsexercisesstructureaccesses"><span class="">structure accesses</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-riscv_vector_surveydocsexercisesautovec-li">
   <a href="/riscv_vector_survey/docs/exercises/autovec/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsexercisesautovec"><span class="td-sidebar-nav-active-item">autovec</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsexercisesvector_math-li">
+  <a href="/riscv_vector_survey/docs/exercises/vector_math/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsexercisesvector_math"><span class="">vector math</span></a>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-riscv_vector_surveydocsopcode_statistics-li">
+  <a href="/riscv_vector_survey/docs/opcode_statistics/" title="Opcode Statistics" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-riscv_vector_surveydocsopcode_statistics"><span class="">opcode statistics</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcode_statisticsdpdk_vector-li">
+  <a href="/riscv_vector_survey/docs/opcode_statistics/dpdk_vector/" title="DPDK Vector ISA Frequencies" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcode_statisticsdpdk_vector"><span class="">DPDK vector frequencies</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcode_statisticswhisper_vector-li">
+  <a href="/riscv_vector_survey/docs/opcode_statistics/whisper_vector/" title="Whisper Vector ISA Frequencies" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcode_statisticswhisper_vector"><span class="">Whisper vector frequencies</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsglossary-li">
+  <a href="/riscv_vector_survey/docs/glossary/" title="Glossary" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsglossary"><span class="">glossary</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocstestbed-li">
   <a href="/riscv_vector_survey/docs/testbed/" title="RISCV-64 toolchain and deployment environment" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocstestbed"><span class="">testbed</span></a>
 </li>
@@ -387,7 +400,10 @@ including something fairly close to our exercise code:</p>
 <li>decompiler loss of values when passed into a varadic logging function via stack slots rather than registers.</li>
 </ul>
 
-	
+	<div class="td-page-meta__lastmod">
+  Last modified July 31, 2024: <a href="https://github.com/thixotropist/ghidra_import_tests/commit/1820e88c16d35a3de9ed73f0eee6db0f93060ff3">Extend analysis of dpdk vector usage (1820e88)</a>
+</div>
+
 </div>
 
 

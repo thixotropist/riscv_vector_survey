@@ -1,11 +1,11 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
   <head>
-	<meta name="generator" content="Hugo 0.129.0"><script src="/riscv_vector_survey/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=riscv_vector_survey/livereload" data-no-instant defer></script>
+	<meta name="generator" content="Hugo 0.129.0">
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/riscv_vector_survey/index.xml">
-<meta name="robots" content="noindex, nofollow">
+<link rel="alternate" type="application/rss&#43;xml" href="https://thixotropist.github.io/riscv_vector_survey/index.xml">
+<meta name="robots" content="index, follow">
 
 
 <link rel="shortcut icon" href="/riscv_vector_survey/favicons/favicon.ico" >
@@ -21,29 +21,26 @@
 
 <title>RISCV ISA extensions Ghidra field guide</title>
 <meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-<meta property="og:url" content="http://localhost:1313/riscv_vector_survey/">
+<meta property="og:url" content="https://thixotropist.github.io/riscv_vector_survey/">
   <meta property="og:site_name" content="RISCV ISA extensions Ghidra field guide">
   <meta property="og:title" content="RISCV-64 Vector instruction survey">
-  <meta property="og:description" content="RISCV-64 Vector instruction survey How to recognize RISCV vector instruction sequences in the Ghidra analyses.
-Introduction Newer RISCV-64 toolchains and processors have access to many instruction set extensions. These can improve program performance, but they can also complicate Ghidra reverse engineering of excecutables. This survey shows how to recognize RISCV vector instructions in applications that wouldn’t be expected to do a lot of vector math.">
+  <meta property="og:description" content="RISCV-64 Vector instruction survey How to recognize the semantics of RISCV vector instruction sequences in Ghidra analyses.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="RISCV-64 Vector instruction survey">
-  <meta itemprop="description" content="RISCV-64 Vector instruction survey How to recognize RISCV vector instruction sequences in the Ghidra analyses.
-Introduction Newer RISCV-64 toolchains and processors have access to many instruction set extensions. These can improve program performance, but they can also complicate Ghidra reverse engineering of excecutables. This survey shows how to recognize RISCV vector instructions in applications that wouldn’t be expected to do a lot of vector math.">
+  <meta itemprop="description" content="RISCV-64 Vector instruction survey How to recognize the semantics of RISCV vector instruction sequences in Ghidra analyses.">
   <meta itemprop="dateModified" content="2024-07-27T11:52:32-04:00">
-  <meta itemprop="wordCount" content="65">
+  <meta itemprop="wordCount" content="17">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="RISCV-64 Vector instruction survey">
-  <meta name="twitter:description" content="RISCV-64 Vector instruction survey How to recognize RISCV vector instruction sequences in the Ghidra analyses.
-Introduction Newer RISCV-64 toolchains and processors have access to many instruction set extensions. These can improve program performance, but they can also complicate Ghidra reverse engineering of excecutables. This survey shows how to recognize RISCV vector instructions in applications that wouldn’t be expected to do a lot of vector math.">
+  <meta name="twitter:description" content="RISCV-64 Vector instruction survey How to recognize the semantics of RISCV vector instruction sequences in Ghidra analyses.">
 
 
 
 
-
-<link href="/riscv_vector_survey/scss/main.css" rel="stylesheet">
+<link rel="preload" href="/riscv_vector_survey/scss/main.min.c7fba8d75c695e2a7cf37f10b188552511714d4c1645c16af7e24f7cc964a002.css" as="style">
+<link href="/riscv_vector_survey/scss/main.min.c7fba8d75c695e2a7cf37f10b188552511714d4c1645c16af7e24f7cc964a002.css" rel="stylesheet" integrity="">
 
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -96,7 +93,7 @@ Introduction Newer RISCV-64 toolchains and processors have access to many instru
         
         <div class="pt-3 lead">
           
-              <p class="mt-5">How to recognize RISCV vector instruction sequences in the Ghidra analyses.</p>
+              <p class="mt-5">How to recognize the semantics of RISCV vector instruction sequences in Ghidra analyses.</p>
 
           
         </div>
@@ -106,18 +103,6 @@ Introduction Newer RISCV-64 toolchains and processors have access to many instru
   
 </section>
 
-<div><a id="td-block-1" class="td-offset-anchor"></a></div>
-<section class="row td-box td-box--primary td-box--height-auto">
-<div class="col">
-<div class="container">
-<h2 id="introduction">Introduction</h2>
-<p>Newer RISCV-64 toolchains and processors have access to many instruction set extensions.  These can
-improve program performance, but they can also complicate Ghidra reverse engineering of excecutables.
-This survey shows how to recognize RISCV vector instructions in applications that wouldn&rsquo;t be expected
-to do a lot of vector math.</p>
-</div>
-</div>
-</section>
 
 
 
@@ -148,8 +133,8 @@ to do a lot of vector math.</p>
 </footer>
 
     </div>
-    <script src="/riscv_vector_survey/js/main.js"></script>
-<script defer src="/riscv_vector_survey/js/click-to-copy.js" crossorigin="anonymous"></script>
+    <script src="/riscv_vector_survey/js/main.min.68c9a31dd693463d3622bbd6253513d826071034389c140c96dd8d24ff9251df.js" integrity="sha256-aMmjHdaTRj02IrvWJTUT2CYHEDQ4nBQMlt2NJP&#43;SUd8=" crossorigin="anonymous"></script>
+<script defer src="/riscv_vector_survey/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
 <script src='/riscv_vector_survey/js/tabpane-persist.js'></script>
 
   </body>

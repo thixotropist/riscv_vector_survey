@@ -25,19 +25,22 @@
   <meta property="og:site_name" content="RISCV ISA extensions Ghidra field guide">
   <meta property="og:title" content="Documentation">
   <meta property="og:description" content="Recognizing vector instruction sequences in large RISCV-64 binaries.
-…">
+Introduction Newer RISCV-64 toolchains and processors have access to many instruction set extensions. These can improve program performance, but they can also complicate Ghidra reverse engineering of executables. This survey shows how to recognize RISCV vector instructions in several C and C&#43;&#43; linux applications.
+Data Plane Development Kit (DPDK) Optimizing compilers like GCC can generate vector instruction sequences in code that has little to do with vectors.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="Documentation">
   <meta itemprop="description" content="Recognizing vector instruction sequences in large RISCV-64 binaries.
-…">
+Introduction Newer RISCV-64 toolchains and processors have access to many instruction set extensions. These can improve program performance, but they can also complicate Ghidra reverse engineering of executables. This survey shows how to recognize RISCV vector instructions in several C and C&#43;&#43; linux applications.
+Data Plane Development Kit (DPDK) Optimizing compilers like GCC can generate vector instruction sequences in code that has little to do with vectors.">
   <meta itemprop="dateModified" content="2024-07-27T11:52:32-04:00">
-  <meta itemprop="wordCount" content="9">
+  <meta itemprop="wordCount" content="386">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Documentation">
   <meta name="twitter:description" content="Recognizing vector instruction sequences in large RISCV-64 binaries.
-…">
+Introduction Newer RISCV-64 toolchains and processors have access to many instruction set extensions. These can improve program performance, but they can also complicate Ghidra reverse engineering of executables. This survey shows how to recognize RISCV vector instructions in several C and C&#43;&#43; linux applications.
+Data Plane Development Kit (DPDK) Optimizing compilers like GCC can generate vector instruction sequences in code that has little to do with vectors.">
 
 
 
@@ -87,9 +90,7 @@
       <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-riscv_vector_surveydocs-li">
   <a href="/riscv_vector_survey/docs/" title="Documentation" class="align-left ps-0 active td-sidebar-link td-sidebar-link__section tree-root" id="m-riscv_vector_surveydocs"><span class="td-sidebar-nav-active-item">Docs</span></a>
   <ul class="ul-1">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsvector_survey-li">
-  <a href="/riscv_vector_survey/docs/vector_survey/" title="Vector ISA Frequencies" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsvector_survey"><span class="">frequencies</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-riscv_vector_surveydocsopcodes-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-riscv_vector_surveydocsopcodes-li">
   <a href="/riscv_vector_survey/docs/opcodes/" title="Opcodes" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-riscv_vector_surveydocsopcodes"><span class="">opcodes</span></a>
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcodespending-li">
@@ -134,8 +135,21 @@
   <a href="/riscv_vector_survey/docs/exercises/structureaccesses/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsexercisesstructureaccesses"><span class="">structure accesses</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsexercisesautovec-li">
   <a href="/riscv_vector_survey/docs/exercises/autovec/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsexercisesautovec"><span class="">autovec</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsexercisesvector_math-li">
+  <a href="/riscv_vector_survey/docs/exercises/vector_math/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsexercisesvector_math"><span class="">vector math</span></a>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-riscv_vector_surveydocsopcode_statistics-li">
+  <a href="/riscv_vector_survey/docs/opcode_statistics/" title="Opcode Statistics" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-riscv_vector_surveydocsopcode_statistics"><span class="">opcode statistics</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcode_statisticsdpdk_vector-li">
+  <a href="/riscv_vector_survey/docs/opcode_statistics/dpdk_vector/" title="DPDK Vector ISA Frequencies" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcode_statisticsdpdk_vector"><span class="">DPDK vector frequencies</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcode_statisticswhisper_vector-li">
+  <a href="/riscv_vector_survey/docs/opcode_statistics/whisper_vector/" title="Whisper Vector ISA Frequencies" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcode_statisticswhisper_vector"><span class="">Whisper vector frequencies</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsglossary-li">
+  <a href="/riscv_vector_survey/docs/glossary/" title="Glossary" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsglossary"><span class="">glossary</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocstestbed-li">
   <a href="/riscv_vector_survey/docs/testbed/" title="RISCV-64 toolchain and deployment environment" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocstestbed"><span class="">testbed</span></a>
 </li>
@@ -156,7 +170,19 @@
 
 </div>
 
-            
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a>
+      <ul>
+        <li><a href="#data-plane-development-kit-dpdk">Data Plane Development Kit (DPDK)</a></li>
+        <li><a href="#whispercpp">Whisper.cpp</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
             
 	
           </aside>
@@ -184,18 +210,40 @@
 
 </div>
 
-<p>&hellip;</p>
+<h2 id="introduction">Introduction</h2>
+<p>Newer RISCV-64 toolchains and processors have access to many instruction set extensions.  These can
+improve program performance, but they can also complicate Ghidra reverse engineering of executables.
+This survey shows how to recognize RISCV vector instructions in several C and C++ linux applications.</p>
+<h3 id="data-plane-development-kit-dpdk">Data Plane Development Kit (DPDK)</h3>
+<p>Optimizing compilers like GCC can generate vector instruction sequences in code that has little to do with
+vectors.  Our first example is <code>dpdk-ip_pipeline</code>, a basic framework for network applications.  GCC 14.1
+won&rsquo;t find a lot to optimize in network data plane implementations, but it will optimize associated
+control plane code. Only a few percent of the total <code>dpdk-ip_pipeline</code> instructions are vector instructions.
+If Ghidra can not process these correctly up to a third of the total instruction set remains unrecognized.</p>
+<p>The survey of <code>dpdk-ip_pipeline</code> shows some examples Ghidra users might run into when working on code that
+has little to do with mathematics or sequences:</p>
+<ul>
+<li>data initializers - the compiler will aggressively generate vector code for vectors of as few as two
+elements when adjacent memory locations are to be initialized in a similar way.</li>
+<li>stdlib inlined code - calls to standard library functions like <code>strlen</code>, <code>memcpy</code>, and <code>memset</code> can be
+replaced with inline vector instructions.  The inlined code shows a lot of diversity, depending on what
+the compiler can determine of alignment and element numbers.</li>
+<li>loop unrolling - the compiler will often convert a simple loop into a complex loop with fewer iterations.
+If the element count is small enough, and the minimum vector register size is known to be big enough, the
+loop can be converted into a single pass through a vector instruction sequence.  If the loop iterates over
+a sequence of structures the generated vector code can be hard to follow.</li>
+</ul>
+<h3 id="whispercpp">Whisper.cpp</h3>
+<p>This voice-to-text application is the kind of Inference Engine application that depends heavily on vector
+math.  Much of the processing involves vector dot products, often with 16 bit floating point operands.
+The optimizing compiler can do a lot with this code, especially if source code breaks the vectors into blocks
+that fit entirely within the vector register file.  The compiler will often vectorize the control structures
+as well, turning simple run-once scalar sequences into slightly more efficient but far more confusing vector sequences.</p>
 
   <div class="section-index">
     
     
     <hr class="panel-line">
-        <div class="entry">
-                <h5>
-                    <a href="/riscv_vector_survey/docs/vector_survey/">Vector ISA Frequencies</a>
-                </h5>
-                <p></p>
-            </div>
         <div class="entry">
                 <h5>
                     <a href="/riscv_vector_survey/docs/opcodes/">Opcodes</a>
@@ -211,6 +259,18 @@
         <div class="entry">
                 <h5>
                     <a href="/riscv_vector_survey/docs/exercises/">Exercises</a>
+                </h5>
+                <p></p>
+            </div>
+        <div class="entry">
+                <h5>
+                    <a href="/riscv_vector_survey/docs/opcode_statistics/">Opcode Statistics</a>
+                </h5>
+                <p></p>
+            </div>
+        <div class="entry">
+                <h5>
+                    <a href="/riscv_vector_survey/docs/glossary/">Glossary</a>
                 </h5>
                 <p></p>
             </div>

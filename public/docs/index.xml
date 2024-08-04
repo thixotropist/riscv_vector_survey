@@ -8,11 +8,11 @@
     <language>en-us</language>
     <atom:link href="http://localhost:1313/riscv_vector_survey/docs/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Vector ISA Frequencies</title>
-      <link>http://localhost:1313/riscv_vector_survey/docs/vector_survey/</link>
+      <title>Glossary</title>
+      <link>http://localhost:1313/riscv_vector_survey/docs/glossary/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/riscv_vector_survey/docs/vector_survey/</guid>
-      <description>What are the vector instruction frequencies in dpdk-ip_pipeline when built with gcc-15 and executed within a RISCV-64 emulated system?&#xA;This means libc calls won&amp;rsquo;t invoke vector instructions in this memory snapshot.&#xA;opcode frequency vse8.v 12756 vsetivli 9668 vsetvli 7882 vle8.v 5841 vle8ff.v 3433 vmv.v.i 3134 vse32.v 2357 vmseq.vi 1914 vse64.v 1880 csrrs[vl] 1843 vfirst.m 1843 vle64.v 1808 vid.v 1801 vse16.v 1751 vmsne.vv 1603 vmor.mm 1597 vle32.v 1431 csrrs[vlenb] 1163 vmul.</description>
+      <guid>http://localhost:1313/riscv_vector_survey/docs/glossary/</guid>
+      <description>Vector terms Detailed Reference&#xA;Acronyms AVL Application Vector Length, the total number of elements to be processed as a candidate value for vl EEW Each vector operand has an effective element width (EEW) and an effective LMUL (EMUL) that is used to determine the size and location of all the elements within a vector register group. By default, for most operands of most instructions, EEW=SEW and EMUL=LMUL. ELEN The maximum size in bits of a vector element that any operation can produce or consume, ELEN ≥ 8, which must be a power of 2.</description>
     </item>
     <item>
       <title>RISCV-64 toolchain and deployment environment</title>

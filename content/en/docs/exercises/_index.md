@@ -5,5 +5,5 @@ weight: 30
 ---
 
 {{% pageinfo %}}
-Vectorized functions to be understood
+Look into a few common or confusing patterns
 {{% /pageinfo %}}

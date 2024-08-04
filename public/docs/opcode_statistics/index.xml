@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Opcode Statistics on RISCV ISA extensions Ghidra field guide</title>
+    <link>https://thixotropist.github.io/riscv_vector_survey/docs/opcode_statistics/</link>
+    <description>Recent content in Opcode Statistics on RISCV ISA extensions Ghidra field guide</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://thixotropist.github.io/riscv_vector_survey/docs/opcode_statistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DPDK Vector ISA Frequencies</title>
+      <link>https://thixotropist.github.io/riscv_vector_survey/docs/opcode_statistics/dpdk_vector/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://thixotropist.github.io/riscv_vector_survey/docs/opcode_statistics/dpdk_vector/</guid>
+      <description>What are the vector instruction frequencies in dpdk-ip_pipeline when built with gcc-15 and executed within a RISCV-64 emulated system?&#xA;This means libc calls won&amp;rsquo;t invoke vector instructions in this memory snapshot.&#xA;opcode frequency vse8.v 12756 vsetivli 9668 vsetvli 7882 vle8.v 5841 vle8ff.v 3433 vmv.v.i 3134 vse32.v 2357 vmseq.vi 1914 vse64.v 1880 csrrs[vl] 1843 vfirst.m 1843 vle64.v 1808 vid.v 1801 vse16.v 1751 vmsne.vv 1603 vmor.mm 1597 vle32.v 1431 csrrs[vlenb] 1163 vmul.</description>
+    </item>
+    <item>
+      <title>Whisper Vector ISA Frequencies</title>
+      <link>https://thixotropist.github.io/riscv_vector_survey/docs/opcode_statistics/whisper_vector/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://thixotropist.github.io/riscv_vector_survey/docs/opcode_statistics/whisper_vector/</guid>
+      <description>What are the vector instruction frequencies in whisper.cpp when built with gcc-15 and imported as an optimized binary?&#xA;Generated from whisper.cpp, release 1.6.2, with developmental snapshot of gcc15&#xA;Total instructions found: 23592 (out of 246142 total)&#xA;opcode frequency vsetvli 3192 vsetivli 1529 vle32.v 1455 vse8.v 1348 vle8.v 1185 vse32.v 993 vse64.v 900 vmv1r.v 778 vfmul.vv 753 vrgather.vv 593 vfmadd.vv 541 vle64.v 536 vmv.v.i 516 vncvt.x.x.w 497 vmv.v.x 478 vfmv.v.f 393 csrrs[vlenb] 389 vand.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,9 +1,9 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
-  <head><script src="/riscv_vector_survey/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=riscv_vector_survey/livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 
 
 <link rel="shortcut icon" href="/riscv_vector_survey/favicons/favicon.ico" >
@@ -21,7 +21,7 @@
 <meta name="description" content="What are the vector instruction frequencies in dpdk-ip_pipeline when built with gcc-15 and executed within a RISCV-64 emulated system?
 This means libc calls won&amp;rsquo;t invoke vector instructions in this memory snapshot.
 opcode frequency vse8.v 12756 vsetivli 9668 vsetvli 7882 vle8.v 5841 vle8ff.v 3433 vmv.v.i 3134 vse32.v 2357 vmseq.vi 1914 vse64.v 1880 csrrs[vl] 1843 vfirst.m 1843 vle64.v 1808 vid.v 1801 vse16.v 1751 vmsne.vv 1603 vmor.mm 1597 vle32.v 1431 csrrs[vlenb] 1163 vmul.">
-<meta property="og:url" content="http://localhost:1313/riscv_vector_survey/docs/vector_survey/">
+<meta property="og:url" content="https://thixotropist.github.io/riscv_vector_survey/docs/vector_survey/">
   <meta property="og:site_name" content="RISCV ISA extensions Ghidra field guide">
   <meta property="og:title" content="Vector ISA Frequencies">
   <meta property="og:description" content="What are the vector instruction frequencies in dpdk-ip_pipeline when built with gcc-15 and executed within a RISCV-64 emulated system?
@@ -30,13 +30,13 @@ opcode frequency vse8.v 12756 vsetivli 9668 vsetvli 7882 vle8.v 5841 vle8ff.v 34
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2024-07-27T11:52:32-04:00">
+    <meta property="article:modified_time" content="2024-07-31T11:32:37-04:00">
 
   <meta itemprop="name" content="Vector ISA Frequencies">
   <meta itemprop="description" content="What are the vector instruction frequencies in dpdk-ip_pipeline when built with gcc-15 and executed within a RISCV-64 emulated system?
 This means libc calls won’t invoke vector instructions in this memory snapshot.
 opcode frequency vse8.v 12756 vsetivli 9668 vsetvli 7882 vle8.v 5841 vle8ff.v 3433 vmv.v.i 3134 vse32.v 2357 vmseq.vi 1914 vse64.v 1880 csrrs[vl] 1843 vfirst.m 1843 vle64.v 1808 vid.v 1801 vse16.v 1751 vmsne.vv 1603 vmor.mm 1597 vle32.v 1431 csrrs[vlenb] 1163 vmul.">
-  <meta itemprop="dateModified" content="2024-07-27T11:52:32-04:00">
+  <meta itemprop="dateModified" content="2024-07-31T11:32:37-04:00">
   <meta itemprop="wordCount" content="329">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Vector ISA Frequencies">
@@ -47,8 +47,8 @@ opcode frequency vse8.v 12756 vsetivli 9668 vsetvli 7882 vle8.v 5841 vle8ff.v 34
 
 
 
-
-<link href="/riscv_vector_survey/scss/main.css" rel="stylesheet">
+<link rel="preload" href="/riscv_vector_survey/scss/main.min.c7fba8d75c695e2a7cf37f10b188552511714d4c1645c16af7e24f7cc964a002.css" as="style">
+<link href="/riscv_vector_survey/scss/main.min.c7fba8d75c695e2a7cf37f10b188552511714d4c1645c16af7e24f7cc964a002.css" rel="stylesheet" integrity="">
 
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -139,8 +139,21 @@ opcode frequency vse8.v 12756 vsetivli 9668 vsetvli 7882 vle8.v 5841 vle8ff.v 34
   <a href="/riscv_vector_survey/docs/exercises/structureaccesses/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsexercisesstructureaccesses"><span class="">structure accesses</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsexercisesautovec-li">
   <a href="/riscv_vector_survey/docs/exercises/autovec/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsexercisesautovec"><span class="">autovec</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsexercisesvector_math-li">
+  <a href="/riscv_vector_survey/docs/exercises/vector_math/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsexercisesvector_math"><span class="">vector math</span></a>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-riscv_vector_surveydocsopcode_statistics-li">
+  <a href="/riscv_vector_survey/docs/opcode_statistics/" title="Opcode Statistics" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-riscv_vector_surveydocsopcode_statistics"><span class="">opcode statistics</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcode_statisticsdpdk_vector-li">
+  <a href="/riscv_vector_survey/docs/opcode_statistics/dpdk_vector/" title="DPDK Vector ISA Frequencies" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcode_statisticsdpdk_vector"><span class="">DPDK vector frequencies</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsopcode_statisticswhisper_vector-li">
+  <a href="/riscv_vector_survey/docs/opcode_statistics/whisper_vector/" title="Whisper Vector ISA Frequencies" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsopcode_statisticswhisper_vector"><span class="">Whisper vector frequencies</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocsglossary-li">
+  <a href="/riscv_vector_survey/docs/glossary/" title="Glossary" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocsglossary"><span class="">glossary</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-riscv_vector_surveydocstestbed-li">
   <a href="/riscv_vector_survey/docs/testbed/" title="RISCV-64 toolchain and deployment environment" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-riscv_vector_surveydocstestbed"><span class="">testbed</span></a>
 </li>
@@ -797,7 +810,7 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 </table>
 
 	<div class="td-page-meta__lastmod">
-  Last modified July 27, 2024: <a href="https://github.com/thixotropist/ghidra_import_tests/commit/7f19f63c3008b9f477754c5ee5f80022d345fdff">Initial commit (7f19f63)</a>
+  Last modified July 31, 2024: <a href="https://github.com/thixotropist/ghidra_import_tests/commit/1820e88c16d35a3de9ed73f0eee6db0f93060ff3">Extend analysis of dpdk vector usage (1820e88)</a>
 </div>
 
 </div>
@@ -832,8 +845,8 @@ when built with gcc-15 and executed within a RISCV-64 emulated system?</p>
 </footer>
 
     </div>
-    <script src="/riscv_vector_survey/js/main.js"></script>
-<script defer src="/riscv_vector_survey/js/click-to-copy.js" crossorigin="anonymous"></script>
+    <script src="/riscv_vector_survey/js/main.min.68c9a31dd693463d3622bbd6253513d826071034389c140c96dd8d24ff9251df.js" integrity="sha256-aMmjHdaTRj02IrvWJTUT2CYHEDQ4nBQMlt2NJP&#43;SUd8=" crossorigin="anonymous"></script>
+<script defer src="/riscv_vector_survey/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
 <script src='/riscv_vector_survey/js/tabpane-persist.js'></script>
 
   </body>

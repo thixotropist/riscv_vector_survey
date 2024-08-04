@@ -1,10 +1,10 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
-  <head><script src="/riscv_vector_survey/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=riscv_vector_survey/livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="canonical" type="text/html" href="http://localhost:1313/riscv_vector_survey/docs/exercises/">
-<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/riscv_vector_survey/docs/exercises/index.xml">
+<link rel="canonical" type="text/html" href="https://thixotropist.github.io/riscv_vector_survey/docs/exercises/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://thixotropist.github.io/riscv_vector_survey/docs/exercises/index.xml">
 <meta name="robots" content="noindex, nofollow">
 
 
@@ -21,26 +21,26 @@
 
 <title>Exercises | RISCV ISA extensions Ghidra field guide</title>
 <meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-<meta property="og:url" content="http://localhost:1313/riscv_vector_survey/docs/exercises/">
+<meta property="og:url" content="https://thixotropist.github.io/riscv_vector_survey/docs/exercises/">
   <meta property="og:site_name" content="RISCV ISA extensions Ghidra field guide">
   <meta property="og:title" content="Exercises">
-  <meta property="og:description" content="Vectorized functions to be understood">
+  <meta property="og:description" content="Look into a few common or confusing patterns">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="Exercises">
-  <meta itemprop="description" content="Vectorized functions to be understood">
+  <meta itemprop="description" content="Look into a few common or confusing patterns">
   <meta itemprop="dateModified" content="2024-07-27T11:52:32-04:00">
-  <meta itemprop="wordCount" content="5">
+  <meta itemprop="wordCount" content="8">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Exercises">
-  <meta name="twitter:description" content="Vectorized functions to be understood">
+  <meta name="twitter:description" content="Look into a few common or confusing patterns">
 
 
 
 
-
-<link href="/riscv_vector_survey/scss/main.css" rel="stylesheet">
+<link rel="preload" href="/riscv_vector_survey/scss/main.min.c7fba8d75c695e2a7cf37f10b188552511714d4c1645c16af7e24f7cc964a002.css" as="style">
+<link href="/riscv_vector_survey/scss/main.min.c7fba8d75c695e2a7cf37f10b188552511714d4c1645c16af7e24f7cc964a002.css" rel="stylesheet" integrity="">
 
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -120,6 +120,14 @@ This is the multi-page printable view of this section.
 
     
   
+    
+    
+	
+<li>3: <a href="#pg-638019202c3156ab0a5ea90353986041">vector math</a></li>
+
+
+    
+  
 
     </ul>
 
@@ -128,7 +136,7 @@ This is the multi-page printable view of this section.
       
 
 <div class="pageinfo pageinfo-primary">
-<p>Vectorized functions to be understood</p>
+<p>Look into a few common or confusing patterns</p>
 
 </div>
 
@@ -575,6 +583,111 @@ including something fairly close to our exercise code:</p>
     
 	
   
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-638019202c3156ab0a5ea90353986041">3 - vector math</h1>
+    
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>Inference Engine  applications like <code>whisper.cpp</code> make heavy use of tensor math.  These can benefit from
+vector instructions, providing perhaps a 3 fold improvement over equivalent scalar code.</p>
+
+</div>
+
+<p>Profiling <code>whisper.cpp</code> with a voice-to-text sample file shows <code>ggml_vec_dot_f16</code> to be a hot-spot.  This
+function implements a vector dot product using 16 bit floating point values.  It is used heavily in tensor
+product calculations.</p>
+<p>The ggml scalar source code source code is:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">static</span> <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">ggml_vec_dot_f16</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">n</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">float</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#204a87;font-weight:bold">restrict</span> <span style="color:#000">s</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">size_t</span> <span style="color:#000">bs</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">ggml_fp16_t</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#204a87;font-weight:bold">restrict</span> <span style="color:#000">x</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">size_t</span> <span style="color:#000">bx</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">ggml_fp16_t</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#204a87;font-weight:bold">restrict</span> <span style="color:#000">y</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">size_t</span> <span style="color:#000">by</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">nrc</span><span style="color:#000;font-weight:bold">)</span> 
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">assert</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">nrc</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">UNUSED</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">nrc</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">UNUSED</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">bx</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">UNUSED</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">by</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">UNUSED</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">bs</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">ggml_float</span> <span style="color:#000">sumf</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0.0</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#000">n</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">sumf</span> <span style="color:#ce5c00;font-weight:bold">+=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">ggml_float</span><span style="color:#000;font-weight:bold">)(</span><span style="color:#000">GGML_FP16_TO_FP32</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">x</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">])</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">GGML_FP16_TO_FP32</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">y</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">]));</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">s</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">sumf</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><p>Ghidra&rsquo;s decompiler&rsquo;s view of this after some signature alignment and variable renaming is:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">ggml_vec_dot_f16</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">ulong</span> <span style="color:#000">n</span><span style="color:#000;font-weight:bold">,</span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">,</span><span style="color:#204a87;font-weight:bold">long</span> <span style="color:#000">x</span><span style="color:#000;font-weight:bold">,</span><span style="color:#204a87;font-weight:bold">long</span> <span style="color:#000">y</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">bool</span> <span style="color:#000">bVar1</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">ulong</span> <span style="color:#000">uVar2</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">ulong</span> <span style="color:#000">uVar3</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">dVar4</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">undefined</span> <span style="color:#000">in_v1</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">256</span><span style="color:#000;font-weight:bold">];</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">undefined</span> <span style="color:#000">x_slice</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">256</span><span style="color:#000;font-weight:bold">];</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">undefined</span> <span style="color:#000">auVar5</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">256</span><span style="color:#000;font-weight:bold">];</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">undefined</span> <span style="color:#000">y_slice</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">256</span><span style="color:#000;font-weight:bold">];</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">ulong</span> <span style="color:#000">in_vlenb</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#000">gp</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">__global_pointer</span><span style="color:#a40000">$</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">long</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">n</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">vsetvli_e64m1tama</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">);</span>              <span style="color:#8f5902;font-style:italic">// SEW=64 bit
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">vmv_v_i</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">in_v1</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">);</span>                  <span style="color:#8f5902;font-style:italic">// v1[*] = 0
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">uVar2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">in_vlenb</span> <span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span> <span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">;</span>             <span style="color:#8f5902;font-style:italic">// VLENB/8, or the number of elements in a vector register
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">auVar5</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vfslide1up_vf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">in_v1</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">);</span>   <span style="color:#8f5902;font-style:italic">// # vd[0]=0, vd[i+1] = in_v1[i]
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">do</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">uVar3</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">n</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">uVar2</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#000">n</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">uVar3</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">uVar2</span><span style="color:#000;font-weight:bold">;</span>                  <span style="color:#8f5902;font-style:italic">// uVar3 = max(n, uVar2)
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">vsetvli_e16mf4tama</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">uVar3</span><span style="color:#000;font-weight:bold">);</span>        <span style="color:#8f5902;font-style:italic">// SEW=16 bits
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">x_slice</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vle16_v</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">x</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">y_slice</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vle16_v</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">y</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">vsetvli_e64m1tama</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">);</span>             <span style="color:#8f5902;font-style:italic">// SEW=64 bits
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">x</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">x</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">in_vlenb</span> <span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">y</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">y</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">in_vlenb</span> <span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">x_slice</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vzext_vf4</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">x_slice</span><span style="color:#000;font-weight:bold">);</span>     <span style="color:#8f5902;font-style:italic">// Zero-extend SEW/4 source to SEW destination
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">y_slice</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vzext_vf4</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">y_slice</span><span style="color:#000;font-weight:bold">);</span>     <span style="color:#8f5902;font-style:italic">// Zero-extend SEW/4 source to SEW destination
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">x_slice</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vsll_vi</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">x_slice</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>     <span style="color:#8f5902;font-style:italic">// vector immediate shift 2
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">y_slice</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vsll_vi</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">y_slice</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>     <span style="color:#8f5902;font-style:italic">// vector immediate shift 2
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">vsetvli_e32mf2tama</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">uVar3</span><span style="color:#000;font-weight:bold">);</span>        <span style="color:#8f5902;font-style:italic">// SEW=32 bits
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">x_slice</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vluxei64_v</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">ggml_table_f32_f16</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">x_slice</span><span style="color:#000;font-weight:bold">);</span>  <span style="color:#8f5902;font-style:italic">// unordered 64-bit indexed load of SEW data
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">y_slice</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vluxei64_v</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">ggml_table_f32_f16</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">y_slice</span><span style="color:#000;font-weight:bold">);</span>  <span style="color:#8f5902;font-style:italic">// unordered 64-bit indexed load of SEW data
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">vsetvli_e32mf2tama</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">);</span>           <span style="color:#8f5902;font-style:italic">// SEW=32 bits (redundant?)
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">x_slice</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vfmul_vv</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">x_slice</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">y_slice</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">// 32 bit Floating-point multiply
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">vmv1r_v</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">y_slice</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">auVar5</span><span style="color:#000;font-weight:bold">);</span>         <span style="color:#8f5902;font-style:italic">// y_slice[i] = auVar5[i] (=0)
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">vsetvli_e32mf2tuma</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">uVar3</span><span style="color:#000;font-weight:bold">);</span>       <span style="color:#8f5902;font-style:italic">// tail unchanged, AVL=uVar3
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">auVar5</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vfwadd_wv</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">y_slice</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">x_slice</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">// Widening FP add, auVar5 is 64 bits wide
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">bVar1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">uVar2</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#000">n</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">n</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">n</span> <span style="color:#ce5c00;font-weight:bold">-</span> <span style="color:#000">uVar2</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">while</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">bVar1</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">vsetvli_e64m1tama</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">);</span>              <span style="color:#8f5902;font-style:italic">// SEW=64 bits
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">x_slice</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vfmv_sf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">);</span>              <span style="color:#8f5902;font-style:italic">// x_slice[0] = 0
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">auVar5</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">vfredusum_vs</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar5</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">x_slice</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">// Vector Single-Width Floating-Point Sum Reduction 
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">dVar4</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">vfmv_fs</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">auVar5</span><span style="color:#000;font-weight:bold">);</span>   <span style="color:#8f5902;font-style:italic">// dvar4 = auVar5[0]
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">s</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">float</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">dVar4</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">return</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">s</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0.0</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">return</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><p>Notes:</p>
+<ul>
+<li>FP16 floats are not yet supported in this RISCV toolchain.  ggml_table_f32_f16 is a 64K table of 32 bit floats
+allowing conversion of an FP16 float into 32 bit floats</li>
+<li>Some of the conversions between 32 and 64 bit floating point are confusing.</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
 
 
 
@@ -607,8 +720,8 @@ including something fairly close to our exercise code:</p>
 </footer>
 
     </div>
-    <script src="/riscv_vector_survey/js/main.js"></script>
-<script defer src="/riscv_vector_survey/js/click-to-copy.js" crossorigin="anonymous"></script>
+    <script src="/riscv_vector_survey/js/main.min.68c9a31dd693463d3622bbd6253513d826071034389c140c96dd8d24ff9251df.js" integrity="sha256-aMmjHdaTRj02IrvWJTUT2CYHEDQ4nBQMlt2NJP&#43;SUd8=" crossorigin="anonymous"></script>
+<script defer src="/riscv_vector_survey/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
 <script src='/riscv_vector_survey/js/tabpane-persist.js'></script>
 
   </body>
